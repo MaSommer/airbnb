@@ -1,1 +1,4 @@
-/target/
+/target/calendar_us.csv
+/target/listings_us.csv
+/target/reviews_us.csv
+/target/neighbourhoods.geojson
