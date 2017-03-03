@@ -11,10 +11,6 @@ public class Main {
 	
 	
 	public static void main(String[] args) {
-<<<<<<< HEAD
-		System.out.println("Heisann pussy");
-	}
-=======
 //	    SparkConf sparkConf = new SparkConf().setAppName("Pussy&Alcohol");
 //	    JavaSparkContext sparkContext = new JavaSparkContext(sparkConf);
 //
@@ -36,7 +32,4 @@ public class Main {
 //
 //	    System.out.println(String.format("Total lines in %s is %d",args[0],count));
 	  }
-	
-
->>>>>>> Marty
 }
