@@ -6,6 +6,15 @@ import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.Function;
 
 import java.io.StringReader;
+<<<<<<< HEAD
+=======
+
+public class Main {
+	
+	
+	
+	
+>>>>>>> master
 
 public class Main {
 	
