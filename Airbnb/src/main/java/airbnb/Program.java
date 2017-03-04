@@ -14,8 +14,6 @@ import scala.Serializable;
 
 
 
-
-
 public class Program {	
 
 	private static JavaRDD<String> inputRDD;
