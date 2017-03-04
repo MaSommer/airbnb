@@ -14,6 +14,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
+		
 		SparkConf conf = new SparkConf()
         .setAppName("SF Salaries")
         .setMaster("local[*]")
