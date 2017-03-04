@@ -11,25 +11,26 @@ public class Main {
 	
 	
 	public static void main(String[] args) {
-	    SparkConf sparkConf = new SparkConf().setAppName("Pussy&Alcohol");
-	    JavaSparkContext sparkContext = new JavaSparkContext(sparkConf);
-
-	    // Read the source file
-	    JavaRDD<String> input = sparkContext.textFile("target/calendar_us.csv");
-
-	    // RDD is immutable, let's create a new RDD which doesn't contain empty lines
-	    // the function needs to return true for the records to be kept
-	    JavaRDD<String> nonEmptyLines = input.filter(new Function<String, Boolean>() {
-	      public Boolean call(String s) throws Exception {
-	        if(s == null || s.trim().length() < 1) {
-	          return false;
-	        }
-	        return true;
-	      }
-	    });
-
-	    long count = nonEmptyLines.count();
-
-	    System.out.println(String.format("Total lines in %s is %d",args[0],count));
+		System.out.println("hei");
+//	    SparkConf sparkConf = new SparkConf().setAppName("Pussy&Alcohol");
+//	    JavaSparkContext sparkContext = new JavaSparkContext(sparkConf);
+//
+//	    // Read the source file
+//	    JavaRDD<String> input = sparkContext.textFile("target/calendar_us.csv");
+//
+//	    // RDD is immutable, let's create a new RDD which doesn't contain empty lines
+//	    // the function needs to return true for the records to be kept
+//	    JavaRDD<String> nonEmptyLines = input.filter(new Function<String, Boolean>() {
+//	      public Boolean call(String s) throws Exception {
+//	        if(s == null || s.trim().length() < 1) {
+//	          return false;
+//	        }
+//	        return true;
+//	      }
+//	    });
+//
+//	    long count = nonEmptyLines.count();
+//
+//	    System.out.println(String.format("Total lines in %s is %d",args[0],count));
 	  }
 }
