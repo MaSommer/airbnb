@@ -3,3 +3,4 @@
 /target/reviews_us.csv
 /target/neighbourhoods.geojson
 /target/spark-2.1.0-bin-hadoop2
+/target/
