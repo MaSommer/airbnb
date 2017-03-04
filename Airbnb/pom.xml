@@ -4,9 +4,14 @@
 	<groupId>com.MartyAndy</groupId>
 	<artifactId>Airbnb</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+<<<<<<< HEAD
 
 	<dependencies>
 
+=======
+
+	<dependencies>
+>>>>>>> Marty
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-core_2.10</artifactId>
@@ -17,6 +22,7 @@
 			<groupId>com.databricks</groupId>
 			<artifactId>spark-csv_2.10</artifactId>
 			<version>1.4.0</version>
+<<<<<<< HEAD
 		</dependency>
 
 		<dependency>
@@ -32,6 +38,23 @@
 			<version>1.1.0</version>
 		</dependency>
 
+=======
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-sql_2.10</artifactId>
+			<version>1.6.1</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.couchbase.client</groupId>
+			<artifactId>spark-connector_2.10</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+
+>>>>>>> Marty
 
 	</dependencies>
 
