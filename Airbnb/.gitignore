@@ -1,1 +1,6 @@
+/target/calendar_us.csv
+/target/listings_us.csv
+/target/reviews_us.csv
+/target/neighbourhoods.geojson
+/target/spark-2.1.0-bin-hadoop2
 /target/
