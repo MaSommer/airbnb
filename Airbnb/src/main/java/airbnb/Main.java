@@ -5,6 +5,7 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.Function;
+import org.apache.spark.api.java.function.Function2;
 
 import com.sun.xml.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
@@ -54,6 +55,12 @@ public class Main {
 					} 
 				});
 				
-				System.out.println(result.reduce(new ));
+				System.out.println(result.reduce(new Function2<String[],String[], String[]>() {
+						public String[] call(String[] arg0, String[] arg1) throws Exception {
+						
+						return null;
+					}
+					
+				}));
 			}
 	}	
