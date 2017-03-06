@@ -25,8 +25,6 @@ public class Program {
 		avgBookingPricePerNight();
 	}
 
-
-
 	//TASK 3a
 	public static void avgBookingPricePerNight(){
 		String[] columndNeeded = {"city", "price"};
