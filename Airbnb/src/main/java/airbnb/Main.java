@@ -7,7 +7,6 @@ import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.Function;
 import org.apache.spark.api.java.function.Function2;
 
-import com.sun.xml.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
 import java.io.StringReader;
 import java.util.Arrays;
