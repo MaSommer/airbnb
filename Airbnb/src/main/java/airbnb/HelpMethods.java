@@ -20,7 +20,38 @@ public class HelpMethods {
 	public static HashMap<String, Integer> attributeListingIndex;
 	public static HashMap<String, Integer> attributeCalendarIndex;
 	public static HashMap<String, Integer> attributeReviewIndex;
+	public static ArrayList<ArrayList<String>> countDistinctFieldsArray = new ArrayList<ArrayList<String>>();
+	public static int iterator=0;
 
+	public static void test() {
+		System.out.println("HEEEEIE");
+	}
+	
+	public static void addRowtoArray(String[] list) {
+		
+		if(iterator==0) {
+			for (int i = 0; i < list.length; i++) {
+				ArrayList<String> l = new ArrayList<String>();
+				countDistinctFieldsArray.add(l);
+			}	
+		}
+		else {
+			for (int i = 0; i < list.length; i++) {
+				if (i>=countDistinctFieldsArray.size()) {
+					countDistinctFieldsArray.add(new ArrayList<String>());
+					countDistinctFieldsArray.get(i).add(list[i]);
+				}
+				else {
+					if(!countDistinctFieldsArray.get(i).contains(list[i])) {
+						countDistinctFieldsArray.get(i).add(list[i]);											
+					}	
+				}
+			}	
+		}
+		System.out.println(iterator);
+		iterator++;
+	}
+	
 	
 	//Parsing the price to a double
 	public static Double priceAsDouble(String s){

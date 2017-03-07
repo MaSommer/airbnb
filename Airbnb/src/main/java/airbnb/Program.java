@@ -4,6 +4,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Iterator;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
@@ -30,7 +31,7 @@ public class Program {
 		listings_usRDD = sc.textFile("target/listings_us.csv");
 		reviews_usRDD = sc.textFile("target/reviews_us.csv");
 		calendar_usRDD = sc.textFile("target/calendar_us.csv");
-		task3();
+//		task3();
 	}
 
 	
@@ -38,12 +39,25 @@ public class Program {
 		
 		//b) Calculate number of distinct values for each field
 		int numFields=0;
+		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
 		
-		
+		System.out.println("hei1");
+		listings_usRDD.foreach(new VoidFunction<String>(){
+			
+			public void call(String arg0) throws Exception {
+				// TODO Auto-generated method stub
+
+				String[] listingInfo = arg0.split("\t");
+				
+				HelpMethods hm = new HelpMethods();
+				hm.addRowtoArray(listingInfo);
+				
+			}
+		});
 	}
 	
 	public static void task3(){
-		String[] columndNeededListings = {"city", "price", "room_type", "reviews_per_month"};
+		String[] columndNeededListings = {"city", "price", "room_type", "reviews_per_month", "id", "host_id", "host_name", "host_total_listings_count"};
 		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
 		JavaRDD<String[]> mappedListings = HelpMethods.mapToColumns(listings_usRDD, columndNeededListings, 'l');
 
@@ -152,7 +166,8 @@ public class Program {
 		.setMaster("local[*]")
 		;
 		JavaSparkContext sc = new JavaSparkContext(conf);
-		new Program(sc);
+		Program p=new Program(sc);
+		p.task2();
 	}
 
 
