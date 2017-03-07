@@ -33,7 +33,15 @@ public class Program {
 		task3();
 	}
 
-
+	
+	public static void task2(){
+		
+		//b) Calculate number of distinct values for each field
+		int numFields=0;
+		
+		
+	}
+	
 	public static void task3(){
 		String[] columndNeededListings = {"city", "price", "room_type", "reviews_per_month"};
 		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
