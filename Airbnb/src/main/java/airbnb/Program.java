@@ -33,13 +33,6 @@ public class Program {
 		task3();
 	}
 
-<<<<<<< HEAD
-	//TASK 3a
-	public static void avgBookingPricePerNight(){
-		String[] columndNeeded = {"city", "price"};
-		JavaRDD<String[]> mapped = HelpMethods.mapToColumns(inputRDD, columndNeeded);
-		
-=======
 
 	public static void task3(){
 		String[] columndNeededListings = {"city", "price", "room_type", "reviews_per_month"};
@@ -47,7 +40,6 @@ public class Program {
 		JavaRDD<String[]> mappedListings = HelpMethods.mapToColumns(listings_usRDD, columndNeededListings, 'l');
 
 		//avg booking price per night and per room type
->>>>>>> master
 		ArrayList<City> initialCityList = new ArrayList<City>();
 		ArrayList<City> cityList = mappedListings.aggregate(initialCityList, HelpMethods.addAndCountCity(), HelpMethods.combineCity());
 		
