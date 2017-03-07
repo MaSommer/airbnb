@@ -41,7 +41,6 @@ public class Program {
 		int numFields=0;
 		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
 		
-		System.out.println("hei1");
 		listings_usRDD.foreach(new VoidFunction<String>(){
 			
 			public void call(String arg0) throws Exception {
@@ -50,10 +49,21 @@ public class Program {
 				String[] listingInfo = arg0.split("\t");
 				
 				HelpMethods hm = new HelpMethods();
-				hm.addRowtoArray(listingInfo);
-				
+				hm.addRowtoArray(listingInfo);		
 			}
 		});
+		// Calculate number of distinct fields per column
+		HelpMethods hm = new HelpMethods();
+		String[] attributeList = listings_usRDD.first().split("\t");
+		HashMap<String,Integer> distPerFieldMap = new HashMap<String, Integer>();
+		
+		for (int i = 0; i < attributeList.length; i++) {
+			distPerFieldMap.put(attributeList[i], hm.countDistinctFieldsArray.get(i).size());
+		}
+		
+		for (String field : distPerFieldMap.keySet()) {
+			System.out.println(field + ":  " +  distPerFieldMap.get(field));
+		}
 	}
 	
 	public static void task3(){
