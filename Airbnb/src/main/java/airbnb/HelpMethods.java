@@ -23,10 +23,6 @@ public class HelpMethods {
 	public static ArrayList<ArrayList<String>> countDistinctFieldsArray = new ArrayList<ArrayList<String>>();
 	public static int iterator=0;
 
-	public static void test() {
-		System.out.println("HEEEEIE");
-	}
-	
 	public static void addRowtoArray(String[] list) {
 		
 		if(iterator==0) {
