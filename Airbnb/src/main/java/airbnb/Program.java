@@ -30,6 +30,7 @@ public class Program {
 	private static JavaRDD<String> listings_usRDD;
 	private static JavaRDD<String> reviews_usRDD;
 	private static JavaRDD<String> calendar_usRDD;
+	public static int cityIndex;
 
 	public Program(JavaSparkContext sc){
 		listings_usRDD = sc.textFile("target/listings_us.csv");
@@ -39,7 +40,7 @@ public class Program {
 	}
 
 	
-	public static void task2(){
+	public static void task2b(){
 		
 		HashMap<String,Integer> result = new HashMap<String, Integer>(); 
 				
@@ -49,6 +50,7 @@ public class Program {
 		
 		for (int i = 0; i < headerList.length; i++) {
 			String col = headerList[i];
+			
 			try {
 				JavaRDD<String> ret = HelpMethods.mapToColumnsString(listings_usRDD, col, 'l').distinct();				
 				int num = (int) ret.count();
@@ -67,6 +69,41 @@ public class Program {
 		}
 		
 	}
+
+	//c) Listings from how many and which cities are contained in the dataset
+	public static void task2c(){
+	 
+		
+		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
+		String[] headerList = listings_usRDD.first().split("\t");
+		 
+		
+		for (int i = 0; i < headerList.length; i++) {
+			if (headerList[i].equals("city")) {
+				cityIndex = i;
+			}
+		}
+		
+		try {
+			JavaRDD<String> ret = HelpMethods.mapToColumnsString(listings_usRDD, headerList[cityIndex], 'l').distinct();				
+			int num = (int) ret.count();
+			ret.foreach(new VoidFunction<String>() {
+
+				public void call(String t) throws Exception {
+					System.out.println(t);
+				}
+				
+			});
+			System.out.println(num);
+		} 
+		catch(Exception e) {
+			System.out.println("Unable to run");
+		}
+		
+}
+	
+	
+	
 	
 	public static void task3(){
 		String[] columndNeededListings = {"city", "price", "room_type", "reviews_per_month", "id", "host_id", "host_name", "host_total_listings_count"};
@@ -179,7 +216,7 @@ public class Program {
 		;
 		JavaSparkContext sc = new JavaSparkContext(conf);
 		Program p=new Program(sc);
-		p.task2();
+		p.task2c();
 	}
 
 

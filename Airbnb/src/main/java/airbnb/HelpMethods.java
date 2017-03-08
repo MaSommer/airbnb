@@ -20,7 +20,6 @@ public class HelpMethods {
 	public static HashMap<String, Integer> attributeListingIndex;
 	public static HashMap<String, Integer> attributeCalendarIndex;
 	public static HashMap<String, Integer> attributeReviewIndex;
-
 	
 	//Parsing the price to a double
 	public static Double priceAsDouble(String s){
