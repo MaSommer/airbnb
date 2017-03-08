@@ -3,8 +3,12 @@ package airbnb;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
@@ -37,33 +41,31 @@ public class Program {
 	
 	public static void task2(){
 		
-		//b) Calculate number of distinct values for each field
-		int numFields=0;
-		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
-		
-		listings_usRDD.foreach(new VoidFunction<String>(){
-			
-			public void call(String arg0) throws Exception {
-				// TODO Auto-generated method stub
-
-				String[] listingInfo = arg0.split("\t");
+		HashMap<String,Integer> result = new HashMap<String, Integer>(); 
 				
-				HelpMethods hm = new HelpMethods();
-				hm.addRowtoArray(listingInfo);		
+		//b) Calculate number of distinct values for each field
+		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
+		String[] headerList = listings_usRDD.first().split("\t");
+		
+		for (int i = 0; i < headerList.length; i++) {
+			String col = headerList[i];
+			try {
+				JavaRDD<String> ret = HelpMethods.mapToColumnsString(listings_usRDD, col, 'l').distinct();				
+				int num = (int) ret.count();
+				result.put(col,num );
+			} 
+			catch(Exception e) {
+				continue;
 			}
-		});
-		// Calculate number of distinct fields per column
-		HelpMethods hm = new HelpMethods();
-		String[] attributeList = listings_usRDD.first().split("\t");
-		HashMap<String,Integer> distPerFieldMap = new HashMap<String, Integer>();
-		
-		for (int i = 0; i < attributeList.length; i++) {
-			distPerFieldMap.put(attributeList[i], hm.countDistinctFieldsArray.get(i).size());
 		}
 		
-		for (String field : distPerFieldMap.keySet()) {
-			System.out.println(field + ":  " +  distPerFieldMap.get(field));
+		List<String> keys = new ArrayList(result.keySet());
+		Collections.sort(keys);
+		
+		for (String s : keys) {
+			System.out.println(s + " has: " + result.get(s) + " distinct fields");
 		}
+		
 	}
 	
 	public static void task3(){

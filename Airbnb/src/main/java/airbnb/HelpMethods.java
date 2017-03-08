@@ -20,34 +20,7 @@ public class HelpMethods {
 	public static HashMap<String, Integer> attributeListingIndex;
 	public static HashMap<String, Integer> attributeCalendarIndex;
 	public static HashMap<String, Integer> attributeReviewIndex;
-	public static ArrayList<ArrayList<String>> countDistinctFieldsArray = new ArrayList<ArrayList<String>>();
-	public static int iterator=0;
 
-	public static void addRowtoArray(String[] list) {
-		
-		if(iterator==0) {
-			for (int i = 0; i < list.length+100; i++) {
-				ArrayList<String> l = new ArrayList<String>();
-				countDistinctFieldsArray.add(l);			
-			}
-		}	
-		
-		for (int i = 0; i < list.length; i++) {
-			if (i==countDistinctFieldsArray.size()) {
-				countDistinctFieldsArray.add(new ArrayList<String>());
-				countDistinctFieldsArray.get(i).add(list[i]);
-			}
-			else {
-				if(!countDistinctFieldsArray.get(i).contains(list[i])) {
-					countDistinctFieldsArray.get(i).add(list[i]);
-
-				}	
-			}
-		}	
-		System.out.println(iterator);
-		iterator++;
-	}
-	
 	
 	//Parsing the price to a double
 	public static Double priceAsDouble(String s){
@@ -62,7 +35,7 @@ public class HelpMethods {
 		}
 		return Double.parseDouble(price);
 	}
-	
+
 	public static String numberOfBedsToRoomType(String numberOfBeds){
 		if (numberOfBeds.isEmpty()){
 			return "Room for 0 persons";
@@ -74,7 +47,7 @@ public class HelpMethods {
 		return "Room for " + number + " persons";
 	}
 
-	
+
 	//The indexes for each attribute
 	public static void mapAttributeAndIndex(JavaRDD<String> input, char csvFile){
 		HashMap<String, Integer> attributeIndex = new HashMap<String, Integer>();
@@ -111,23 +84,37 @@ public class HelpMethods {
 					}
 					attriButesToReturn[i] = entireRow[index];
 				}
-//				System.out.println(Arrays.toString(attriButesToReturn));
+				//				System.out.println(Arrays.toString(attriButesToReturn));
 				return attriButesToReturn;
 			} 
 		});
 		//Removes the header of the inpuRDD
 		Function2 removeHeader= new Function2<Integer, Iterator<String[]>, Iterator<String[]>>(){
-		    public Iterator<String[]> call(Integer ind, Iterator<String[]> iterator) throws Exception {
-		    	if(ind==0 && iterator.hasNext()){
-		            iterator.next();
-		            return iterator;
-		        }else
-		            return iterator;
-		    }
+			public Iterator<String[]> call(Integer ind, Iterator<String[]> iterator) throws Exception {
+				if(ind==0 && iterator.hasNext()){
+					iterator.next();
+					return iterator;
+				}else
+					return iterator;
+			}
 		};
 		//		System.out.println(result.count());
 		JavaRDD<String[]> resultAfterCuttingHead = result.mapPartitionsWithIndex(removeHeader, true);
 		return resultAfterCuttingHead;
+	}
+
+	//Returns a JavaRDD<String> with the the columns equal to the attributes specified in "columns"
+	public static JavaRDD<String> mapToColumnsString(JavaRDD<String> inputRDD, final String column, final char csvFile){
+		JavaRDD<String> result = inputRDD.map(new Function<String, String>() {
+			public String call(String s) {
+				String[] entireRow = s.split("\t");
+				String attriButeToReturn;
+				attriButeToReturn = entireRow[attributeListingIndex.get(column)];
+	
+				return attriButeToReturn;
+			} 
+		});
+		return result;
 	}
 
 	//FOR CITYLIST
@@ -164,7 +151,7 @@ public class HelpMethods {
 			}
 		};
 	}
-	
+
 
 	public static boolean cityExistsInCityList(ArrayList<City> cityList, City cityToCheck){
 		for (City city : cityList) {
@@ -174,7 +161,7 @@ public class HelpMethods {
 		}
 		return false;
 	}
-	
+
 	public static void updateCity(ArrayList<City> cityList, City city){
 		for (City cityToUpdate : cityList) {
 			if (cityToUpdate.getName().equals(city.getName())){
@@ -182,12 +169,12 @@ public class HelpMethods {
 			}
 		}
 	}
-	
+
 	public static void addNewCity(ArrayList<City> cityList, City city){
 		cityList.add(city);
 	}
-	
-	
+
+
 	//FOR LISTINGLIST
 	public static Function2<ArrayList<Listing>, String[], ArrayList<Listing>> addAndCountListing(){
 		return new Function2<ArrayList<Listing>, String[], ArrayList<Listing>>() { 
@@ -222,7 +209,7 @@ public class HelpMethods {
 			}
 		};
 	}
-	
+
 	public static boolean listingExistsInListingList(ArrayList<Listing> listingList, Listing listingToCheck){
 		for (Listing listing : listingList) {
 			if (listing.getId() == listingToCheck.getId()){
@@ -231,7 +218,7 @@ public class HelpMethods {
 		}
 		return false;
 	}
-	
+
 	public static void updateListing(ArrayList<Listing> listingList, Listing listing){
 		for (Listing listingToUpdate : listingList) {
 			if (listingToUpdate.getId() == listing.getId()){
@@ -239,11 +226,11 @@ public class HelpMethods {
 			}
 		}
 	}
-	
+
 	public static void addNewListing(ArrayList<Listing> listingList, Listing listing){
 		listingList.add(listing);
 	}
-	
+
 	public static void calculateTop3HostsWithHighestIncomeForEachCity(ArrayList<City> cityList, ArrayList<Listing> listingList){
 		for (City city : cityList) {
 			for (Host host : city.getHostList()) {
@@ -256,7 +243,7 @@ public class HelpMethods {
 			city.updateTop3Hosts();
 		}
 	}
-	
+
 	public static JavaPairRDD<String, String[]> mapToPair(JavaRDD<String> input, final String key, final String[] columns, final HashMap<String, Integer> attributeList){
 		PairFunction<String, String, String[]> keyData = new PairFunction<String, String, String[]>() { 
 			public Tuple2<String, String[]> call(String s) throws Exception {
@@ -272,34 +259,34 @@ public class HelpMethods {
 		};
 		//Removes the header
 		Function2 removeHeader= new Function2<Integer, Iterator<String[]>, Iterator<String[]>>(){
-		    public Iterator<String[]> call(Integer ind, Iterator<String[]> iterator) throws Exception {
-		    	if(ind==0 && iterator.hasNext()){
-		            iterator.next();
-		            return iterator;
-		        }else
-		            return iterator;
-		    }
+			public Iterator<String[]> call(Integer ind, Iterator<String[]> iterator) throws Exception {
+				if(ind==0 && iterator.hasNext()){
+					iterator.next();
+					return iterator;
+				}else
+					return iterator;
+			}
 		};
 		JavaPairRDD<String, String[]> listingPairs = input.mapToPair(keyData);
 		listingPairs.mapPartitionsWithIndex(removeHeader, true);
 		return listingPairs;
 	}
-	
+
 	//Joining pair2 into pair1. pair1.leftouterJoin(Pair2).
 	public static JavaPairRDD<String, String[]> lefOuterJoin(JavaPairRDD<String, String[]> pair1, JavaPairRDD<String, String[]> pair2){
 		JavaPairRDD<String, Tuple2<String[], Optional<String[]>>> joinedPair = pair1.leftOuterJoin(pair2);
-		
-//		joinedPair.foreach(new VoidFunction<Tuple2<String, Tuple2<String[], Optional<String[]>>>>(){
-//
-//			public void call(
-//					Tuple2<String, Tuple2<String[], Optional<String[]>>> t)
-//					throws Exception {
-//				System.out.println("t1: " +Arrays.toString(t._2._1));
-//				System.out.println("t2: " +Arrays.toString(t._2._2.get()));
-//			}
-//			});
-		
-		
+
+		//		joinedPair.foreach(new VoidFunction<Tuple2<String, Tuple2<String[], Optional<String[]>>>>(){
+		//
+		//			public void call(
+		//					Tuple2<String, Tuple2<String[], Optional<String[]>>> t)
+		//					throws Exception {
+		//				System.out.println("t1: " +Arrays.toString(t._2._1));
+		//				System.out.println("t2: " +Arrays.toString(t._2._2.get()));
+		//			}
+		//			});
+
+
 		JavaPairRDD<String, String[]> joinedAndReducedPair = joinedPair
 				.mapToPair(new PairFunction<Tuple2<String, Tuple2<String[], Optional<String[]>>>, String, String[]>() {
 					public Tuple2<String, String[]> call(
@@ -322,6 +309,6 @@ public class HelpMethods {
 				});
 		return joinedAndReducedPair;
 	}
-	
+
 
 }
