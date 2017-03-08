@@ -2,6 +2,8 @@ package airbnb;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -20,9 +22,14 @@ public class HelpMethods {
 	public static HashMap<String, Integer> attributeListingIndex;
 	public static HashMap<String, Integer> attributeCalendarIndex;
 	public static HashMap<String, Integer> attributeReviewIndex;
+<<<<<<< HEAD
 	
+=======
+
+
+>>>>>>> master
 	//Parsing the price to a double
-	public static Double priceAsDouble(String s){
+	public static Double stringToDouble(String s){
 		String price = "";
 		for (int i = 0; i < s.length(); i++) {
 			if (s.charAt(i) != ',' && s.charAt(i) != '$'){
@@ -102,6 +109,7 @@ public class HelpMethods {
 		return resultAfterCuttingHead;
 	}
 
+<<<<<<< HEAD
 	//Returns a JavaRDD<String> with the the columns equal to the attributes specified in "columns"
 	public static JavaRDD<String> mapToColumnsString(JavaRDD<String> inputRDD, final String column, final char csvFile){
 		JavaRDD<String> result = inputRDD.map(new Function<String, String>() {
@@ -118,20 +126,288 @@ public class HelpMethods {
 
 
 
-	
-	public static JavaPairRDD<String, String[]> mapToPair(JavaRDD<String> input, final String key, final String[] columns, final HashMap<String, Integer> attributeList){
+=======
+	public static JavaPairRDD<String, String[]> mapToPair(JavaRDD<String> input, final String[] key, final String[] columns, final HashMap<String, Integer> attributeList){
+
 		PairFunction<String, String, String[]> keyData = new PairFunction<String, String, String[]>() { 
+
 			public Tuple2<String, String[]> call(String s) throws Exception {
 				String[] entireRow = s.split("\t");
 				String[] attriButesToReturn = new String[columns.length];
-				int keyIndex = attributeList.get(key);
+				String keyToReturn = "";
+				for (int i = 0; i < key.length; i++) {
+					keyToReturn += entireRow[attributeList.get(key[i])];
+					if (i != key.length-1){
+						keyToReturn += " ";
+					}
+				}
 				for (int i = 0; i < columns.length; i++) {
 					int index = attributeList.get(columns[i]);
 					attriButesToReturn[i] = entireRow[index];
 				}
-				return new Tuple2(entireRow[keyIndex], attriButesToReturn);
+				return new Tuple2(keyToReturn, attriButesToReturn);
 			}
 		};
+		JavaPairRDD<String, String[]> listingPairs = input.mapToPair(keyData);
+
+		JavaPairRDD<String, String[]> listingPairsWithoutHeader = listingPairs.filter(new Function<Tuple2<String, String[]>, Boolean>(){
+			public Boolean call(Tuple2<String, String[]> v1) throws Exception {
+				for (int i = 0; i < columns.length; i++) {
+					if (!columns[i].equals(v1._2[i])){
+						return true;
+					}
+				}
+				return false;
+			}
+
+		});
+		return listingPairsWithoutHeader;
+	}
+	
+	public static JavaPairRDD<String, String[]> mapToPairNewKey(JavaPairRDD<String, String[]> input, final int keyIndex){
+		
+		PairFunction<Tuple2<String, String[]>, String, String[]> keyData = new PairFunction<Tuple2<String, String[]>, String, String[]>() { 
+
+			public Tuple2<String, String[]> call(Tuple2<String, String[]> t)
+					throws Exception {
+				String[] attriButesToReturn = t._2;
+				return new Tuple2(attriButesToReturn[keyIndex], attriButesToReturn);
+			}
+		};
+		JavaPairRDD<String, String[]> listingPairs = input.mapToPair(keyData);
+		return listingPairs;
+	}
+
+	//Joining pair2 into pair1. pair1.leftouterJoin(Pair2).
+	public static JavaPairRDD<String, String[]> lefOuterJoin(JavaPairRDD<String, String[]> pair1, JavaPairRDD<String, String[]> pair2){
+		JavaPairRDD<String, Tuple2<String[], Optional<String[]>>> joinedPair = pair1.leftOuterJoin(pair2);
+
+		JavaPairRDD<String, String[]> joinedAndReducedPair = joinedPair
+				.mapToPair(new PairFunction<Tuple2<String, Tuple2<String[], Optional<String[]>>>, String, String[]>() {
+					public Tuple2<String, String[]> call(
+							Tuple2<String, Tuple2<String[], Optional<String[]>>> t)
+									throws Exception {
+						if (t._2._2.isPresent()){
+							String[] newTuple = new String[t._2._1.length+t._2._2.get().length-1];
+							for (int i = 0; i < t._2._1.length; i++) {
+								newTuple[i] = t._2._1[i];
+							}
+							for (int j = t._2._1.length; j < newTuple.length; j++) {
+								//make sure to not duplicate the key in the tupple
+								if (t._2._2.get()[j-t._2._1.length].equals(t._1)){
+									if (t._2._2.get()[j-t._2._1.length+1].equals("t")){
+										newTuple[j] = "0";																																							
+									}
+									else if (t._2._2.get()[j-t._2._1.length+1].equals("f")){
+										newTuple[j] = "1";																													
+									}
+									else{
+										newTuple[j] = t._2._2.get()[j-t._2._1.length+1];																			
+									}
+									continue;
+								}
+								newTuple[j] = t._2._2.get()[j-t._2._1.length];
+							}
+							return new Tuple2<String, String[]>(t._1, newTuple);
+						}
+						else{
+							return new Tuple2<String, String[]>(t._1, t._2._1);
+						}
+					}
+				});
+		return joinedAndReducedPair;
+	}
+
+	public static JavaPairRDD<String, String[]> reduceByKeyOnAvailable(JavaPairRDD<String, String[]> joinedPair){
+
+
+		JavaPairRDD<String, String[]> joinedPairReducedByKey = joinedPair.reduceByKey(new Function2<String[], String[], String[]>(){
+			public String[] call(String[] v1, String[] v2) {
+				int numberOfNotAvailable1 = Integer.parseInt(v1[v1.length-1]);
+				int numberOfNotAvailable2 = Integer.parseInt(v2[v2.length-1]);
+				int sum = numberOfNotAvailable1 + numberOfNotAvailable2;
+				v1[v1.length-1] = ""+sum;
+				//				System.out.println(Arrays.toString(v1));
+				return v1;
+			}
+		});
+		//		System.out.println(joinedPair.count());
+		return joinedPairReducedByKey;
+	}
+	
+	public static JavaPairRDD<String, String[]> reduceByKeyOnHostId(JavaPairRDD<String, String[]> joinedPair){
+		JavaPairRDD<String, String[]> joinedPairReducedByKey = joinedPair.reduceByKey(new Function2<String[], String[], String[]>(){
+			public String[] call(String[] v1, String[] v2) {
+				return v1;
+			}
+		});
+		//		System.out.println(joinedPair.count());
+		return joinedPairReducedByKey;
+	}
+
+	public static Function2<String[], String[], String[]> addAndCombinePairAverage(){
+
+		return new  Function2<String[], String[], String[]>() {
+			public String[] call(String[] v1, String[] v2) throws Exception {
+				//{"key", "total", "number"}
+				v1[0] = v2[0];
+				if (v1[1] == null){
+					v1[1] = v2[1];
+				}else{
+					v1[1] = (double)(stringToDouble(v1[1]) + stringToDouble(v2[1]))+"";
+				}
+				if (v1[2] == null){
+					v1[2] = "1";
+				}
+				else{
+					v1[2] = (int)(stringToDouble(v1[2]) + 1)+"";					
+				}
+				return v1;
+			}
+		};
+	}
+	
+	public static Function2<String[], String[], String[]> combinePairAverage(){
+		return new Function2<String[], String[], String[]>(){
+
+			public String[] call(String[] v1, String[] v2) throws Exception {
+				//{"key", "total", "number"}
+				String key = v1[0];
+				String total = (double)(stringToDouble(v1[1]) + stringToDouble(v2[1]))+"";
+				String number = (int)(stringToDouble(v1[2]) + stringToDouble(v2[2]))+"";
+				String[] ret = {key, total, number};
+				return ret;
+			}
+		};
+	}
+	
+	public static Function2<String[], String[], String[]> addAndCombineEstimatedNumberOfNights(){
+		
+		return new  Function2<String[], String[], String[]>() {
+			public String[] call(String[] v1, String[] v2) throws Exception {
+				//{"key", "total", "number"}
+				v1[0] = v2[0];
+				if (v1[1] == null){
+					v1[1] = (double)(stringToDouble(v2[1])/0.7*3)+"";
+				}else{
+					v1[1] = (double)(stringToDouble(v1[1]) + stringToDouble(v2[1])/0.7*3)+"";
+				}
+				return v1;
+			}
+		};
+	}
+	public static Function2<String[], String[], String[]> combinePairEstimatedNumberOfNights(){
+		return new Function2<String[], String[], String[]>(){
+			
+			public String[] call(String[] v1, String[] v2) throws Exception {
+				//{"key", "total", "number"}
+				String key = v1[0];
+				String total = (double)(stringToDouble(v1[1]) + stringToDouble(v2[1]))+"";
+				String[] ret = {key, total};
+				return ret;
+			}
+		};
+	}
+	
+	public static Function2<String[], String[], String[]> addAndCombineAmountOfMoneySpent(){
+		
+		return new  Function2<String[], String[], String[]>() {
+			public String[] call(String[] v1, String[] v2) throws Exception {
+				//{"key", "total amount of money spent"}
+				v1[0] = v2[0];
+				if (v1[1] == null){
+					v1[1] = (double)(stringToDouble(v2[1])/0.7*3*12*stringToDouble(v2[2]))+"";
+				}else{
+					v1[1] = (double)(stringToDouble(v1[1]) + stringToDouble(v2[1])/0.7*3*12*stringToDouble(v2[2]))+"";
+				}
+				String[] ret = {v1[0], v1[1]};
+				return ret;
+			}
+		};
+	}
+	public static Function2<String[], String[], String[]> combinePairAmountOfMoneySpent(){
+		return new Function2<String[], String[], String[]>(){
+			
+			public String[] call(String[] v1, String[] v2) throws Exception {
+				//{"key", "total", "number"}
+				String key = v1[0];
+				String total = (double)(stringToDouble(v1[1]) + stringToDouble(v2[1]))+"";
+				String[] ret = {key, total};
+				return ret;
+			}
+		};
+	}
+	
+	public static Function2<ArrayList<Host>, String[], ArrayList<Host>> addAndCombineTop3Hosts(){
+		
+		return new  Function2<ArrayList<Host>, String[], ArrayList<Host>>() {
+
+			public ArrayList<Host> call(ArrayList<Host> hostList, String[] v2)
+					throws Exception {
+				//{"city", "price", "id", "host_id", "host_name", "host_total_listings_count"}
+				double id = stringToDouble(v2[3]);
+				String hostName = v2[4];
+				double totalListings = stringToDouble(v2[5]);
+				double price = stringToDouble(v2[1]);
+				double numberOfNightsNotAvailable = stringToDouble(v2[6]);
+				Host host = new Host((int) id, hostName, (int)totalListings, price, (int) numberOfNightsNotAvailable);
+				hostList = updateTop3Hosts(hostList, host);
+				return hostList;
+			}
+		};
+	}
+	public static ArrayList<Host> updateTop3Hosts(ArrayList<Host> hostList, Host host){
+		if (hostList.contains(host)){
+			hostList.remove(host);
+		}
+		//adds host if null in host list
+		if (hostList.size() < 3){
+			hostList.add(host);
+		}
+		else{
+			for (int i = 0; i < 3; i++) {
+				if (host.getTotalIncome() > hostList.get(i).getTotalIncome()){
+					hostList.set(i, host);
+					hostList.remove(hostList.size()-1);
+					break;
+				}
+			}
+		}
+		//sort the hosts from high to low total income
+		Collections.sort(hostList, new Comparator<Host>() {
+			public int compare(Host h1, Host h2) {
+				if (h1.getTotalIncome() < h2.getTotalIncome()){
+					return 1;
+				}
+				else if (h1.getTotalIncome() > h2.getTotalIncome()){
+					return -1;
+				}
+				else{
+					return 0;
+				}
+			}
+		});
+		return hostList;
+	}
+>>>>>>> master
+	
+	public static Function2<ArrayList<Host>, ArrayList<Host>, ArrayList<Host>> combinePairTop3Hosts(){
+		return new Function2<ArrayList<Host>, ArrayList<Host>, ArrayList<Host>>(){
+
+			public ArrayList<Host> call(ArrayList<Host> hostList1, ArrayList<Host> hostList2)
+					throws Exception {
+				for (Host host2 : hostList2) {
+					for (Host host1 : hostList1) {
+						if (host1.getId() == host2.getId()){
+							host2.updateTotalIncome(host1);
+						}
+					}
+					hostList1 = updateTop3Hosts(hostList1, host2);
+				}
+				return hostList1;
+			}
+		};
+<<<<<<< HEAD
 		//Removes the header
 		Function2 removeHeader= new Function2<Integer, Iterator<String[]>, Iterator<String[]>>(){
 			public Iterator<String[]> call(Integer ind, Iterator<String[]> iterator) throws Exception {
@@ -185,5 +461,35 @@ public class HelpMethods {
 		return joinedAndReducedPair;
 	}
 
+=======
+	}
+	
+	public static Function2<double[], Tuple2<String, String[]>, double[]> addAndCombineAverageNumberOfListings(){
+		
+		return new  Function2<double[], Tuple2<String, String[]>, double[]>() {
 
+			public double[] call(double[] v1, Tuple2<String, String[]> v2)
+					throws Exception {
+				v1[0] += stringToDouble(v2._2[1]);
+				v1[1] ++;
+				if (stringToDouble(v2._2[1]) > 1){
+					v1[2]++;
+				}
+				return v1;
+			}
+			
+		};
+	}
+	public static Function2<double[], double[], double[]> combinePairAverageNumberOfListings(){
+		return new Function2<double[], double[], double[]>(){
+>>>>>>> master
+
+			public double[] call(double[] v1, double[] v2) throws Exception {
+				v1[0] += v2[0];
+				v1[1] += v2[1];
+				v1[2] += v2[2];
+				return v1;
+			}
+		};
+	}
 }
