@@ -44,7 +44,7 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Which subtask do you want to run? (a, b, c, d or e)");
 		String subtask = sc.next();
-		if (sc.next().equals("a")){
+		if (subtask.equals("a")){
 			String[] columndNeededListingsa = {"city", "price"};
 			String[] keysa = {"city"};
 			JavaPairRDD<String, String[]> mappedListingsPair = HelpMethods.mapToPair(listings_usRDD, keysa, columndNeededListingsa, HelpMethods.attributeListingIndex);
@@ -53,7 +53,7 @@ public class Program {
 			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombinePairAverage(), HelpMethods.combinePairAverage());
 			Print.task3a(mappedListingsPairAggregated);
 		}
-		else if (sc.next().equals("b")){
+		else if (subtask.equals("b")){
 			String[] columndNeededListingsb = {"city", "price"};
 			String[] keysb = {"city", "room_type"};
 			JavaPairRDD<String, String[]> mappedListingsPair = HelpMethods.mapToPair(listings_usRDD, keysb, columndNeededListingsb, HelpMethods.attributeListingIndex);
@@ -62,7 +62,7 @@ public class Program {
 			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombinePairAverage(), HelpMethods.combinePairAverage());
 			Print.task3b(mappedListingsPairAggregated);
 		}
-		else if (sc.next().equals("c")){
+		else if (subtask.equals("c")){
 			String[] columndNeededListingsc = {"city", "reviews_per_month"};
 			String[] keysc = {"city"};
 			JavaPairRDD<String, String[]> mappedListingsPair = HelpMethods.mapToPair(listings_usRDD, keysc, columndNeededListingsc, HelpMethods.attributeListingIndex);
@@ -71,7 +71,7 @@ public class Program {
 			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombinePairAverage(), HelpMethods.combinePairAverage());
 			Print.task3c(mappedListingsPairAggregated);
 		}
-		else if (sc.next().equals("d")){
+		else if (subtask.equals("d")){
 			String[] columndNeededListingsd = {"city", "reviews_per_month"};
 			String[] keysd = {"city"};
 			JavaPairRDD<String, String[]> mappedListingsPair = HelpMethods.mapToPair(listings_usRDD, keysd, columndNeededListingsd, HelpMethods.attributeListingIndex);
@@ -80,7 +80,7 @@ public class Program {
 			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombineEstimatedNumberOfNights(), HelpMethods.combinePairEstimatedNumberOfNights());
 			Print.task3d(mappedListingsPairAggregated);
 		}
-		else if (sc.next().equals("e")){
+		else if (subtask.equals("e")){
 			String[] columndNeededListingse = {"city", "reviews_per_month", "price"};
 			String[] keyse = {"city"};
 			JavaPairRDD<String, String[]> mappedListingsPair = HelpMethods.mapToPair(listings_usRDD, keyse, columndNeededListingse, HelpMethods.attributeListingIndex);
