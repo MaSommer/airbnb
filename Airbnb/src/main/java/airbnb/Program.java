@@ -4,6 +4,10 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Scanner;
+
+import javax.annotation.OverridingMethodsMustInvokeSuper;
+import javax.validation.OverridesAttribute;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
@@ -14,6 +18,7 @@ import org.apache.spark.api.java.function.Function;
 import org.apache.spark.api.java.function.Function2;
 import org.apache.spark.api.java.function.PairFunction;
 import org.apache.spark.api.java.function.VoidFunction;
+import org.apache.spark.sql.RowFactory;
 
 import scala.Serializable;
 import scala.Tuple2;
@@ -30,111 +35,157 @@ public class Program {
 		listings_usRDD = sc.textFile("target/listings_us.csv");
 		reviews_usRDD = sc.textFile("target/reviews_us.csv");
 		calendar_usRDD = sc.textFile("target/calendar_us.csv");
-		task3();
+		task4();
 	}
 
 
 	public static void task3(){
-		String[] columndNeededListings = {"city", "price", "room_type", "reviews_per_month"};
 		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
-		JavaRDD<String[]> mappedListings = HelpMethods.mapToColumns(listings_usRDD, columndNeededListings, 'l');
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Which subtask do you want to run? (a, b, c, d or e)");
+		String subtask = sc.next();
+		if (sc.next().equals("a")){
+			String[] columndNeededListingsa = {"city", "price"};
+			String[] keysa = {"city"};
+			JavaPairRDD<String, String[]> mappedListingsPair = HelpMethods.mapToPair(listings_usRDD, keysa, columndNeededListingsa, HelpMethods.attributeListingIndex);
 
-		//avg booking price per night and per room type
-		ArrayList<City> initialCityList = new ArrayList<City>();
-		ArrayList<City> cityList = mappedListings.aggregate(initialCityList, HelpMethods.addAndCountCity(), HelpMethods.combineCity());
-		
-		printTask3(cityList);
-		
-//		String[] columndNeededCalendar = {"listing_id", "available"};
-//		HelpMethods.mapAttributeAndIndex(calendar_usRDD, 'c');
-//		JavaRDD<String[]> mappedCalendar = HelpMethods.mapToColumns(calendar_usRDD, columndNeededCalendar, 'c');
-//		ArrayList<Listing> initialListingList = new ArrayList<Listing>();
-//		ArrayList<Listing> listingList = mappedCalendar.aggregate(initialListingList, HelpMethods.addAndCountListing(), HelpMethods.combineListing());
-//
-//		//calculating top 3 hosts with the highest income
-//		HelpMethods.calculateTop3HostsWithHighestIncomeForEachCity(cityList, listingList);
-//		printTask4(cityList, listingList);
+			String[] initial = new String[3];
+			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombinePairAverage(), HelpMethods.combinePairAverage());
+			Print.task3a(mappedListingsPairAggregated);
+		}
+		else if (sc.next().equals("b")){
+			String[] columndNeededListingsb = {"city", "price"};
+			String[] keysb = {"city", "room_type"};
+			JavaPairRDD<String, String[]> mappedListingsPair = HelpMethods.mapToPair(listings_usRDD, keysb, columndNeededListingsb, HelpMethods.attributeListingIndex);
+
+			String[] initial = new String[3];
+			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombinePairAverage(), HelpMethods.combinePairAverage());
+			Print.task3b(mappedListingsPairAggregated);
+		}
+		else if (sc.next().equals("c")){
+			String[] columndNeededListingsc = {"city", "reviews_per_month"};
+			String[] keysc = {"city"};
+			JavaPairRDD<String, String[]> mappedListingsPair = HelpMethods.mapToPair(listings_usRDD, keysc, columndNeededListingsc, HelpMethods.attributeListingIndex);
+
+			String[] initial = new String[3];
+			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombinePairAverage(), HelpMethods.combinePairAverage());
+			Print.task3c(mappedListingsPairAggregated);
+		}
+		else if (sc.next().equals("d")){
+			String[] columndNeededListingsd = {"city", "reviews_per_month"};
+			String[] keysd = {"city"};
+			JavaPairRDD<String, String[]> mappedListingsPair = HelpMethods.mapToPair(listings_usRDD, keysd, columndNeededListingsd, HelpMethods.attributeListingIndex);
+
+			String[] initial = new String[3];
+			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombineEstimatedNumberOfNights(), HelpMethods.combinePairEstimatedNumberOfNights());
+			Print.task3d(mappedListingsPairAggregated);
+		}
+		else if (sc.next().equals("e")){
+			String[] columndNeededListingse = {"city", "reviews_per_month", "price"};
+			String[] keyse = {"city"};
+			JavaPairRDD<String, String[]> mappedListingsPair = HelpMethods.mapToPair(listings_usRDD, keyse, columndNeededListingse, HelpMethods.attributeListingIndex);
+
+			String[] initial = new String[4];
+			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombineAmountOfMoneySpent(), HelpMethods.combinePairAmountOfMoneySpent());
+			Print.task3e(mappedListingsPairAggregated);
+		}
 	}
 
 	public static void task4(){
-		String[] columndNeededListings = {"city", "price", "room_type", "reviews_per_month", "id", "host_id", "host_name", "host_total_listings_count"};
 		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
-		JavaPairRDD<String, String[]> listingPairs = HelpMethods.mapToPair(listings_usRDD, "id", columndNeededListings, HelpMethods.attributeListingIndex);
-
-		String[] columndNeededCalendar = {"listing_id", "available"};
 		HelpMethods.mapAttributeAndIndex(calendar_usRDD, 'c');
-		JavaPairRDD<String, String[]> calendarPairs = HelpMethods.mapToPair(calendar_usRDD, "listing_id", columndNeededCalendar, HelpMethods.attributeCalendarIndex);
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Which subtask do you want to run? (a, b or c)");
+		String subtask = sc.next();
+		if (subtask.equals("a") || subtask.equals("b")){
+			String[] columndNeededListings = {"host_id", "host_total_listings_count"};
+			String[] keysListing = {"host_id"};
+			JavaPairRDD<String, String[]> listingPairs = HelpMethods.mapToPair(listings_usRDD, keysListing, columndNeededListings, HelpMethods.attributeListingIndex);
+			JavaPairRDD<String, String[]> listingPairsReduced = HelpMethods.reduceByKeyOnHostId(listingPairs);
+			
+//			listingPairsReduced.foreach(new VoidFunction<Tuple2<String, String[]>>(){
+//				
+//							public void call(Tuple2<String, String[]> t) throws Exception {
+//								System.out.println(Arrays.toString(t._2));	
+//							}
+//						});;
+			
+			//{total listings, total number of hosts, hosts with more than 1 listing}
+			double[] initial = {0.0, 0.0, 0.0};
+			double[] totalAndNumberOfListings = listingPairsReduced.aggregate(initial, HelpMethods.addAndCombineAverageNumberOfListings(), HelpMethods.combinePairAverageNumberOfListings());
+			Print.task4ab(totalAndNumberOfListings);
+		}
+		else if (subtask.equals("c")){
+			String[] columndNeededListings = {"city", "price", "id", "host_id", "host_name", "host_total_listings_count"};
+			HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
+			String[] keys1 = {"id"};
+			JavaPairRDD<String, String[]> listingPairs = HelpMethods.mapToPair(listings_usRDD, keys1, columndNeededListings, HelpMethods.attributeListingIndex);
+			
+			String[] columndNeededCalendar = {"listing_id", "available"};
+			HelpMethods.mapAttributeAndIndex(calendar_usRDD, 'c');
+			String[] keys2 = {"listing_id"};
+			JavaPairRDD<String, String[]> calendarPairs = HelpMethods.mapToPair(calendar_usRDD, keys2, columndNeededCalendar, HelpMethods.attributeCalendarIndex);
+			
+			//Using left outer join because have to make sure that all listings are included in the result
+			JavaPairRDD<String, String[]> joinedPair = HelpMethods.lefOuterJoin(listingPairs, calendarPairs);
+			
+			JavaPairRDD<String, String[]> joinedPairReducedByKey = HelpMethods.reduceByKeyOnAvailable(joinedPair);
+			
+			JavaPairRDD<String, String[]> joinedPairWithCityAsKey = HelpMethods.mapToPairNewKey(joinedPairReducedByKey, 0);
+			//{city, hostid_rank1, hostname, income}
+			
+			ArrayList<Host> initial = new ArrayList<Host>();
+			JavaPairRDD<String, ArrayList<Host>> joinedPairAggregated = joinedPairWithCityAsKey.aggregateByKey(initial, HelpMethods.addAndCombineTop3Hosts(), HelpMethods.combinePairTop3Hosts());
+			Print.task4c(joinedPairAggregated);
+		}
+	}
 
-		//Using left outer join because have to make sure that all listings are included in the result
-		JavaPairRDD<String, String[]> joinedPair = HelpMethods.lefOuterJoin(listingPairs, calendarPairs);
-		
-		new JavaPairRDD<String, String[]>(null, null, null);
-		
-//		joinedPair.red
-		
-//		joinedPair.combineByKey(createCombiner, mergeValue, mergeCombiners)
-		
-		joinedPair.foreach(new VoidFunction<Tuple2<String, String[]>>(){
+	public static void task5(){
 
-			public void call(Tuple2<String, String[]> t) throws Exception {
-				System.out.println(Arrays.toString(t._2));	
-			}
-			});;
-		
+		//		String[] columnsNeededListings = {"city", "price", "id"};
+		//		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
+		//		JavaPairRDD<String, String[]> listingPairs = HelpMethods.mapToPair(listings_usRDD, "id", columnsNeededListings, HelpMethods.attributeListingIndex);
+		//		
+		//		String[] columnsNeededReviews = {"listing_id", "reviewer_id", "reviewer_name"};
+		//		HelpMethods.mapAttributeAndIndex(reviews_usRDD, 'r');
+		//		JavaPairRDD<String, String[]> reviewerPairs = HelpMethods.mapToPair(reviews_usRDD, "listing_id", columnsNeededReviews, HelpMethods.attributeReviewIndex);
+		//		
+		//		JavaPairRDD<String, String[]> joinedPair = HelpMethods.lefOuterJoin(reviewerPairs, listingPairs);
+		//		
+		//		ArrayList<City> initialCityList = new ArrayList<City>();
+		//		ArrayList<City> cityList = joinedPair.aggregate(initialCityList, HelpMethods.addAndCountCityAndReviewers(), HelpMethods.combineCityLists());
+		//		printTask5(cityList);
+		//		joinedPair.foreach(new VoidFunction<Tuple2<String, String[]>>(){
+		//						public void call(Tuple2<String, String[]> t) throws Exception {
+		//							System.out.println(Arrays.toString(t._2));	
+		//						}
+		//					});;
 
 	}
 
-	public static void printTask3(ArrayList<City> cityList){
-		int rooms = 0;
-		DecimalFormat numberFormat = new DecimalFormat("#.00");
+	public static void printTask5(ArrayList<City> cityList){
+		Reviewer reviewerSpendingMostMoney = null;
 		for (City city : cityList) {
 			System.out.println(city.getName());
-			System.out.println("AvgPrice: $" + numberFormat.format(city.getAveragePricePerNight()) + " Avg nr. of reviews: " + numberFormat.format(city.getAvgNumberOfReviewsPerMonth()) 
-					+ " Est. nr of nights: " + numberFormat.format(city.getEstimatedNumberOfNightsBookedPerYear()) + " Est. amount of money spent in a year: $" + numberFormat.format(city.getEstimatedAmountOfMoneySpentPerYear()));
-			System.out.println("Avg. price per room type: ");
-			for (RoomType roomType : city.getRoomTypeList()) {
-				System.out.println(roomType.getRoomType() + ": $" + numberFormat.format(roomType.getAvgPricePerNight()));
-			}
-			rooms += city.getNumberOfRooms();
-			System.out.println();
-		}
-		System.out.println("Number of rooms: " + rooms);
-	}
-
-	public static void printTask4(ArrayList<City> cityList, ArrayList<Listing> listingList){
-		//4a and 4b
-		int numberOfHosts = 0;
-		int numberOfListings = 0;
-		int numberOfHostsWithMoreThanOneListing = 0;
-		for (City city : cityList) {
-			for (Host host : city.getHostList()) {
-				numberOfListings += host.getTotalListings();
-				numberOfHosts++;
-				if (host.getTotalListings() > 1){
-					numberOfHostsWithMoreThanOneListing++;
-				}
-			}
-		}
-		double globalAverageNumberOfListingsPerHost = (double) numberOfListings/numberOfHosts;
-		System.out.println("Global avg number of listings per host: " + globalAverageNumberOfListingsPerHost);
-		double percentageOfHostsWithMoreThanOneListing = (double) numberOfHostsWithMoreThanOneListing/numberOfHosts;
-		System.out.println("Percentage of hosts with more than 1 listings: " + percentageOfHostsWithMoreThanOneListing);
-		for (City city : cityList) {
-			System.out.println("Top 3 in " +city.getName() + ": ");
+			System.out.println("Top 3  guests ranked by their number of bookings: ");
 			int rank = 1;
-			for (Host host : city.getTop3Hosts()) {
-				if (host != null){
-					System.out.println(rank +". Name: " + host.getHostName() + "\tID: " + host.getId() + "\t Income: $" + host.getTotalIncome());					
-				}
+			for (Reviewer reviewer : city.getTop3ReviewersRankedByNumberOfBookings()) {
+				System.out.println(rank + ". Name: " + reviewer.getName() + "\tID: " + reviewer.getId() + "\t Number of bookings: "+ reviewer.getNumberOfBookings());
 				rank++;
 			}
+			if (reviewerSpendingMostMoney == null){
+				reviewerSpendingMostMoney = city.getReviewerSpendingMostMoney();
+			}
+			else{
+				if (reviewerSpendingMostMoney.getTotalAmountSpentOnAccomodation() < city.getReviewerSpendingMostMoney().getTotalAmountSpentOnAccomodation()){
+					reviewerSpendingMostMoney = city.getReviewerSpendingMostMoney();
+				}
+			}
 		}
+		System.out.println();
+		System.out.println("The reviewer spending the most money is: ");
+		System.out.println("Name: " + reviewerSpendingMostMoney.getName() + " ID: "+reviewerSpendingMostMoney.getId() + " Spent: $" + reviewerSpendingMostMoney.getTotalAmountSpentOnAccomodation() + " Number of bookings: " + reviewerSpendingMostMoney.getNumberOfBookings());
 	}
-
-	//	public static void task4(){
-	//		String[] columndNeeded = {"host_id", "host_listings_count"};
-	//		JavaRDD<String[]> mappedListings = HelpMethods.mapToColumns(listings_usRDD, columndNeeded);
-	//	}
 
 
 
@@ -144,6 +195,7 @@ public class Program {
 		.setMaster("local[*]")
 		;
 		JavaSparkContext sc = new JavaSparkContext(conf);
+
 		new Program(sc);
 	}
 
