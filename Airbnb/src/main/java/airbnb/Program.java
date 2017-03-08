@@ -35,7 +35,7 @@ public class Program {
 		listings_usRDD = sc.textFile("target/listings_us.csv");
 		reviews_usRDD = sc.textFile("target/reviews_us.csv");
 		calendar_usRDD = sc.textFile("target/calendar_us.csv");
-		task4();
+		task3();
 	}
 
 
@@ -161,30 +161,6 @@ public class Program {
 		//						}
 		//					});;
 
-	}
-
-	public static void printTask5(ArrayList<City> cityList){
-		Reviewer reviewerSpendingMostMoney = null;
-		for (City city : cityList) {
-			System.out.println(city.getName());
-			System.out.println("Top 3  guests ranked by their number of bookings: ");
-			int rank = 1;
-			for (Reviewer reviewer : city.getTop3ReviewersRankedByNumberOfBookings()) {
-				System.out.println(rank + ". Name: " + reviewer.getName() + "\tID: " + reviewer.getId() + "\t Number of bookings: "+ reviewer.getNumberOfBookings());
-				rank++;
-			}
-			if (reviewerSpendingMostMoney == null){
-				reviewerSpendingMostMoney = city.getReviewerSpendingMostMoney();
-			}
-			else{
-				if (reviewerSpendingMostMoney.getTotalAmountSpentOnAccomodation() < city.getReviewerSpendingMostMoney().getTotalAmountSpentOnAccomodation()){
-					reviewerSpendingMostMoney = city.getReviewerSpendingMostMoney();
-				}
-			}
-		}
-		System.out.println();
-		System.out.println("The reviewer spending the most money is: ");
-		System.out.println("Name: " + reviewerSpendingMostMoney.getName() + " ID: "+reviewerSpendingMostMoney.getId() + " Spent: $" + reviewerSpendingMostMoney.getTotalAmountSpentOnAccomodation() + " Number of bookings: " + reviewerSpendingMostMoney.getNumberOfBookings());
 	}
 
 
