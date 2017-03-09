@@ -265,7 +265,7 @@ public class Program {
 		JavaSparkContext sc = new JavaSparkContext(conf);
 
 		Program p=new Program(sc);
-		p.task3();
+		p.task4();
 
 
 
