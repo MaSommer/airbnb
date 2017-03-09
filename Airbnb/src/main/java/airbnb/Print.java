@@ -80,5 +80,25 @@ public class Print {
 			}
 		});
 	}
+	
+	public static void task5a(JavaPairRDD<String, ArrayList<Reviewer>> mappedListingsPairAggregated){
+		mappedListingsPairAggregated.foreach(new VoidFunction<Tuple2<String, ArrayList<Reviewer>>>(){
+			public void call(Tuple2<String, ArrayList<Reviewer>> t)
+					throws Exception {
+				System.out.println("Top 3 reviewers ranked by number of bookings for city  " + t._1+":");
+				int rank = 1;
+				for (Reviewer reviewer : t._2) {
+					System.out.println(rank +". Name: " + reviewer.getName() + "\tID: " + reviewer.getId() + "\t Number of bookings: " + reviewer.getNumberOfReviews());
+					rank++;
+				}
+				
+			}
+		});
+	}
+	
+	public static void task5b(String[] result){
+		System.out.println("The guest that spent the most money on accomodation is: ");
+		System.out.println("Name: " + result[2] + " ReviewerID: " + result[1] + " Amount: $" + result[5]);
+	}
 
 }

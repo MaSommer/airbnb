@@ -1,11 +1,24 @@
 package airbnb;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Polygon;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
@@ -30,7 +43,7 @@ public class HelpMethods {
 	public static Double stringToDouble(String s){
 		String price = "";
 		for (int i = 0; i < s.length(); i++) {
-			if (s.charAt(i) != ',' && s.charAt(i) != '$'){
+			if (s.charAt(i) != ',' && s.charAt(i) != '$' && s.charAt(i) != '[' && s.charAt(i) != ']'){
 				price += s.charAt(i);
 			}
 		}
@@ -162,14 +175,40 @@ public class HelpMethods {
 		return listingPairsWithoutHeader;
 	}
 	
-	public static JavaPairRDD<String, String[]> mapToPairNewKey(JavaPairRDD<String, String[]> input, final int keyIndex){
-		
+	public static JavaPairRDD<String, String[]> mapToPairNewKey(JavaPairRDD<String, String[]> input, final int[] keyIndexes){
 		PairFunction<Tuple2<String, String[]>, String, String[]> keyData = new PairFunction<Tuple2<String, String[]>, String, String[]>() { 
-
 			public Tuple2<String, String[]> call(Tuple2<String, String[]> t)
 					throws Exception {
 				String[] attriButesToReturn = t._2;
-				return new Tuple2(attriButesToReturn[keyIndex], attriButesToReturn);
+				
+				String key = "";
+				for (int i = 0; i < keyIndexes.length; i++) {
+					key += attriButesToReturn[keyIndexes[i]];
+					if (i < keyIndexes.length-1){
+						key+= " ";
+					}
+				}
+				return new Tuple2(key, attriButesToReturn);
+			}
+		};
+		JavaPairRDD<String, String[]> listingPairs = input.mapToPair(keyData);
+		return listingPairs;
+	}
+	
+	public static JavaPairRDD<String, String[]> mapToPair(JavaPairRDD<String, String[]> input, final int[] keyIndexes){
+		PairFunction<Tuple2<String, String[]>, String, String[]> keyData = new PairFunction<Tuple2<String, String[]>, String, String[]>() { 
+			public Tuple2<String, String[]> call(Tuple2<String, String[]> t)
+					throws Exception {
+				String[] attriButesToReturn = t._2;
+				
+				String key = "";
+				for (int i = 0; i < keyIndexes.length; i++) {
+					key += attriButesToReturn[keyIndexes[i]];
+					if (i < keyIndexes.length-1){
+						key+= " ";
+					}
+				}
+				return new Tuple2(key, attriButesToReturn);
 			}
 		};
 		JavaPairRDD<String, String[]> listingPairs = input.mapToPair(keyData);
@@ -236,6 +275,32 @@ public class HelpMethods {
 	public static JavaPairRDD<String, String[]> reduceByKeyOnHostId(JavaPairRDD<String, String[]> joinedPair){
 		JavaPairRDD<String, String[]> joinedPairReducedByKey = joinedPair.reduceByKey(new Function2<String[], String[], String[]>(){
 			public String[] call(String[] v1, String[] v2) {
+				return v1;
+			}
+		});
+		//		System.out.println(joinedPair.count());
+		return joinedPairReducedByKey;
+	}
+	
+	public static JavaPairRDD<String, String[]> reduceByKeySummingNumberOfReviews(JavaPairRDD<String, String[]> joinedPair){
+		JavaPairRDD<String, String[]> joinedPairReducedByKey = joinedPair.reduceByKey(new Function2<String[], String[], String[]>(){
+			public String[] call(String[] v1, String[] v2) {
+				double numberOfReviews1 = stringToDouble(v1[3]);
+				double numberOfReviews2 = stringToDouble(v2[3]);
+				v1[3] = (double)(numberOfReviews1+numberOfReviews2) + "";
+				return v1;
+			}
+		});
+		//		System.out.println(joinedPair.count());
+		return joinedPairReducedByKey;
+	}
+	
+	public static JavaPairRDD<String, String[]> reduceByKeySummingTotalAmountSpent(JavaPairRDD<String, String[]> joinedPair){
+		JavaPairRDD<String, String[]> joinedPairReducedByKey = joinedPair.reduceByKey(new Function2<String[], String[], String[]>(){
+			public String[] call(String[] v1, String[] v2) {
+				double numberOfReviews1 = stringToDouble(v1[5]);
+				double numberOfReviews2 = stringToDouble(v2[5]);
+				v1[5] = (double)(numberOfReviews1+numberOfReviews2) + "";
 				return v1;
 			}
 		});
@@ -408,6 +473,116 @@ public class HelpMethods {
 	}
 
 	
+	public static JavaPairRDD<String, String[]> mapToPairAddNumberOfReviewers(JavaPairRDD<String, String[]> input){
+		return input.mapToPair(new PairFunction<Tuple2<String, String[]>, String, String[]>(){
+			public Tuple2<String, String[]> call(Tuple2<String, String[]> t)
+					throws Exception {
+				String[] ret = new String[t._2.length+1];
+				for (int i = 0; i < ret.length; i++) {
+					if (i == ret.length-1){
+						ret[i] = "1";
+					}
+					else{
+						ret[i] = t._2[i];
+					}
+				}
+				return new Tuple2<String, String[]>(t._1, ret);
+			}
+			
+		});
+	}
+	
+	public static JavaPairRDD<String, String[]> mapToPairAddTotalAmountSpent(JavaPairRDD<String, String[]> input){
+		return input.mapToPair(new PairFunction<Tuple2<String, String[]>, String, String[]>(){
+			public Tuple2<String, String[]> call(Tuple2<String, String[]> t)
+					throws Exception {
+				String[] ret = new String[t._2.length+1];
+				for (int i = 0; i < ret.length; i++) {
+					if (i == ret.length-1){
+						double spent = 3*stringToDouble(t._2[4]);
+						ret[i] = spent+"";
+					}
+					else{
+						ret[i] = t._2[i];
+					}
+				}
+				return new Tuple2<String, String[]>(t._1, ret);
+			}
+			
+		});
+	}
+	
+	public static Function2<ArrayList<Reviewer>, String[], ArrayList<Reviewer>> addAndCombineTop3Reviewers(){
+		
+		return new  Function2<ArrayList<Reviewer>, String[], ArrayList<Reviewer>>() {
+			
+			public ArrayList<Reviewer> call(ArrayList<Reviewer> reviewerList, String[] v2)
+					throws Exception {
+				//{listing_id, review_id, reviewer_name, number_of_reviewers_for_this_reviewer, city, price}
+				double reviewer_id = stringToDouble(v2[1]);
+				String reviewer_name = v2[2];
+				double price = stringToDouble(v2[5]);
+				double number_of_reviews_for_this_city = stringToDouble(v2[3]);
+				
+				Reviewer reviewer = new Reviewer(reviewer_name, (int) reviewer_id, price, (int) number_of_reviews_for_this_city);
+				reviewerList = updateTop3Reviewers(reviewerList, reviewer);
+
+				return reviewerList;
+			}
+		};
+	}
+	public static ArrayList<Reviewer> updateTop3Reviewers(ArrayList<Reviewer> reviewerList, Reviewer reviewer){
+		if (reviewerList.contains(reviewer)){
+			reviewerList.remove(reviewer);
+		}
+		//adds host if null in host list
+		if (reviewerList.size() < 3){
+			reviewerList.add(reviewer);
+		}
+		else{
+			for (int i = 0; i < 3; i++) {
+				if (reviewer.getNumberOfReviews() > reviewerList.get(i).getNumberOfReviews()){
+					reviewerList.set(i, reviewer);
+					reviewerList.remove(reviewerList.size()-1);
+					break;
+				}
+			}
+		}
+		//sort the hosts from high to low total income
+		Collections.sort(reviewerList, new Comparator<Reviewer>() {
+			public int compare(Reviewer r1, Reviewer r2) {
+				if (r1.getNumberOfReviews() < r2.getNumberOfReviews()){
+					return 1;
+				}
+				else if (r1.getNumberOfReviews() > r2.getNumberOfReviews()){
+					return -1;
+				}
+				else{
+					return 0;
+				}
+			}
+		});
+		return reviewerList;
+	}
+	
+	public static Function2<ArrayList<Reviewer>, ArrayList<Reviewer>, ArrayList<Reviewer>> combinePairTop3Reviewers(){
+		return new Function2<ArrayList<Reviewer>, ArrayList<Reviewer>, ArrayList<Reviewer>>(){
+			
+			public ArrayList<Reviewer> call(ArrayList<Reviewer> reviewerList1, ArrayList<Reviewer> reviewerList2)
+					throws Exception {
+				for (Reviewer reviewer2 : reviewerList2) {
+					for (Reviewer reviewer1 : reviewerList1) {
+						if (reviewer1.getId() == reviewer2.getId()){
+							reviewer2.updateParameters(reviewer1);;
+						}
+					}
+					reviewerList1 = updateTop3Reviewers(reviewerList1, reviewer2);
+				}
+				return reviewerList1;
+			}
+		};
+	}
+	
 	public static Function2<double[], Tuple2<String, String[]>, double[]> addAndCombineAverageNumberOfListings(){
 		
 		return new  Function2<double[], Tuple2<String, String[]>, double[]>() {
@@ -436,6 +611,7 @@ public class HelpMethods {
 			}
 		};
 	}
+<<<<<<< HEAD
 
 	public static void fieldListings(JavaRDD<String> listings_usRDD, String col) {
 		
@@ -555,4 +731,111 @@ public class HelpMethods {
 		
 		
 	}
+=======
+	
+	public static Function2<String[], Tuple2<String, String[]>, String[]> addAndCountTotalAmountSpent(){
+		
+		return new  Function2<String[], Tuple2<String, String[]>, String[]>() {
+			
+			public String[] call(String[] v1, Tuple2<String, String[]> t2)
+					throws Exception {
+				double r1 = stringToDouble(v1[v1.length-1]);
+				double r2 = stringToDouble(t2._2[t2._2.length-1]);
+				if (r1 > r2){
+					return v1;
+				}
+				else{
+					return t2._2;
+				}
+			}
+		};
+	}
+	public static Function2<String[], String[], String[]> combinePairTotalAmountSpent(){
+		return new Function2<String[], String[], String[]>(){
+			
+			public String[] call(String[] v1, String[] v2) throws Exception {
+				if (stringToDouble(v1[v1.length-1]) > stringToDouble(v2[v2.length-1])){
+					return v1;
+				}
+				else{
+					return v2;
+				}
+			}
+		};
+	}
+	
+	public static ArrayList<PolygonConstructor> createPolygons() throws IOException{
+		ArrayList<PolygonConstructor> polygons = new ArrayList<PolygonConstructor>();
+		BufferedReader br;
+		ArrayList<Double> latitudes;
+		ArrayList<Double> longtitudes;
+		try {
+			br = new BufferedReader(new FileReader("target/neighbourhoods.geojson"));
+			String line = br.readLine();
+			String[] list = line.split("]]],");
+			String neighbourhood_group = "";
+			String neighbourhood = "";
+			for (String string : list) {
+				String[] split = string.split(":");
+				latitudes = new ArrayList<Double>();
+				longtitudes = new ArrayList<Double>();
+				for (int i = 0; i < split.length; i++) {
+					if (split[i].equals("{\"neighbourhood_group\"") && neighbourhood_group.length() < 1){
+						int count = 0;
+						for (int j = 0; j < split[i+1].length(); j++) {
+							if (split[i+1].charAt(j) == '"'){
+								count++;
+							}
+							else if (count < 2){
+								neighbourhood_group += split[i+1].charAt(j);
+							}
+							if (count == 2){
+								break;
+							}
+						}
+					}
+					else if (split[i].endsWith("\"neighbourhood\"") && neighbourhood.length() < 1){
+						int count = 0;
+						for (int j = 0; j < split[i+1].length(); j++) {
+							if (split[i+1].charAt(j) == '"'){
+								count++;
+							}
+							else if (count < 2){
+								neighbourhood += split[i+1].charAt(j);
+							}
+							if (count == 2){
+								break;
+							}
+						}					
+					}
+					else if (split[i].substring(0, 3).equals("[[[")){
+						String cuttedBeggining = split[i].substring(3, split[i].length());
+						String[] coordinates = cuttedBeggining.split(",");
+						double latitute = -1;
+						double longtitude = -1;
+						for (int j = 0; j < coordinates.length; j++) {
+							if (j%2 == 0){
+								latitute = HelpMethods.stringToDouble(coordinates[j]);
+//								System.out.println("lat:" + latitute);
+							}
+							else{
+								longtitude = HelpMethods.stringToDouble(coordinates[j]);
+//								System.out.print(" long: "+ longtitude);
+								latitudes.add(latitute);
+								longtitudes.add(longtitude);
+							}
+						}
+					}
+				}
+				PolygonConstructor p = new PolygonConstructor(latitudes, longtitudes, neighbourhood_group, neighbourhood);
+				polygons.add(p);
+			}
+		} 
+		catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}	
+		return polygons;
+	}
+	
+>>>>>>> master
 }
