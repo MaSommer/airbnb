@@ -773,9 +773,9 @@ public class HelpMethods {
 			br = new BufferedReader(new FileReader("target/neighbourhoods.geojson"));
 			String line = br.readLine();
 			String[] list = line.split("]]],");
-			String neighbourhood_group = "";
-			String neighbourhood = "";
 			for (String string : list) {
+				String neighbourhood_group = "";
+				String neighbourhood = "";
 				String[] split = string.split(":");
 				latitudes = new ArrayList<Double>();
 				longtitudes = new ArrayList<Double>();
@@ -815,11 +815,11 @@ public class HelpMethods {
 						double longtitude = -1;
 						for (int j = 0; j < coordinates.length; j++) {
 							if (j%2 == 0){
-								latitute = HelpMethods.stringToDouble(coordinates[j]);
+								longtitude = HelpMethods.stringToDouble(coordinates[j]);
 //								System.out.println("lat:" + latitute);
 							}
 							else{
-								longtitude = HelpMethods.stringToDouble(coordinates[j]);
+								latitute = HelpMethods.stringToDouble(coordinates[j]);
 //								System.out.print(" long: "+ longtitude);
 								latitudes.add(latitute);
 								longtitudes.add(longtitude);
@@ -827,8 +827,10 @@ public class HelpMethods {
 						}
 					}
 				}
-				PolygonConstructor p = new PolygonConstructor(latitudes, longtitudes, neighbourhood_group, neighbourhood);
-				polygons.add(p);
+				if (latitudes.size() > 1){
+					PolygonConstructor p = new PolygonConstructor(latitudes, longtitudes, neighbourhood_group, neighbourhood);
+					polygons.add(p);					
+				}
 			}
 		} 
 		catch (FileNotFoundException e) {

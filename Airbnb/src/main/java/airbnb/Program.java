@@ -1,5 +1,6 @@
 package airbnb;
 
+import java.awt.geom.Point2D;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -304,7 +305,6 @@ public class Program {
 
 	public static void task6() throws IOException{
 		ArrayList<PolygonConstructor> polygons = HelpMethods.createPolygons();
-		
 
 	}
 
