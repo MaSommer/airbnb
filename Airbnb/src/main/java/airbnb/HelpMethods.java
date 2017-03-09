@@ -105,68 +105,6 @@ public class HelpMethods {
 		return resultAfterCuttingHead;
 	}
 
-	//FOR CITYLIST
-	public static Function2<ArrayList<City>, String[], ArrayList<City>> addAndCountCity(){
-		return new Function2<ArrayList<City>, String[], ArrayList<City>>() { 
-
-			public ArrayList<City> call(ArrayList<City> cityList, String[] cityInfo)
-					throws Exception {
-				String cityName = cityInfo[0];
-				double price = stringToDouble(cityInfo[1]);
-				String room_type = cityInfo[2];
-				double reviews_per_month = stringToDouble(cityInfo[3]);
-
-				City city = new City(cityName, price, room_type, reviews_per_month);
-				if (cityExistsInCityList(cityList, city)){
-					updateCity(cityList, city);
-				}
-				else{
-					addNewCity(cityList, city);
-				}
-				return cityList;
-			} 
-		};
-	}
-
-	public static Function2<ArrayList<City>, ArrayList<City>, ArrayList<City>> combineCityLists(){
-		return new Function2<ArrayList<City>, ArrayList<City>, ArrayList<City>>() {
-			public ArrayList<City> call(ArrayList<City> cityList1, ArrayList<City> cityList2)
-					throws Exception {
-				for (City city2 : cityList2) {
-					if (cityExistsInCityList(cityList1, city2)){
-						updateCity(cityList1, city2);
-					}
-					else{
-						addNewCity(cityList1, city2);
-					}
-				}
-				return cityList1;
-			}
-		};
-	}
-
-
-	public static boolean cityExistsInCityList(ArrayList<City> cityList, City cityToCheck){
-		for (City city : cityList) {
-			if (city.getName().equals(cityToCheck.getName())){
-				return true;
-			}
-		}
-		return false;
-	}
-
-	public static void updateCity(ArrayList<City> cityList, City city){
-		for (City cityToUpdate : cityList) {
-			if (cityToUpdate.getName().equals(city.getName())){
-				cityToUpdate.updateParameters(city);
-			}
-		}
-	}
-
-	public static void addNewCity(ArrayList<City> cityList, City city){
-		cityList.add(city);
-	}
-
 	public static JavaPairRDD<String, String[]> mapToPair(JavaRDD<String> input, final String[] key, final String[] columns, final HashMap<String, Integer> attributeList){
 
 		PairFunction<String, String, String[]> keyData = new PairFunction<String, String, String[]>() { 
@@ -335,56 +273,6 @@ public class HelpMethods {
 		});
 		//		System.out.println(joinedPair.count());
 		return joinedPairReducedByKey;
-	}
-
-	public static Function2<ArrayList<City>, Tuple2<String, String[]>, ArrayList<City>> addAndCountCityAndHost(){
-		return new Function2<ArrayList<City>, Tuple2<String, String[]>, ArrayList<City>>(){
-
-			public ArrayList<City> call(ArrayList<City> cityList,
-					Tuple2<String, String[]> keyValuePair) throws Exception {
-				//				System.out.println(Arrays.toString(keyValuePair._2));
-				String cityName = keyValuePair._2[0];
-				double price = stringToDouble(keyValuePair._2[1]);
-				double hostID = stringToDouble(keyValuePair._2[3]);
-				String hostName = keyValuePair._2[4];
-				double totalListingsForHost = stringToDouble(keyValuePair._2[5]);
-				double numberOfNightsNotAvailable = 0;
-				if (keyValuePair._2.length > 6){
-					numberOfNightsNotAvailable = stringToDouble(keyValuePair._2[6]);
-				}
-				City city = new City(cityName, price, hostID, hostName, totalListingsForHost, numberOfNightsNotAvailable);
-				if (cityExistsInCityList(cityList, city)){
-					updateCity(cityList, city);
-				}
-				else{
-					addNewCity(cityList, city);
-				}				
-				return cityList;
-			};
-		};
-	}
-
-	public static Function2<ArrayList<City>, Tuple2<String, String[]>, ArrayList<City>> addAndCountCityAndReviewers(){
-		return new Function2<ArrayList<City>, Tuple2<String, String[]>, ArrayList<City>>(){
-
-			public ArrayList<City> call(ArrayList<City> cityList,
-					Tuple2<String, String[]> keyValuePair) throws Exception {
-				//				System.out.println(Arrays.toString(keyValuePair._2));
-				double reviewer_id = stringToDouble(keyValuePair._2[1]);
-				String reviewer_name = keyValuePair._2[2];
-				String cityName = keyValuePair._2[3];
-				double price = stringToDouble(keyValuePair._2[4]);
-
-				City city = new City(cityName, price, reviewer_id, reviewer_name);
-				if (cityExistsInCityList(cityList, city)){
-					updateCity(cityList, city);
-				}
-				else{
-					addNewCity(cityList, city);
-				}				
-				return cityList;
-			};
-		};
 	}
 
 	public static Function2<String[], String[], String[]> addAndCombinePairAverage(){
