@@ -36,15 +36,24 @@ public class PolygonConstructor {
 	public void initPath() {
         path = new Path2D.Double();
 
-        path.moveTo(latitudes.get(0), longtitudes.get(0));
+        path.moveTo(longtitudes.get(0), latitudes.get(0));
         for(int i = 1; i < latitudes.size(); ++i) {
-           path.lineTo(latitudes.get(i), longtitudes.get(i));
+           path.lineTo(longtitudes.get(i), latitudes.get(i));
         }
         path.closePath();
     }
 	
 	public boolean checkIfInsideOfPath(Point2D point){
 		return path.contains(point);
+	}
+
+
+	public String getNeighbourhoodGroup() {
+		return neighbourhoodGroup;
+	}
+
+	public String getNeighbourhood() {
+		return neighbourhood;
 	}
 	
 }
