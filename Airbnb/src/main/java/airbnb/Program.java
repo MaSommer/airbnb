@@ -35,11 +35,7 @@ public class Program {
 		listings_usRDD = sc.textFile("target/listings_us.csv");
 		reviews_usRDD = sc.textFile("target/reviews_us.csv");
 		calendar_usRDD = sc.textFile("target/calendar_us.csv");
-<<<<<<< HEAD
-		task3();
-=======
 		task5();
->>>>>>> Marty
 	}
 
 
@@ -193,8 +189,6 @@ public class Program {
 			//the following method reduces on key (reviewer_id) and sums up the total price
 			JavaPairRDD<String, String[]> joinedPairReducedOnReviewerId = HelpMethods.reduceByKeySummingTotalAmountSpent(joinedPairWithReviewerIdAsKey);
 
-<<<<<<< HEAD
-=======
 			String[] initial = new String[6];
 			initial[5] = "0.0"; 
 			String[] result = joinedPairReducedOnReviewerId.aggregate(initial, HelpMethods.addAndCountTotalAmountSpent(), HelpMethods.combinePairTotalAmountSpent());
@@ -202,7 +196,6 @@ public class Program {
 		}
 	}
 
->>>>>>> Marty
 
 
 	public static void main(String[] args) {
