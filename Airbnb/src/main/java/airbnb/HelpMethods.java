@@ -1,11 +1,24 @@
 package airbnb;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Polygon;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
@@ -28,7 +41,7 @@ public class HelpMethods {
 	public static Double stringToDouble(String s){
 		String price = "";
 		for (int i = 0; i < s.length(); i++) {
-			if (s.charAt(i) != ',' && s.charAt(i) != '$'){
+			if (s.charAt(i) != ',' && s.charAt(i) != '$' && s.charAt(i) != '[' && s.charAt(i) != ']'){
 				price += s.charAt(i);
 			}
 		}
@@ -605,6 +618,79 @@ public class HelpMethods {
 				}
 			}
 		};
+	}
+	
+	public static ArrayList<PolygonConstructor> createPolygons() throws IOException{
+		ArrayList<PolygonConstructor> polygons = new ArrayList<PolygonConstructor>();
+		BufferedReader br;
+		ArrayList<Double> latitudes;
+		ArrayList<Double> longtitudes;
+		try {
+			br = new BufferedReader(new FileReader("target/neighbourhoods.geojson"));
+			String line = br.readLine();
+			String[] list = line.split("]]],");
+			String neighbourhood_group = "";
+			String neighbourhood = "";
+			for (String string : list) {
+				String[] split = string.split(":");
+				latitudes = new ArrayList<Double>();
+				longtitudes = new ArrayList<Double>();
+				for (int i = 0; i < split.length; i++) {
+					if (split[i].equals("{\"neighbourhood_group\"") && neighbourhood_group.length() < 1){
+						int count = 0;
+						for (int j = 0; j < split[i+1].length(); j++) {
+							if (split[i+1].charAt(j) == '"'){
+								count++;
+							}
+							else if (count < 2){
+								neighbourhood_group += split[i+1].charAt(j);
+							}
+							if (count == 2){
+								break;
+							}
+						}
+					}
+					else if (split[i].endsWith("\"neighbourhood\"") && neighbourhood.length() < 1){
+						int count = 0;
+						for (int j = 0; j < split[i+1].length(); j++) {
+							if (split[i+1].charAt(j) == '"'){
+								count++;
+							}
+							else if (count < 2){
+								neighbourhood += split[i+1].charAt(j);
+							}
+							if (count == 2){
+								break;
+							}
+						}					
+					}
+					else if (split[i].substring(0, 3).equals("[[[")){
+						String cuttedBeggining = split[i].substring(3, split[i].length());
+						String[] coordinates = cuttedBeggining.split(",");
+						double latitute = -1;
+						double longtitude = -1;
+						for (int j = 0; j < coordinates.length; j++) {
+							if (j%2 == 0){
+								latitute = HelpMethods.stringToDouble(coordinates[j]);
+//								System.out.println("lat:" + latitute);
+							}
+							else{
+								longtitude = HelpMethods.stringToDouble(coordinates[j]);
+//								System.out.print(" long: "+ longtitude);
+								latitudes.add(latitute);
+								longtitudes.add(longtitude);
+							}
+						}
+					}
+				}
+				PolygonConstructor p = new PolygonConstructor(latitudes, longtitudes, neighbourhood_group, neighbourhood);
+				polygons.add(p);
+			}
+		} 
+		catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}	
+		return polygons;
 	}
 	
 }
