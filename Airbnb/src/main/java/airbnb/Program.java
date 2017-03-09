@@ -23,7 +23,7 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.validation.OverridesAttribute;
 
-
+import org.apache.avro.file.SyncableFileOutputStream;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
@@ -57,7 +57,7 @@ public class Program {
 		listings_usRDD = sc.textFile("target/listings_us.csv");
 		reviews_usRDD = sc.textFile("target/reviews_us.csv");
 		calendar_usRDD = sc.textFile("target/calendar_us.csv");
-		neighborhood_test = sc.textFile("neighborhood_test.csv");
+		neighborhood_test = sc.textFile("target/neighborhood_test.csv");
 		neighbourHoodGeosjon = sc.textFile("target/neighbourhoods.geojson");
 //		task6();
 
@@ -309,7 +309,6 @@ public class Program {
 	}
 
 	public static void task6a() throws IOException {
-		System.out.println("hei");
 		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
 		HelpMethods.mapAttributeAndIndex(neighborhood_test, 'a');
 		
@@ -342,6 +341,8 @@ public class Program {
 			}
 		});
 		
+		
+		
 		//Make neigRdd into JavaPairRDD
 		JavaPairRDD<String,String[]> neigPairRDD = neigRDD.mapToPair(new PairFunction<String[], String, String[]>() {
 
@@ -349,7 +350,7 @@ public class Program {
 				
 				String[] neig = new String[1];
 				neig[0] = t[1];
-				Tuple2<String,String[]> result = new Tuple2<String, String[]>(t[0],neig);
+				Tuple2<String,String[]> result = new Tuple2<String, String[]>(t[0],t);
 				return result;
 			}
 			
@@ -360,40 +361,75 @@ public class Program {
 				
 				String[] neig = new String[1];
 				neig[0] = t[1];
-				Tuple2<String,String[]> result = new Tuple2<String, String[]>(t[0],neig);
+				Tuple2<String,String[]> result = new Tuple2<String, String[]>(t[0],t);
 				return result;
 			}
 			
 		});
-
 		
-		JavaPairRDD<String, String[]> resultPairRDD = HelpMethods.lefOuterJoin(testPairRDD, neigPairRDD);
-		
-		
-		JavaRDD<String[]> finalRestult = resultPairRDD.map(new Function<Tuple2<String,String[]>, String[]>() {
-
-			public String[] call(Tuple2<String, String[]> v1) throws Exception {
-				String[] listToCheck = v1._2;
-				String match = "No";
-				if (listToCheck[1].equals(listToCheck[3])) {
-					match = "Yes";
-				}
-				String[] result = new String[3];
-				
-				result[0] = v1._1;
-				result[1] = v1._2[1];
-				result[2] = match;
-				
-				return result;
-			}
-		});
-		finalRestult.foreach(new VoidFunction<String[]>() {
+//		neigPairRDD.foreach(new VoidFunction<Tuple2<String,String[]>>() {
+//			
+//			public void call(Tuple2<String, String[]> t) throws Exception {
+//				System.out.println(t._1 + " " + Arrays.toString(t._2));
+//				
+//			}
+//		});
+		testPairRDD.foreach(new VoidFunction<Tuple2<String,String[]>>() {
 			
-			public void call(String[] t) throws Exception {
-				System.out.println(Arrays.toString(t));
+			public void call(Tuple2<String, String[]> t) throws Exception {
+				System.out.println(t._1 + " " + Arrays.toString(t._2));
 				
 			}
 		});
+//		System.out.println("1");
+//		JavaPairRDD<String, Tuple2<String[], String[]>> resultPairRDD = neigPairRDD.join(testPairRDD);
+//		System.out.println("2");
+//		
+//		resultPairRDD.foreach(new VoidFunction<Tuple2<String,Tuple2<String[],String[]>>>() {
+//			
+//			public void call(Tuple2<String, Tuple2<String[], String[]>> t) throws Exception {
+//				System.out.println(t._1);
+//				
+//			}
+//		});
+			
+			
+		
+//		resultPairRDD.foreach(new VoidFunction<Tuple2<String,String[]>>() {
+//			
+//			public void call(Tuple2<String, String[]> t) throws Exception {
+//				System.out.println("y");
+//				
+//			}
+//		});
+//		JavaRDD<String[]> finalResult = resultPairRDD.map(new Function<Tuple2<String,String[]>, String[]>() {
+//
+//			public String[] call(Tuple2<String, String[]> v1) throws Exception {
+//				String[] listToCheck = v1._2;
+//				String match = "No";
+//				
+//				if (listToCheck[1].equals(listToCheck[3])) {
+//					match = "Yes";
+//					System.out.println("1");
+//				}
+//				String[] result = new String[3];
+//				
+//				result[0] = v1._1;
+//				result[1] = v1._2[1];
+//				result[2] = match;
+//				
+//				return result;
+//			}
+//		});
+//		
+//		System.out.println("2");
+//		finalResult.foreach(new VoidFunction<String[]>() {
+//			
+//			public void call(String[] t) throws Exception {
+//				System.out.println(Arrays.toString(t));
+//				
+//			}
+//		});
 		
 		
 	}

@@ -104,6 +104,10 @@ public class HelpMethods {
 					else if (csvFile == 'c'){
 						index = attributeCalendarIndex.get(columns[i]);
 					}
+					else if (csvFile == 'a'){
+						index = neigbourhoodTestIndex.get(columns[i]);
+					}
+					
 					attriButesToReturn[i] = entireRow[index];
 				}
 				//				System.out.println(Arrays.toString(attriButesToReturn));
@@ -223,7 +227,7 @@ public class HelpMethods {
 	//Joining pair2 into pair1. pair1.leftouterJoin(Pair2).
 	public static JavaPairRDD<String, String[]> lefOuterJoin(JavaPairRDD<String, String[]> pair1, JavaPairRDD<String, String[]> pair2){
 		JavaPairRDD<String, Tuple2<String[], Optional<String[]>>> joinedPair = pair1.leftOuterJoin(pair2);
-
+		
 		JavaPairRDD<String, String[]> joinedAndReducedPair = joinedPair
 				.mapToPair(new PairFunction<Tuple2<String, Tuple2<String[], Optional<String[]>>>, String, String[]>() {
 					public Tuple2<String, String[]> call(
