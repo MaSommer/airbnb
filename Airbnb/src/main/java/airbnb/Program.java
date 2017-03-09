@@ -35,7 +35,7 @@ public class Program {
 		listings_usRDD = sc.textFile("target/listings_us.csv");
 		reviews_usRDD = sc.textFile("target/reviews_us.csv");
 		calendar_usRDD = sc.textFile("target/calendar_us.csv");
-		task4();
+		task5();
 	}
 
 
@@ -44,7 +44,7 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Which subtask do you want to run? (a, b, c, d or e)");
 		String subtask = sc.next();
-		if (sc.next().equals("a")){
+		if (subtask.equals("a")){
 			String[] columndNeededListingsa = {"city", "price"};
 			String[] keysa = {"city"};
 			JavaPairRDD<String, String[]> mappedListingsPair = HelpMethods.mapToPair(listings_usRDD, keysa, columndNeededListingsa, HelpMethods.attributeListingIndex);
@@ -53,7 +53,7 @@ public class Program {
 			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombinePairAverage(), HelpMethods.combinePairAverage());
 			Print.task3a(mappedListingsPairAggregated);
 		}
-		else if (sc.next().equals("b")){
+		else if (subtask.equals("b")){
 			String[] columndNeededListingsb = {"city", "price"};
 			String[] keysb = {"city", "room_type"};
 			JavaPairRDD<String, String[]> mappedListingsPair = HelpMethods.mapToPair(listings_usRDD, keysb, columndNeededListingsb, HelpMethods.attributeListingIndex);
@@ -62,7 +62,7 @@ public class Program {
 			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombinePairAverage(), HelpMethods.combinePairAverage());
 			Print.task3b(mappedListingsPairAggregated);
 		}
-		else if (sc.next().equals("c")){
+		else if (subtask.equals("c")){
 			String[] columndNeededListingsc = {"city", "reviews_per_month"};
 			String[] keysc = {"city"};
 			JavaPairRDD<String, String[]> mappedListingsPair = HelpMethods.mapToPair(listings_usRDD, keysc, columndNeededListingsc, HelpMethods.attributeListingIndex);
@@ -71,7 +71,7 @@ public class Program {
 			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombinePairAverage(), HelpMethods.combinePairAverage());
 			Print.task3c(mappedListingsPairAggregated);
 		}
-		else if (sc.next().equals("d")){
+		else if (subtask.equals("d")){
 			String[] columndNeededListingsd = {"city", "reviews_per_month"};
 			String[] keysd = {"city"};
 			JavaPairRDD<String, String[]> mappedListingsPair = HelpMethods.mapToPair(listings_usRDD, keysd, columndNeededListingsd, HelpMethods.attributeListingIndex);
@@ -80,7 +80,7 @@ public class Program {
 			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombineEstimatedNumberOfNights(), HelpMethods.combinePairEstimatedNumberOfNights());
 			Print.task3d(mappedListingsPairAggregated);
 		}
-		else if (sc.next().equals("e")){
+		else if (subtask.equals("e")){
 			String[] columndNeededListingse = {"city", "reviews_per_month", "price"};
 			String[] keyse = {"city"};
 			JavaPairRDD<String, String[]> mappedListingsPair = HelpMethods.mapToPair(listings_usRDD, keyse, columndNeededListingse, HelpMethods.attributeListingIndex);
@@ -103,13 +103,6 @@ public class Program {
 			JavaPairRDD<String, String[]> listingPairs = HelpMethods.mapToPair(listings_usRDD, keysListing, columndNeededListings, HelpMethods.attributeListingIndex);
 			JavaPairRDD<String, String[]> listingPairsReduced = HelpMethods.reduceByKeyOnHostId(listingPairs);
 			
-//			listingPairsReduced.foreach(new VoidFunction<Tuple2<String, String[]>>(){
-//				
-//							public void call(Tuple2<String, String[]> t) throws Exception {
-//								System.out.println(Arrays.toString(t._2));	
-//							}
-//						});;
-			
 			//{total listings, total number of hosts, hosts with more than 1 listing}
 			double[] initial = {0.0, 0.0, 0.0};
 			double[] totalAndNumberOfListings = listingPairsReduced.aggregate(initial, HelpMethods.addAndCombineAverageNumberOfListings(), HelpMethods.combinePairAverageNumberOfListings());
@@ -131,7 +124,8 @@ public class Program {
 			
 			JavaPairRDD<String, String[]> joinedPairReducedByKey = HelpMethods.reduceByKeyOnAvailable(joinedPair);
 			
-			JavaPairRDD<String, String[]> joinedPairWithCityAsKey = HelpMethods.mapToPairNewKey(joinedPairReducedByKey, 0);
+			int[] keyIndexes = {0};
+			JavaPairRDD<String, String[]> joinedPairWithCityAsKey = HelpMethods.mapToPairNewKey(joinedPairReducedByKey, keyIndexes);
 			//{city, hostid_rank1, hostname, income}
 			
 			ArrayList<Host> initial = new ArrayList<Host>();
@@ -141,50 +135,65 @@ public class Program {
 	}
 
 	public static void task5(){
+		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
+		HelpMethods.mapAttributeAndIndex(reviews_usRDD, 'r');
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Which subtask do you want to run? (a or b)");
+		String subtask = sc.next();
+		
+		
+		if (subtask.equals("a")){
+			String[] columndNeededListings = {"city", "price", "id"};
+			String[] keys1 = {"id"};
+			JavaPairRDD<String, String[]> listingPairs = HelpMethods.mapToPair(listings_usRDD, keys1, columndNeededListings, HelpMethods.attributeListingIndex);
+			
+			String[] columnsNeededReviews = {"listing_id", "reviewer_id", "reviewer_name"};
+			String[] keys2 = {"listing_id"};
+			JavaPairRDD<String, String[]> reviewerPairs = HelpMethods.mapToPair(reviews_usRDD, keys2, columnsNeededReviews, HelpMethods.attributeReviewIndex);
+			JavaPairRDD<String, String[]> reviewerPairsWithNumberOfReviews = HelpMethods.mapToPairAddNumberOfReviewers(reviewerPairs);
+			
+			JavaPairRDD<String, String[]> joinedPair = HelpMethods.lefOuterJoin(reviewerPairsWithNumberOfReviews, listingPairs);
+			//{listing_id, review_id, reviewer_name, number_of_reviewers_for_this_reviewer, city, price}
 
-		//		String[] columnsNeededListings = {"city", "price", "id"};
-		//		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
-		//		JavaPairRDD<String, String[]> listingPairs = HelpMethods.mapToPair(listings_usRDD, "id", columnsNeededListings, HelpMethods.attributeListingIndex);
-		//		
-		//		String[] columnsNeededReviews = {"listing_id", "reviewer_id", "reviewer_name"};
-		//		HelpMethods.mapAttributeAndIndex(reviews_usRDD, 'r');
-		//		JavaPairRDD<String, String[]> reviewerPairs = HelpMethods.mapToPair(reviews_usRDD, "listing_id", columnsNeededReviews, HelpMethods.attributeReviewIndex);
-		//		
-		//		JavaPairRDD<String, String[]> joinedPair = HelpMethods.lefOuterJoin(reviewerPairs, listingPairs);
-		//		
-		//		ArrayList<City> initialCityList = new ArrayList<City>();
-		//		ArrayList<City> cityList = joinedPair.aggregate(initialCityList, HelpMethods.addAndCountCityAndReviewers(), HelpMethods.combineCityLists());
-		//		printTask5(cityList);
-		//		joinedPair.foreach(new VoidFunction<Tuple2<String, String[]>>(){
-		//						public void call(Tuple2<String, String[]> t) throws Exception {
-		//							System.out.println(Arrays.toString(t._2));	
-		//						}
-		//					});;
-
-	}
-
-	public static void printTask5(ArrayList<City> cityList){
-		Reviewer reviewerSpendingMostMoney = null;
-		for (City city : cityList) {
-			System.out.println(city.getName());
-			System.out.println("Top 3  guests ranked by their number of bookings: ");
-			int rank = 1;
-			for (Reviewer reviewer : city.getTop3ReviewersRankedByNumberOfBookings()) {
-				System.out.println(rank + ". Name: " + reviewer.getName() + "\tID: " + reviewer.getId() + "\t Number of bookings: "+ reviewer.getNumberOfBookings());
-				rank++;
-			}
-			if (reviewerSpendingMostMoney == null){
-				reviewerSpendingMostMoney = city.getReviewerSpendingMostMoney();
-			}
-			else{
-				if (reviewerSpendingMostMoney.getTotalAmountSpentOnAccomodation() < city.getReviewerSpendingMostMoney().getTotalAmountSpentOnAccomodation()){
-					reviewerSpendingMostMoney = city.getReviewerSpendingMostMoney();
-				}
-			}
+			int[] keyIndexes = {4, 1};
+			//The following function is creating a new key for the JavaPairRDD. The new key is now "city reviewer_id".
+			JavaPairRDD<String, String[]> joinedPairWithCityAndReviewerIdAsKey = HelpMethods.mapToPairNewKey(joinedPair, keyIndexes);
+			
+			JavaPairRDD<String, String[]> reducedPairOnKey = HelpMethods.reduceByKeySummingNumberOfReviews(joinedPairWithCityAndReviewerIdAsKey);
+			//The next line of code change the key from cityAndReviewerId back to city
+			JavaPairRDD<String, String[]> mappedCityAsKey = reducedPairOnKey.mapToPair(new PairFunction<Tuple2<String, String[]>, String, String[]>(){
+				public Tuple2<String, String[]> call(Tuple2<String, String[]> t)throws Exception {
+					return new Tuple2<String, String[]>(t._2[4], t._2);}});
+			
+			ArrayList<Reviewer> initial = new ArrayList<Reviewer>();
+			JavaPairRDD<String, ArrayList<Reviewer>> joinedPairAggregatedOnCity = mappedCityAsKey.aggregateByKey(initial, HelpMethods.addAndCombineTop3Reviewers(), HelpMethods.combinePairTop3Reviewers());
+			
+			Print.task5a(joinedPairAggregatedOnCity);
 		}
-		System.out.println();
-		System.out.println("The reviewer spending the most money is: ");
-		System.out.println("Name: " + reviewerSpendingMostMoney.getName() + " ID: "+reviewerSpendingMostMoney.getId() + " Spent: $" + reviewerSpendingMostMoney.getTotalAmountSpentOnAccomodation() + " Number of bookings: " + reviewerSpendingMostMoney.getNumberOfBookings());
+		else if (subtask.equals("b")){
+			String[] columndNeededListings = {"city", "price", "id"};
+			String[] keys1 = {"id"};
+			JavaPairRDD<String, String[]> listingPairs = HelpMethods.mapToPair(listings_usRDD, keys1, columndNeededListings, HelpMethods.attributeListingIndex);
+			
+			String[] columnsNeededReviews = {"listing_id", "reviewer_id", "reviewer_name"};
+			String[] keys2 = {"listing_id"};
+			JavaPairRDD<String, String[]> reviewerPairs = HelpMethods.mapToPair(reviews_usRDD, keys2, columnsNeededReviews, HelpMethods.attributeReviewIndex);
+			JavaPairRDD<String, String[]> joinedPair = HelpMethods.lefOuterJoin(reviewerPairs, listingPairs);
+			
+			JavaPairRDD<String, String[]> reviewerPairsWithNumberOfReviews = HelpMethods.mapToPairAddTotalAmountSpent(joinedPair);
+			//{listing_id, review_id, reviewer_name, city, price, totalAmountSpent}
+			
+			int[] keyIndexes = {1};
+			JavaPairRDD<String, String[]> joinedPairWithReviewerIdAsKey = HelpMethods.mapToPairNewKey(reviewerPairsWithNumberOfReviews, keyIndexes);
+			
+			//the following method reduces on key (reviewer_id) and sums up the total price
+			JavaPairRDD<String, String[]> joinedPairReducedOnReviewerId = HelpMethods.reduceByKeySummingTotalAmountSpent(joinedPairWithReviewerIdAsKey);
+
+			String[] initial = new String[6];
+			initial[5] = "0.0"; 
+			String[] result = joinedPairReducedOnReviewerId.aggregate(initial, HelpMethods.addAndCountTotalAmountSpent(), HelpMethods.combinePairTotalAmountSpent());
+			Print.task5b(result);
+		}
 	}
 
 
