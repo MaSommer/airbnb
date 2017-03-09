@@ -45,6 +45,8 @@ public class Program {
 	private static JavaRDD<String> listings_usRDD;
 	private static JavaRDD<String> reviews_usRDD;
 	private static JavaRDD<String> calendar_usRDD;
+	private static JavaRDD<String> neighborhood_test;
+	
 
 	public static int cityIndex;
 
@@ -55,11 +57,9 @@ public class Program {
 		listings_usRDD = sc.textFile("target/listings_us.csv");
 		reviews_usRDD = sc.textFile("target/reviews_us.csv");
 		calendar_usRDD = sc.textFile("target/calendar_us.csv");
-
-//		task3();
-
+		neighborhood_test = sc.textFile("neighborhood_test.csv");
 		neighbourHoodGeosjon = sc.textFile("target/neighbourhoods.geojson");
-		task6();
+//		task6();
 
 	}
 
@@ -308,6 +308,95 @@ public class Program {
 
 	}
 
+	public static void task6a() throws IOException {
+		System.out.println("hei");
+		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
+		HelpMethods.mapAttributeAndIndex(neighborhood_test, 'a');
+		
+		String[] columns_listings = {"id","longitude","latitude"};
+		JavaRDD<String[]> listingsRDD = HelpMethods.mapToColumns(listings_usRDD, columns_listings,'l');
+		
+		String[] columns_test = {"id","neighbourhood","city"};
+		JavaRDD<String[]> testRDD = HelpMethods.mapToColumns(neighborhood_test, columns_test,'a');
+		
+		JavaRDD<String[]> neigRDD = listingsRDD.map(new Function<String[], String[]>() {
+
+			public String[] call(String[] list) throws Exception {
+				
+				String[] result = new String[2];
+				result[0] = list[0];
+				
+				ArrayList<PolygonConstructor> polygons = HelpMethods.createPolygons();
+				String longitude = list[1];
+				String latitude = list[2];
+				
+				
+				
+				for (int i = 0; i < polygons.size(); i++) {
+					if(polygons.get(i).checkIfInsideOfPath(new Point2D.Double((HelpMethods.stringToDouble(longitude)),HelpMethods.stringToDouble(latitude)))) {
+						result[1]=polygons.get(i).getNeighbourhood();
+					}
+				}
+				return result;
+				
+			}
+		});
+		
+		//Make neigRdd into JavaPairRDD
+		JavaPairRDD<String,String[]> neigPairRDD = neigRDD.mapToPair(new PairFunction<String[], String, String[]>() {
+
+			public Tuple2<String, String[]> call(String[] t) throws Exception {
+				
+				String[] neig = new String[1];
+				neig[0] = t[1];
+				Tuple2<String,String[]> result = new Tuple2<String, String[]>(t[0],neig);
+				return result;
+			}
+			
+		});
+		JavaPairRDD<String,String[]> testPairRDD = testRDD.mapToPair(new PairFunction<String[], String, String[]>() {
+			
+			public Tuple2<String, String[]> call(String[] t) throws Exception {
+				
+				String[] neig = new String[1];
+				neig[0] = t[1];
+				Tuple2<String,String[]> result = new Tuple2<String, String[]>(t[0],neig);
+				return result;
+			}
+			
+		});
+
+		
+		JavaPairRDD<String, String[]> resultPairRDD = HelpMethods.lefOuterJoin(testPairRDD, neigPairRDD);
+		
+		
+		JavaRDD<String[]> finalRestult = resultPairRDD.map(new Function<Tuple2<String,String[]>, String[]>() {
+
+			public String[] call(Tuple2<String, String[]> v1) throws Exception {
+				String[] listToCheck = v1._2;
+				String match = "No";
+				if (listToCheck[1].equals(listToCheck[3])) {
+					match = "Yes";
+				}
+				String[] result = new String[3];
+				
+				result[0] = v1._1;
+				result[1] = v1._2[1];
+				result[2] = match;
+				
+				return result;
+			}
+		});
+		finalRestult.foreach(new VoidFunction<String[]>() {
+			
+			public void call(String[] t) throws Exception {
+				System.out.println(Arrays.toString(t));
+				
+			}
+		});
+		
+		
+	}
 
 
 
@@ -320,6 +409,6 @@ public class Program {
 		JavaSparkContext sc = new JavaSparkContext(conf);
 
 		Program p=new Program(sc);
-		p.task4();
+		p.task6a();
 	}
 }

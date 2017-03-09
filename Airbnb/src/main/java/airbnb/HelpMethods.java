@@ -35,6 +35,8 @@ public class HelpMethods {
 	public static HashMap<String, Integer> attributeListingIndex;
 	public static HashMap<String, Integer> attributeCalendarIndex;
 	public static HashMap<String, Integer> attributeReviewIndex;
+	public static HashMap<String, Integer> neigbourhoodTestIndex;
+	
 	
 	
 	
@@ -82,6 +84,9 @@ public class HelpMethods {
 		}
 		else if (csvFile == 'r'){
 			attributeReviewIndex = attributeIndex;
+		}
+		else if (csvFile == 'a'){
+			neigbourhoodTestIndex = attributeIndex;
 		}
 	}
 
