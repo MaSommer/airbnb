@@ -5,17 +5,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-<<<<<<< HEAD
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
-=======
+
 import java.util.Scanner;
 
 import javax.annotation.OverridingMethodsMustInvokeSuper;
 import javax.validation.OverridesAttribute;
->>>>>>> master
+
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
@@ -47,7 +47,7 @@ public class Program {
 //		task3();
 	}
 
-<<<<<<< HEAD
+
 	
 	public static void task2b(){
 		
@@ -116,10 +116,19 @@ public class Program {
 		
 }
 	
-	
-	
-	
-=======
+	public static void task2d(){
+	 
+		
+		//b) Calculate number of distinct values for each field
+		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
+		String[] fieldList = {"country", "minimum_nights", "maximum_nights", "monthly_price", "price"};
+		
+		for (int i = 0; i < fieldList.length; i++) {
+			String col = fieldList[0];
+			HelpMethods.fieldListings(listings_usRDD,col);
+		}
+		
+	}
 
 	public static void task3(){
 		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
@@ -245,7 +254,7 @@ public class Program {
 
 	}
 
->>>>>>> master
+
 
 
 	public static void main(String[] args) {
@@ -254,13 +263,12 @@ public class Program {
 		.setMaster("local[*]")
 		;
 		JavaSparkContext sc = new JavaSparkContext(conf);
-<<<<<<< HEAD
-		Program p=new Program(sc);
-		p.task2c();
-=======
 
-		new Program(sc);
->>>>>>> master
+		Program p=new Program(sc);
+		p.task3();
+
+
+
 	}
 
 
