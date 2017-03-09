@@ -611,127 +611,127 @@ public class HelpMethods {
 			}
 		};
 	}
-<<<<<<< HEAD
+
 
 	public static void fieldListings(JavaRDD<String> listings_usRDD, String col) {
-		
-		HashMap<String,Integer> result = new HashMap<String, Integer>();
-		
-		if (col.equals("monthly_price") || col.equals("price")) {
-			try {
-				JavaRDD<String> ret = HelpMethods.mapToColumnsString(listings_usRDD, col, 'l').distinct();				
-				int num = (int) ret.count();
-				result.put(col,num);
-				
-				JavaRDD<Integer> resultParseInt = ret.map(new Function<String, Integer>() {
-
-					public Integer call(String v1) throws Exception {
-						int numres;
-						if(v1.equals("price") || v1.equals("monthly_price")) {
-							numres = 100;
-												
-						}
-						else {
-							double num = stringToDouble(v1);
-							numres = (int) num;		
-						}
-						return numres;
-					}
-					
-				});
-				
-				int resultMax = resultParseInt.reduce(new Function2<Integer, Integer, Integer>() {
-					
-					public Integer call(Integer v1, Integer v2) throws Exception {
-						return Integer.max(v1, v2);
-					}
-				});
-				int resultMin = resultParseInt.reduce(new Function2<Integer, Integer, Integer>() {
-					
-					public Integer call(Integer v1, Integer v2) throws Exception {
-						return Integer.min(v1, v2);
-					}
-				});
-				
-				System.out.println(col + " has " + num + " distinct values");
-				System.out.println("The highest " + col + " is: " + resultMax);
-				System.out.println("The lowest " + col + " is: " + resultMin);
-		
-			}
-			catch(Exception e) {
-				
-			}
 		}
-		
-		else if (col.equals("minimum_nights") || col.equals("maximum_nights")) {
-			try {
-				JavaRDD<String> ret = HelpMethods.mapToColumnsString(listings_usRDD, col, 'l').distinct();				
-				int num = (int) ret.count();
-				result.put(col,num);
-				
-				JavaRDD<Integer> resultParseInt = ret.map(new Function<String, Integer>() {
-					
-					public Integer call(String v1) throws Exception {
-						
-						if (v1.equals("minimum_nights") || v1.equals("maximum_nights")) {
-							return 5;
-						}
-						else {
-							return Integer.parseInt(v1);
-						}
-						
-						
-					}
-					
-				});
-				
-				int resultMax = resultParseInt.reduce(new Function2<Integer, Integer, Integer>() {
-					
-					public Integer call(Integer v1, Integer v2) throws Exception {
-						return Integer.max(v1, v2);
-					}
-				});
-				int resultMin = resultParseInt.reduce(new Function2<Integer, Integer, Integer>() {
-					
-					public Integer call(Integer v1, Integer v2) throws Exception {
-						return Integer.min(v1, v2);
-					}
-				});
-				
-				System.out.println(col + " has " + num + " distinct values");
-				System.out.println("The highest " + col + " is: " + resultMax);
-				System.out.println("The lowest " + col + " is: " + resultMin);
-			}
-			catch(Exception e) {
-				
-			}
-		}
-		else  {
-			try {
-				JavaRDD<String> ret = HelpMethods.mapToColumnsString(listings_usRDD, col, 'l').distinct();				
-				int num = (int) ret.count();
-				result.put(col,num);
-				ret.foreach(new VoidFunction<String>() {
-					
-					public void call(String t) throws Exception {
-						if(!t.equals("country")) {
-							
-							System.out.println(t);
-						}
-						
-					}
-				});
-				System.out.println("There are " + num + " counrties");
-			
-			}
-			catch(Exception e) {
-				
-			}
-		}
-		
-		
-	}
-=======
+//		HashMap<String,Integer> result = new HashMap<String, Integer>();
+//		
+//		if (col.equals("monthly_price") || col.equals("price")) {
+//			try {
+//				JavaRDD<String> ret = HelpMethods.mapToColumnsString(listings_usRDD, col, 'l').distinct();				
+//				int num = (int) ret.count();
+//				result.put(col,num);
+//				
+//				JavaRDD<Integer> resultParseInt = ret.map(new Function<String, Integer>() {
+//
+//					public Integer call(String v1) throws Exception {
+//						int numres;
+//						if(v1.equals("price") || v1.equals("monthly_price")) {
+//							numres = 100;
+//												
+//						}
+//						else {
+//							double num = stringToDouble(v1);
+//							numres = (int) num;		
+//						}
+//						return numres;
+//					}
+//					
+//				});
+//				
+//				int resultMax = resultParseInt.reduce(new Function2<Integer, Integer, Integer>() {
+//					
+//					public Integer call(Integer v1, Integer v2) throws Exception {
+//						return Integer.max(v1, v2);
+//					}
+//				});
+//				int resultMin = resultParseInt.reduce(new Function2<Integer, Integer, Integer>() {
+//					
+//					public Integer call(Integer v1, Integer v2) throws Exception {
+//						return Integer.min(v1, v2);
+//					}
+//				});
+//				
+//				System.out.println(col + " has " + num + " distinct values");
+//				System.out.println("The highest " + col + " is: " + resultMax);
+//				System.out.println("The lowest " + col + " is: " + resultMin);
+//		
+//			}
+//			catch(Exception e) {
+//				
+//			}
+//		}
+//		
+//		else if (col.equals("minimum_nights") || col.equals("maximum_nights")) {
+//			try {
+//				JavaRDD<String> ret = HelpMethods.mapToColumnsString(listings_usRDD, col, 'l').distinct();				
+//				int num = (int) ret.count();
+//				result.put(col,num);
+//				
+//				JavaRDD<Integer> resultParseInt = ret.map(new Function<String, Integer>() {
+//					
+//					public Integer call(String v1) throws Exception {
+//						
+//						if (v1.equals("minimum_nights") || v1.equals("maximum_nights")) {
+//							return 5;
+//						}
+//						else {
+//							return Integer.parseInt(v1);
+//						}
+//						
+//						
+//					}
+//				});
+//			
+//				
+//				int resultMax = resultParseInt.reduce(new Function2<Integer, Integer, Integer>() {
+//					
+//					public Integer call(Integer v1, Integer v2) throws Exception {
+//						return Integer.max(v1, v2);
+//					}
+//				});
+//				
+//				int resultMin = resultParseInt.reduce(new Function2<Integer, Integer, Integer>() {
+//					
+//					public Integer call(Integer v1, Integer v2) throws Exception {
+//						return Integer.min(v1, v2);
+//					}
+//				});
+//				
+//				System.out.println(col + " has " + num + " distinct values");
+//				System.out.println("The highest " + col + " is: " + resultMax);
+//				System.out.println("The lowest " + col + " is: " + resultMin);
+//			}
+//			catch(Exception e) {
+//				
+//			}
+//		}
+//		else  {
+//			try {
+//				JavaRDD<String> ret = HelpMethods.mapToColumnsString(listings_usRDD, col, 'l').distinct();				
+//				int num = (int) ret.count();
+//				result.put(col,num);
+//				ret.foreach(new VoidFunction<String>() {
+//					
+//					public void call(String t) throws Exception {
+//						if(!t.equals("country")) {
+//							
+//							System.out.println(t);
+//						}
+//						
+//					}
+//				});
+//				System.out.println("There are " + num + " counrties");
+//			
+//			}
+//			catch(Exception e) {
+//				
+//			}
+//		}
+//			
+//	}
+//
 	
 	public static Function2<String[], Tuple2<String, String[]>, String[]> addAndCountTotalAmountSpent(){
 		
@@ -837,5 +837,4 @@ public class HelpMethods {
 		return polygons;
 	}
 	
->>>>>>> master
 }

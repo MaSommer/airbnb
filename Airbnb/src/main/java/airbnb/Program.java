@@ -44,22 +44,22 @@ public class Program {
 	private static JavaRDD<String> listings_usRDD;
 	private static JavaRDD<String> reviews_usRDD;
 	private static JavaRDD<String> calendar_usRDD;
-<<<<<<< HEAD
+
 	public static int cityIndex;
-=======
+
 	private static JavaRDD<String> neighbourHoodGeosjon;
->>>>>>> master
+
 
 	public Program(JavaSparkContext sc) throws IOException{
 		listings_usRDD = sc.textFile("target/listings_us.csv");
 		reviews_usRDD = sc.textFile("target/reviews_us.csv");
 		calendar_usRDD = sc.textFile("target/calendar_us.csv");
-<<<<<<< HEAD
+
 //		task3();
-=======
+
 		neighbourHoodGeosjon = sc.textFile("target/neighbourhoods.geojson");
 		task6();
->>>>>>> master
+
 	}
 
 
@@ -310,12 +310,9 @@ public class Program {
 
 
 
-<<<<<<< HEAD
 
-	public static void main(String[] args) {
-=======
+
 	public static void main(String[] args) throws IOException {
->>>>>>> master
 		SparkConf conf = new SparkConf()
 		.setAppName("AirbnbData")
 		.setMaster("local[*]")
@@ -324,10 +321,5 @@ public class Program {
 
 		Program p=new Program(sc);
 		p.task4();
-
-
-
 	}
-
-
 }
