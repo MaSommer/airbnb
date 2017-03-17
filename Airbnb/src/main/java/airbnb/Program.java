@@ -27,6 +27,8 @@ import org.apache.spark.api.java.function.PairFunction;
 import org.apache.spark.api.java.function.VoidFunction;
 import org.apache.spark.sql.RowFactory;
 
+import com.couchbase.client.core.event.consumers.LoggingConsumer.OutputFormat;
+
 import scala.Serializable;
 import scala.Tuple2;
 
@@ -38,13 +40,15 @@ public class Program {
 	private static JavaRDD<String> reviews_usRDD;
 	private static JavaRDD<String> calendar_usRDD;
 	private static JavaRDD<String> neighbourHoodGeosjon;
+	private static JavaRDD<String> neighbourHoodTest_usRDD;
 
 	public Program(JavaSparkContext sc) throws IOException{
 		listings_usRDD = sc.textFile("target/listings_us.csv");
 		reviews_usRDD = sc.textFile("target/reviews_us.csv");
 		calendar_usRDD = sc.textFile("target/calendar_us.csv");
 		neighbourHoodGeosjon = sc.textFile("target/neighbourhoods.geojson");
-		task6();
+		neighbourHoodTest_usRDD = sc.textFile("target/neighborhood_test.csv");
+		task4();
 	}
 
 
@@ -57,19 +61,22 @@ public class Program {
 			String[] columndNeededListingsa = {"city", "price"};
 			String[] keysa = {"city"};
 			JavaPairRDD<String, String[]> mappedListingsPair = HelpMethods.mapToPair(listings_usRDD, keysa, columndNeededListingsa, HelpMethods.attributeListingIndex);
-
+						
 			String[] initial = new String[3];
 			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombinePairAverage(), HelpMethods.combinePairAverage());
 			Print.task3a(mappedListingsPairAggregated);
+			HelpMethods.mapToPairToStringAvg(mappedListingsPairAggregated).coalesce(1).saveAsTextFile("target/task3a");
 		}
 		else if (subtask.equals("b")){
 			String[] columndNeededListingsb = {"city", "price"};
 			String[] keysb = {"city", "room_type"};
+			System.out.println(listings_usRDD.first());
 			JavaPairRDD<String, String[]> mappedListingsPair = HelpMethods.mapToPair(listings_usRDD, keysb, columndNeededListingsb, HelpMethods.attributeListingIndex);
 
 			String[] initial = new String[3];
 			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombinePairAverage(), HelpMethods.combinePairAverage());
 			Print.task3b(mappedListingsPairAggregated);
+			HelpMethods.mapToPairToStringAvg(mappedListingsPairAggregated).coalesce(1).saveAsTextFile("target/task3b");
 		}
 		else if (subtask.equals("c")){
 			String[] columndNeededListingsc = {"city", "reviews_per_month"};
@@ -79,6 +86,7 @@ public class Program {
 			String[] initial = new String[3];
 			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombinePairAverage(), HelpMethods.combinePairAverage());
 			Print.task3c(mappedListingsPairAggregated);
+			HelpMethods.mapToPairToStringAvg(mappedListingsPairAggregated).coalesce(1).saveAsTextFile("target/task3c");
 		}
 		else if (subtask.equals("d")){
 			String[] columndNeededListingsd = {"city", "reviews_per_month"};
@@ -88,6 +96,7 @@ public class Program {
 			String[] initial = new String[3];
 			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombineEstimatedNumberOfNights(), HelpMethods.combinePairEstimatedNumberOfNights());
 			Print.task3d(mappedListingsPairAggregated);
+			HelpMethods.mapToPairToString(mappedListingsPairAggregated).coalesce(1).saveAsTextFile("target/task3d");
 		}
 		else if (subtask.equals("e")){
 			String[] columndNeededListingse = {"city", "reviews_per_month", "price"};
@@ -97,6 +106,7 @@ public class Program {
 			String[] initial = new String[4];
 			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombineAmountOfMoneySpent(), HelpMethods.combinePairAmountOfMoneySpent());
 			Print.task3e(mappedListingsPairAggregated);
+			HelpMethods.mapToPairToString(mappedListingsPairAggregated).coalesce(1).saveAsTextFile("target/task3e");
 		}
 	}
 
@@ -128,15 +138,24 @@ public class Program {
 			String[] keys2 = {"listing_id"};
 			JavaPairRDD<String, String[]> calendarPairs = HelpMethods.mapToPair(calendar_usRDD, keys2, columndNeededCalendar, HelpMethods.attributeCalendarIndex);
 
-			//Using left outer join because have to make sure that all listings are included in the result
+			//Using left outer join because we have to make sure that all listings are included in the result
 			JavaPairRDD<String, String[]> joinedPair = HelpMethods.lefOuterJoin(listingPairs, calendarPairs);
 
 			JavaPairRDD<String, String[]> joinedPairReducedByKey = HelpMethods.reduceByKeyOnAvailable(joinedPair);
-
+			
+			int[] keyIndexes1 = {0, 3};
+			JavaPairRDD<String, String[]> joinedPairWithHostIdAndCityAsKey = HelpMethods.mapToPairNewKey(joinedPairReducedByKey, keyIndexes1);
+			System.out.println("here");
+			System.out.println(Arrays.toString(joinedPairWithHostIdAndCityAsKey.first()._2));
+			//The next line sums up total income and leave the tupple {city, host_id, host_name, totalIncome}
+			JavaPairRDD<String, String[]> joinedPairWithHostIdAndCityAsKeySummingIncome = HelpMethods.mapToPairNewKeyStringArray(joinedPairWithHostIdAndCityAsKey);
+			//The next line reduce by key and summing total income for each host in each city
+			JavaPairRDD<String, String[]> joinedPairWithHostIdAsKeyAndCityReduced = HelpMethods.reduceByKeySummingTotalIncome(joinedPairWithHostIdAndCityAsKeySummingIncome);
+			
 			int[] keyIndexes = {0};
-			JavaPairRDD<String, String[]> joinedPairWithCityAsKey = HelpMethods.mapToPairNewKey(joinedPairReducedByKey, keyIndexes);
-			//{city, hostid_rank1, hostname, income}
-
+			//{city, host_id, host_name, totalIncome}
+			JavaPairRDD<String, String[]> joinedPairWithCityAsKey = HelpMethods.mapToPairNewKey(joinedPairWithHostIdAsKeyAndCityReduced, keyIndexes);
+			
 			ArrayList<Host> initial = new ArrayList<Host>();
 			JavaPairRDD<String, ArrayList<Host>> joinedPairAggregated = joinedPairWithCityAsKey.aggregateByKey(initial, HelpMethods.addAndCombineTop3Hosts(), HelpMethods.combinePairTop3Hosts());
 			Print.task4c(joinedPairAggregated);
@@ -149,7 +168,6 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Which subtask do you want to run? (a or b)");
 		String subtask = sc.next();
-
 
 		if (subtask.equals("a")){
 			String[] columndNeededListings = {"city", "price", "id"};
@@ -176,8 +194,9 @@ public class Program {
 
 			ArrayList<Reviewer> initial = new ArrayList<Reviewer>();
 			JavaPairRDD<String, ArrayList<Reviewer>> joinedPairAggregatedOnCity = mappedCityAsKey.aggregateByKey(initial, HelpMethods.addAndCombineTop3Reviewers(), HelpMethods.combinePairTop3Reviewers());
-
 			Print.task5a(joinedPairAggregatedOnCity);
+			HelpMethods.mapToPairToStringFromReviewList(joinedPairAggregatedOnCity).coalesce(1).saveAsTextFile("target/task5a");
+			
 		}
 		else if (subtask.equals("b")){
 			String[] columndNeededListings = {"city", "price", "id"};
@@ -207,9 +226,62 @@ public class Program {
 
 	public static void task6() throws IOException{
 		ArrayList<PolygonConstructor> polygons = HelpMethods.createPolygons();
-
+	}
+	
+	public static void task6a() throws IOException{
+		ArrayList<PolygonConstructor> polygons = HelpMethods.createPolygons();
+		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
+		String[] columndNeededListings = {"id", "longitude", "latitude"};
+		String[] keys1 = {"id"};
+		JavaPairRDD<String, String[]> listingPairs = HelpMethods.mapToPair(listings_usRDD, keys1, columndNeededListings, HelpMethods.attributeListingIndex);
+		JavaPairRDD<String, String[]> listingPairsWithNeighborhood = HelpMethods.mapToPairAddNeighborhood(listingPairs, polygons);
+		
+		HelpMethods.mapAttributeAndIndex(neighbourHoodTest_usRDD, 'n');
+		String[] columndNeededNeigh = {"id", "neighbourhood"};
+		String[] keys2 = {"id"};
+		JavaPairRDD<String, String[]> neighPairs = HelpMethods.mapToPair(neighbourHoodTest_usRDD, keys2, columndNeededNeigh, HelpMethods.attributeNeihbourhoodIndex);
+		
+		JavaPairRDD<String, String[]> joinedPairRDD = HelpMethods.lefOuterJoin(neighPairs, listingPairsWithNeighborhood);
+		
+		//number of listings, number of neighbourhood that is equal
+		double[] initial = {0.0, 0.0};
+		double[] result = joinedPairRDD.aggregate(initial, HelpMethods.addAndCountNumberOfEqualNeighborhood(), HelpMethods.combinePairEqualNeighbourhood());
+		Print.task6a(result);
+		
+	}
+	
+	public static void task6b() throws IOException{
+		ArrayList<PolygonConstructor> polygons = HelpMethods.createPolygons();
+		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
+		String[] columndNeededListings = {"id", "amenities", "longitude", "latitude"};
+		String[] keys1 = {"id"};
+		JavaPairRDD<String, String[]> listingPairs = HelpMethods.mapToPair(listings_usRDD, keys1, columndNeededListings, HelpMethods.attributeListingIndex);
+		// {"id", "amenities", "longtitude", "latitude", "neighbourhood"}
+		JavaPairRDD<String, String[]> listingPairsMapedToNeighbourhood = HelpMethods.mapToPairAddNeighbourhood(listingPairs, polygons);
+		
+		//Makes neighbourhood new key
+		int[] keyIndexes = {4};
+		JavaPairRDD<String, String[]> listingPairsMapedToNeighbourhoodNewKey = HelpMethods.mapToPairNewKey(listingPairsMapedToNeighbourhood, keyIndexes);
+		
+		ArrayList<String> initial = new ArrayList<String>();
+		JavaPairRDD<String, ArrayList<String>> results = listingPairsMapedToNeighbourhoodNewKey.aggregateByKey(initial, HelpMethods.addAndCountDistinctAmenities(), HelpMethods.combinePairDistinctAmenities());
+		Print.task6b(results);
+		HelpMethods.mapToPairToStringArray(results).coalesce(1).saveAsTextFile("target/task6b");
 	}
 
+//	public static void task7(){
+//		final String[] columndNeededListingsa = {"city", "price"};
+//		String[] keysa = {"city"};
+//		JavaRDD<String> listings =  listings_usRDD.map(new Function<String, String>() {
+//
+//			public String call(String v1) throws Exception {
+//				String 
+//				return null;
+//			}
+//		});
+//		JavaPairRDD<String, String> mappedListingsPair = HelpMethods.mapToPair(listings_usRDD, keysa, columndNeededListingsa, HelpMethods.attributeListingIndex);
+//		JavaPairRDD<String, String> output = HelpMethods.mapToPairToString(mappedListingsPair);
+//	}
 
 
 	public static void main(String[] args) throws IOException {
