@@ -75,11 +75,10 @@ public class Program {
 		
 		for (int i = 0; i < headerList.length; i++) {
 			String col = headerList[i];
-			
 			try {
 				JavaRDD<String> ret = HelpMethods.mapToColumnsString(listings_usRDD, col, 'l').distinct();				
 				int num = (int) ret.count();
-				result.put(col,num );
+				result.put(col,num);
 			} 
 			catch(Exception e) {
 				continue;
@@ -90,7 +89,7 @@ public class Program {
 		Collections.sort(keys);
 		
 		for (String s : keys) {
-			System.out.println(s + " has: " + result.get(s) + " distinct fields");
+			System.out.println(s + " has: " + (result.get(s)-1) + " distinct fields");
 		}
 		
 	}
@@ -134,8 +133,6 @@ public class Program {
 	
 	public static void task2d(){
 	 
-		
-		//b) Calculate number of distinct values for each field
 		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
 		String[] fieldList = {"country", "minimum_nights", "maximum_nights", "monthly_price", "price"};
 		
@@ -260,13 +257,14 @@ public class Program {
 			JavaPairRDD<String, String[]> reviewerPairsWithNumberOfReviews = HelpMethods.mapToPairAddNumberOfReviewers(reviewerPairs);
 
 			JavaPairRDD<String, String[]> joinedPair = HelpMethods.lefOuterJoin(reviewerPairsWithNumberOfReviews, listingPairs);
-			//{listing_id, review_id, reviewer_name, number_of_reviewers_for_this_reviewer, city, price}
+			//{listing_id, reviewer_id, reviewer_name, number_of_reviewers_for_this_reviewer, city, price}
 
 			int[] keyIndexes = {4, 1};
 			//The following function is creating a new key for the JavaPairRDD. The new key is now "city reviewer_id".
 			JavaPairRDD<String, String[]> joinedPairWithCityAndReviewerIdAsKey = HelpMethods.mapToPairNewKey(joinedPair, keyIndexes);
 
 			JavaPairRDD<String, String[]> reducedPairOnKey = HelpMethods.reduceByKeySummingNumberOfReviews(joinedPairWithCityAndReviewerIdAsKey);
+			
 			//The next line of code change the key from cityAndReviewerId back to city
 			JavaPairRDD<String, String[]> mappedCityAsKey = reducedPairOnKey.mapToPair(new PairFunction<Tuple2<String, String[]>, String, String[]>(){
 				public Tuple2<String, String[]> call(Tuple2<String, String[]> t)throws Exception {
@@ -374,34 +372,28 @@ public class Program {
 //				
 //			}
 //		});
-		testPairRDD.foreach(new VoidFunction<Tuple2<String,String[]>>() {
+//		testPairRDD.foreach(new VoidFunction<Tuple2<String,String[]>>() {
+//			
+//			public void call(Tuple2<String, String[]> t) throws Exception {
+//				System.out.println(t._1 + " " + Arrays.toString(t._2));
+//				
+//			}
+//		});
+		
+//		System.out.println("1");
+		JavaPairRDD<String, Tuple2<String[], String[]>> resultPairRDD = neigPairRDD.join(testPairRDD);
+		System.out.println("2");
+		
+		resultPairRDD.foreach(new VoidFunction<Tuple2<String,Tuple2<String[],String[]>>>() {
 			
-			public void call(Tuple2<String, String[]> t) throws Exception {
-				System.out.println(t._1 + " " + Arrays.toString(t._2));
+			public void call(Tuple2<String, Tuple2<String[], String[]>> t) throws Exception {
+				System.out.println(t._1);
 				
 			}
 		});
-//		System.out.println("1");
-//		JavaPairRDD<String, Tuple2<String[], String[]>> resultPairRDD = neigPairRDD.join(testPairRDD);
-//		System.out.println("2");
-//		
-//		resultPairRDD.foreach(new VoidFunction<Tuple2<String,Tuple2<String[],String[]>>>() {
-//			
-//			public void call(Tuple2<String, Tuple2<String[], String[]>> t) throws Exception {
-//				System.out.println(t._1);
-//				
-//			}
-//		});
-			
 			
 		
-//		resultPairRDD.foreach(new VoidFunction<Tuple2<String,String[]>>() {
-//			
-//			public void call(Tuple2<String, String[]> t) throws Exception {
-//				System.out.println("y");
-//				
-//			}
-//		});
+		
 //		JavaRDD<String[]> finalResult = resultPairRDD.map(new Function<Tuple2<String,String[]>, String[]>() {
 //
 //			public String[] call(Tuple2<String, String[]> v1) throws Exception {
@@ -445,6 +437,6 @@ public class Program {
 		JavaSparkContext sc = new JavaSparkContext(conf);
 
 		Program p=new Program(sc);
-		p.task6a();
+		p.task5();
 	}
 }

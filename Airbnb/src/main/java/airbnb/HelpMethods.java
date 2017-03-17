@@ -37,9 +37,6 @@ public class HelpMethods {
 	public static HashMap<String, Integer> attributeReviewIndex;
 	public static HashMap<String, Integer> neigbourhoodTestIndex;
 	
-	
-	
-	
 
 	//Parsing the price to a double
 	public static Double stringToDouble(String s){
@@ -527,7 +524,7 @@ public class HelpMethods {
 			
 			public ArrayList<Reviewer> call(ArrayList<Reviewer> reviewerList, String[] v2)
 					throws Exception {
-				//{listing_id, review_id, reviewer_name, number_of_reviewers_for_this_reviewer, city, price}
+				//{listing_id, reviewer_id, reviewer_name, number_of_reviewers_for_this_reviewer, city, price}
 				double reviewer_id = stringToDouble(v2[1]);
 				String reviewer_name = v2[2];
 				double price = stringToDouble(v2[5]);
@@ -541,22 +538,32 @@ public class HelpMethods {
 		};
 	}
 	public static ArrayList<Reviewer> updateTop3Reviewers(ArrayList<Reviewer> reviewerList, Reviewer reviewer){
-		if (reviewerList.contains(reviewer)){
-			reviewerList.remove(reviewer);
-		}
-		//adds host if null in host list
-		if (reviewerList.size() < 3){
-			reviewerList.add(reviewer);
-		}
-		else{
-			for (int i = 0; i < 3; i++) {
-				if (reviewer.getNumberOfReviews() > reviewerList.get(i).getNumberOfReviews()){
-					reviewerList.set(i, reviewer);
-					reviewerList.remove(reviewerList.size()-1);
-					break;
-				}
+		
+		boolean added = false;
+		for (Reviewer rev : reviewerList) {
+			if(reviewer.getId() == rev.getId()) {
+				rev.updateParameters(reviewer);
+				added = true;
 			}
 		}
+		
+		//adds host if null in host list
+		if(added==false) {
+			if (reviewerList.size() < 3){
+				reviewerList.add(reviewer);			
+			}
+			else{
+				for (int i = 0; i < 3; i++) {
+					if (reviewer.getNumberOfReviews() > reviewerList.get(i).getNumberOfReviews()){
+						reviewerList.remove(reviewerList.size()-1);
+						reviewerList.add(reviewer);
+						break;
+					}
+				}
+			}
+		
+		}
+		
 		//sort the hosts from high to low total income
 		Collections.sort(reviewerList, new Comparator<Reviewer>() {
 			public int compare(Reviewer r1, Reviewer r2) {
