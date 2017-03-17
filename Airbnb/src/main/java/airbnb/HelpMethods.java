@@ -35,7 +35,8 @@ public class HelpMethods {
 	public static HashMap<String, Integer> attributeListingIndex;
 	public static HashMap<String, Integer> attributeCalendarIndex;
 	public static HashMap<String, Integer> attributeReviewIndex;
-
+	public static HashMap<String, Integer> neigbourhoodTestIndex;
+	
 
 	//Parsing the price to a double
 	public static Double stringToDouble(String s){
@@ -81,6 +82,9 @@ public class HelpMethods {
 		else if (csvFile == 'r'){
 			attributeReviewIndex = attributeIndex;
 		}
+		else if (csvFile == 'a'){
+			neigbourhoodTestIndex = attributeIndex;
+		}
 	}
 
 	//Returns a JavaRDD<String> with the the columns equal to the attributes specified in "columns"
@@ -97,6 +101,10 @@ public class HelpMethods {
 					else if (csvFile == 'c'){
 						index = attributeCalendarIndex.get(columns[i]);
 					}
+					else if (csvFile == 'a'){
+						index = neigbourhoodTestIndex.get(columns[i]);
+					}
+					
 					attriButesToReturn[i] = entireRow[index];
 				}
 				//				System.out.println(Arrays.toString(attriButesToReturn));
@@ -104,7 +112,7 @@ public class HelpMethods {
 			} 
 		});
 		//Removes the header of the inpuRDD
-		Function2 removeHeader= new Function2<Integer, Iterator<String[]>, Iterator<String[]>>(){
+		Function2 removeHeader = new Function2<Integer, Iterator<String[]>, Iterator<String[]>>(){
 			public Iterator<String[]> call(Integer ind, Iterator<String[]> iterator) throws Exception {
 				if(ind==0 && iterator.hasNext()){
 					iterator.next();
@@ -117,6 +125,24 @@ public class HelpMethods {
 		JavaRDD<String[]> resultAfterCuttingHead = result.mapPartitionsWithIndex(removeHeader, true);
 		return resultAfterCuttingHead;
 	}
+
+
+	//Returns a JavaRDD<String> with the the columns equal to the attributes specified in "columns"
+	public static JavaRDD<String> mapToColumnsString(JavaRDD<String> inputRDD, final String column, final char csvFile){
+		JavaRDD<String> result = inputRDD.map(new Function<String, String>() {
+			public String call(String s) {
+				String[] entireRow = s.split("\t");
+				String attriButeToReturn;
+				attriButeToReturn = entireRow[attributeListingIndex.get(column)];
+	
+				return attriButeToReturn;
+			} 
+		});
+		return result;
+	}
+
+
+
 
 	public static JavaPairRDD<String, String[]> mapToPair(JavaRDD<String> input, final String[] key, final String[] columns, final HashMap<String, Integer> attributeList){
 
@@ -198,7 +224,7 @@ public class HelpMethods {
 	//Joining pair2 into pair1. pair1.leftouterJoin(Pair2).
 	public static JavaPairRDD<String, String[]> lefOuterJoin(JavaPairRDD<String, String[]> pair1, JavaPairRDD<String, String[]> pair2){
 		JavaPairRDD<String, Tuple2<String[], Optional<String[]>>> joinedPair = pair1.leftOuterJoin(pair2);
-
+		
 		JavaPairRDD<String, String[]> joinedAndReducedPair = joinedPair
 				.mapToPair(new PairFunction<Tuple2<String, Tuple2<String[], Optional<String[]>>>, String, String[]>() {
 					public Tuple2<String, String[]> call(
@@ -432,6 +458,7 @@ public class HelpMethods {
 		});
 		return hostList;
 	}
+
 	
 	public static Function2<ArrayList<Host>, ArrayList<Host>, ArrayList<Host>> combinePairTop3Hosts(){
 		return new Function2<ArrayList<Host>, ArrayList<Host>, ArrayList<Host>>(){
@@ -450,6 +477,7 @@ public class HelpMethods {
 			}
 		};
 	}
+
 	
 	public static JavaPairRDD<String, String[]> mapToPairAddNumberOfReviewers(JavaPairRDD<String, String[]> input){
 		return input.mapToPair(new PairFunction<Tuple2<String, String[]>, String, String[]>(){
@@ -496,7 +524,7 @@ public class HelpMethods {
 			
 			public ArrayList<Reviewer> call(ArrayList<Reviewer> reviewerList, String[] v2)
 					throws Exception {
-				//{listing_id, review_id, reviewer_name, number_of_reviewers_for_this_reviewer, city, price}
+				//{listing_id, reviewer_id, reviewer_name, number_of_reviewers_for_this_reviewer, city, price}
 				double reviewer_id = stringToDouble(v2[1]);
 				String reviewer_name = v2[2];
 				double price = stringToDouble(v2[5]);
@@ -510,22 +538,32 @@ public class HelpMethods {
 		};
 	}
 	public static ArrayList<Reviewer> updateTop3Reviewers(ArrayList<Reviewer> reviewerList, Reviewer reviewer){
-		if (reviewerList.contains(reviewer)){
-			reviewerList.remove(reviewer);
-		}
-		//adds host if null in host list
-		if (reviewerList.size() < 3){
-			reviewerList.add(reviewer);
-		}
-		else{
-			for (int i = 0; i < 3; i++) {
-				if (reviewer.getNumberOfReviews() > reviewerList.get(i).getNumberOfReviews()){
-					reviewerList.set(i, reviewer);
-					reviewerList.remove(reviewerList.size()-1);
-					break;
-				}
+		
+		boolean added = false;
+		for (Reviewer rev : reviewerList) {
+			if(reviewer.getId() == rev.getId()) {
+				rev.updateParameters(reviewer);
+				added = true;
 			}
 		}
+		
+		//adds host if null in host list
+		if(added==false) {
+			if (reviewerList.size() < 3){
+				reviewerList.add(reviewer);			
+			}
+			else{
+				for (int i = 0; i < 3; i++) {
+					if (reviewer.getNumberOfReviews() > reviewerList.get(i).getNumberOfReviews()){
+						reviewerList.remove(reviewerList.size()-1);
+						reviewerList.add(reviewer);
+						break;
+					}
+				}
+			}
+		
+		}
+		
 		//sort the hosts from high to low total income
 		Collections.sort(reviewerList, new Comparator<Reviewer>() {
 			public int compare(Reviewer r1, Reviewer r2) {
@@ -580,6 +618,7 @@ public class HelpMethods {
 	public static Function2<double[], double[], double[]> combinePairAverageNumberOfListings(){
 		return new Function2<double[], double[], double[]>(){
 
+
 			public double[] call(double[] v1, double[] v2) throws Exception {
 				v1[0] += v2[0];
 				v1[1] += v2[1];
@@ -588,6 +627,127 @@ public class HelpMethods {
 			}
 		};
 	}
+
+
+	public static void fieldListings(JavaRDD<String> listings_usRDD, String col) {
+		}
+//		HashMap<String,Integer> result = new HashMap<String, Integer>();
+//		
+//		if (col.equals("monthly_price") || col.equals("price")) {
+//			try {
+//				JavaRDD<String> ret = HelpMethods.mapToColumnsString(listings_usRDD, col, 'l').distinct();				
+//				int num = (int) ret.count();
+//				result.put(col,num);
+//				
+//				JavaRDD<Integer> resultParseInt = ret.map(new Function<String, Integer>() {
+//
+//					public Integer call(String v1) throws Exception {
+//						int numres;
+//						if(v1.equals("price") || v1.equals("monthly_price")) {
+//							numres = 100;
+//												
+//						}
+//						else {
+//							double num = stringToDouble(v1);
+//							numres = (int) num;		
+//						}
+//						return numres;
+//					}
+//					
+//				});
+//				
+//				int resultMax = resultParseInt.reduce(new Function2<Integer, Integer, Integer>() {
+//					
+//					public Integer call(Integer v1, Integer v2) throws Exception {
+//						return Integer.max(v1, v2);
+//					}
+//				});
+//				int resultMin = resultParseInt.reduce(new Function2<Integer, Integer, Integer>() {
+//					
+//					public Integer call(Integer v1, Integer v2) throws Exception {
+//						return Integer.min(v1, v2);
+//					}
+//				});
+//				
+//				System.out.println(col + " has " + num + " distinct values");
+//				System.out.println("The highest " + col + " is: " + resultMax);
+//				System.out.println("The lowest " + col + " is: " + resultMin);
+//		
+//			}
+//			catch(Exception e) {
+//				
+//			}
+//		}
+//		
+//		else if (col.equals("minimum_nights") || col.equals("maximum_nights")) {
+//			try {
+//				JavaRDD<String> ret = HelpMethods.mapToColumnsString(listings_usRDD, col, 'l').distinct();				
+//				int num = (int) ret.count();
+//				result.put(col,num);
+//				
+//				JavaRDD<Integer> resultParseInt = ret.map(new Function<String, Integer>() {
+//					
+//					public Integer call(String v1) throws Exception {
+//						
+//						if (v1.equals("minimum_nights") || v1.equals("maximum_nights")) {
+//							return 5;
+//						}
+//						else {
+//							return Integer.parseInt(v1);
+//						}
+//						
+//						
+//					}
+//				});
+//			
+//				
+//				int resultMax = resultParseInt.reduce(new Function2<Integer, Integer, Integer>() {
+//					
+//					public Integer call(Integer v1, Integer v2) throws Exception {
+//						return Integer.max(v1, v2);
+//					}
+//				});
+//				
+//				int resultMin = resultParseInt.reduce(new Function2<Integer, Integer, Integer>() {
+//					
+//					public Integer call(Integer v1, Integer v2) throws Exception {
+//						return Integer.min(v1, v2);
+//					}
+//				});
+//				
+//				System.out.println(col + " has " + num + " distinct values");
+//				System.out.println("The highest " + col + " is: " + resultMax);
+//				System.out.println("The lowest " + col + " is: " + resultMin);
+//			}
+//			catch(Exception e) {
+//				
+//			}
+//		}
+//		else  {
+//			try {
+//				JavaRDD<String> ret = HelpMethods.mapToColumnsString(listings_usRDD, col, 'l').distinct();				
+//				int num = (int) ret.count();
+//				result.put(col,num);
+//				ret.foreach(new VoidFunction<String>() {
+//					
+//					public void call(String t) throws Exception {
+//						if(!t.equals("country")) {
+//							
+//							System.out.println(t);
+//						}
+//						
+//					}
+//				});
+//				System.out.println("There are " + num + " counrties");
+//			
+//			}
+//			catch(Exception e) {
+//				
+//			}
+//		}
+//			
+//	}
+//
 	
 	public static Function2<String[], Tuple2<String, String[]>, String[]> addAndCountTotalAmountSpent(){
 		
