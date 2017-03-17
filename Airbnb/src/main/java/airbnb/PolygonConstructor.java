@@ -8,14 +8,19 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.geom.Path2D;
 import java.awt.geom.Point2D;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+<<<<<<< HEAD
 import scala.Serializable;
 
 public class PolygonConstructor implements Serializable{
+=======
+public class PolygonConstructor implements Serializable {
+>>>>>>> master
 	
 	private Path2D path;
 	

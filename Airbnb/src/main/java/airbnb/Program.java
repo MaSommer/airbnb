@@ -8,7 +8,14 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
 import java.util.Scanner;
 
 import javax.annotation.OverridingMethodsMustInvokeSuper;
@@ -16,6 +23,7 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.validation.OverridesAttribute;
 
+import org.apache.avro.file.SyncableFileOutputStream;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
@@ -39,18 +47,126 @@ public class Program {
 	private static JavaRDD<String> listings_usRDD;
 	private static JavaRDD<String> reviews_usRDD;
 	private static JavaRDD<String> calendar_usRDD;
+	private static JavaRDD<String> neighborhood_test;
+
+
+	public static int cityIndex;
+
 	private static JavaRDD<String> neighbourHoodGeosjon;
 	private static JavaRDD<String> neighbourHoodTest_usRDD;
+
 
 	public Program(JavaSparkContext sc) throws IOException{
 		listings_usRDD = sc.textFile("target/listings_us.csv");
 		reviews_usRDD = sc.textFile("target/reviews_us.csv");
 		calendar_usRDD = sc.textFile("target/calendar_us.csv");
+		neighborhood_test = sc.textFile("target/neighborhood_test.csv");
 		neighbourHoodGeosjon = sc.textFile("target/neighbourhoods.geojson");
 		neighbourHoodTest_usRDD = sc.textFile("target/neighborhood_test.csv");
-		task4();
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Which assignment do you want to run? (2, 3, 4, 5, 6 or 7)");
+		if (scanner.next().equals("2")){
+			System.out.println("Whick task do you want to run? (b, c, or d");
+			if (scanner.next().equals("b")){
+				task2b();
+			}
+			else if (scanner.next().equals("c")){
+				task2c();
+			}
+			else{
+				task2d();
+			}
+		}
+		else if (scanner.next().equals("3")){
+			task3();
+		}
+		else if (scanner.next().equals("4")){
+			task4();
+		}
+		else if (scanner.next().equals("5")){
+			task5();
+		}
+		else if (scanner.next().equals("6")){
+			task6();
+		}
+		else{
+//			task7();	
+		}
 	}
 
+
+
+	public static void task2b(){
+
+		HashMap<String,Integer> result = new HashMap<String, Integer>(); 
+
+		//b) Calculate number of distinct values for each field
+		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
+		String[] headerList = listings_usRDD.first().split("\t");
+
+		for (int i = 0; i < headerList.length; i++) {
+			String col = headerList[i];
+			try {
+				JavaRDD<String> ret = HelpMethods.mapToColumnsString(listings_usRDD, col, 'l').distinct();				
+				int num = (int) ret.count();
+				result.put(col,num);
+			} 
+			catch(Exception e) {
+				continue;
+			}
+		}
+
+		List<String> keys = new ArrayList(result.keySet());
+		Collections.sort(keys);
+
+		for (String s : keys) {
+			System.out.println(s + " has: " + (result.get(s)-1) + " distinct fields");
+		}
+
+	}
+
+	//c) Listings from how many and which cities are contained in the dataset
+	public static void task2c(){
+		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
+		String[] headerList = listings_usRDD.first().split("\t");
+
+		for (int i = 0; i < headerList.length; i++) {
+			if (headerList[i].equals("city")) {
+				cityIndex = i;
+			}
+		}
+
+		try {
+			JavaRDD<String> ret = HelpMethods.mapToColumnsString(listings_usRDD, headerList[cityIndex], 'l').distinct();				
+			int num = (int) ret.count();
+			ret.foreach(new VoidFunction<String>() {
+
+				public void call(String t) throws Exception {
+					if(t.equals("city")) {
+
+					}
+					else {
+						System.out.println(t);						
+					}
+				}
+			});
+			System.out.println(num-1);
+		} 
+		catch(Exception e) {
+			System.out.println("Unable to run");
+		}
+
+	}
+
+	public static void task2d(){
+		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
+		String[] fieldList = {"country", "minimum_nights", "maximum_nights", "monthly_price", "price"};
+
+		for (int i = 0; i < fieldList.length; i++) {
+			String col = fieldList[0];
+			HelpMethods.fieldListings(listings_usRDD,col);
+		}
+	}
 
 	public static void task3(){
 		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
@@ -61,7 +177,7 @@ public class Program {
 			String[] columndNeededListingsa = {"city", "price"};
 			String[] keysa = {"city"};
 			JavaPairRDD<String, String[]> mappedListingsPair = HelpMethods.mapToPair(listings_usRDD, keysa, columndNeededListingsa, HelpMethods.attributeListingIndex);
-						
+
 			String[] initial = new String[3];
 			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombinePairAverage(), HelpMethods.combinePairAverage());
 			Print.task3a(mappedListingsPairAggregated);
@@ -142,7 +258,7 @@ public class Program {
 			JavaPairRDD<String, String[]> joinedPair = HelpMethods.lefOuterJoin(listingPairs, calendarPairs);
 
 			JavaPairRDD<String, String[]> joinedPairReducedByKey = HelpMethods.reduceByKeyOnAvailable(joinedPair);
-			
+
 			int[] keyIndexes1 = {0, 3};
 			JavaPairRDD<String, String[]> joinedPairWithHostIdAndCityAsKey = HelpMethods.mapToPairNewKey(joinedPairReducedByKey, keyIndexes1);
 			System.out.println("here");
@@ -151,11 +267,11 @@ public class Program {
 			JavaPairRDD<String, String[]> joinedPairWithHostIdAndCityAsKeySummingIncome = HelpMethods.mapToPairNewKeyStringArray(joinedPairWithHostIdAndCityAsKey);
 			//The next line reduce by key and summing total income for each host in each city
 			JavaPairRDD<String, String[]> joinedPairWithHostIdAsKeyAndCityReduced = HelpMethods.reduceByKeySummingTotalIncome(joinedPairWithHostIdAndCityAsKeySummingIncome);
-			
+
 			int[] keyIndexes = {0};
 			//{city, host_id, host_name, totalIncome}
 			JavaPairRDD<String, String[]> joinedPairWithCityAsKey = HelpMethods.mapToPairNewKey(joinedPairWithHostIdAsKeyAndCityReduced, keyIndexes);
-			
+
 			ArrayList<Host> initial = new ArrayList<Host>();
 			JavaPairRDD<String, ArrayList<Host>> joinedPairAggregated = joinedPairWithCityAsKey.aggregateByKey(initial, HelpMethods.addAndCombineTop3Hosts(), HelpMethods.combinePairTop3Hosts());
 			Print.task4c(joinedPairAggregated);
@@ -180,13 +296,14 @@ public class Program {
 			JavaPairRDD<String, String[]> reviewerPairsWithNumberOfReviews = HelpMethods.mapToPairAddNumberOfReviewers(reviewerPairs);
 
 			JavaPairRDD<String, String[]> joinedPair = HelpMethods.lefOuterJoin(reviewerPairsWithNumberOfReviews, listingPairs);
-			//{listing_id, review_id, reviewer_name, number_of_reviewers_for_this_reviewer, city, price}
+			//{listing_id, reviewer_id, reviewer_name, number_of_reviewers_for_this_reviewer, city, price}
 
 			int[] keyIndexes = {4, 1};
 			//The following function is creating a new key for the JavaPairRDD. The new key is now "city reviewer_id".
 			JavaPairRDD<String, String[]> joinedPairWithCityAndReviewerIdAsKey = HelpMethods.mapToPairNewKey(joinedPair, keyIndexes);
 
 			JavaPairRDD<String, String[]> reducedPairOnKey = HelpMethods.reduceByKeySummingNumberOfReviews(joinedPairWithCityAndReviewerIdAsKey);
+
 			//The next line of code change the key from cityAndReviewerId back to city
 			JavaPairRDD<String, String[]> mappedCityAsKey = reducedPairOnKey.mapToPair(new PairFunction<Tuple2<String, String[]>, String, String[]>(){
 				public Tuple2<String, String[]> call(Tuple2<String, String[]> t)throws Exception {
@@ -196,7 +313,7 @@ public class Program {
 			JavaPairRDD<String, ArrayList<Reviewer>> joinedPairAggregatedOnCity = mappedCityAsKey.aggregateByKey(initial, HelpMethods.addAndCombineTop3Reviewers(), HelpMethods.combinePairTop3Reviewers());
 			Print.task5a(joinedPairAggregatedOnCity);
 			HelpMethods.mapToPairToStringFromReviewList(joinedPairAggregatedOnCity).coalesce(1).saveAsTextFile("target/task5a");
-			
+
 		}
 		else if (subtask.equals("b")){
 			String[] columndNeededListings = {"city", "price", "id"};
@@ -227,7 +344,7 @@ public class Program {
 	public static void task6() throws IOException{
 		ArrayList<PolygonConstructor> polygons = HelpMethods.createPolygons();
 	}
-	
+
 	public static void task6a() throws IOException{
 		ArrayList<PolygonConstructor> polygons = HelpMethods.createPolygons();
 		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
@@ -235,21 +352,21 @@ public class Program {
 		String[] keys1 = {"id"};
 		JavaPairRDD<String, String[]> listingPairs = HelpMethods.mapToPair(listings_usRDD, keys1, columndNeededListings, HelpMethods.attributeListingIndex);
 		JavaPairRDD<String, String[]> listingPairsWithNeighborhood = HelpMethods.mapToPairAddNeighborhood(listingPairs, polygons);
-		
+
 		HelpMethods.mapAttributeAndIndex(neighbourHoodTest_usRDD, 'n');
 		String[] columndNeededNeigh = {"id", "neighbourhood"};
 		String[] keys2 = {"id"};
 		JavaPairRDD<String, String[]> neighPairs = HelpMethods.mapToPair(neighbourHoodTest_usRDD, keys2, columndNeededNeigh, HelpMethods.attributeNeihbourhoodIndex);
-		
+
 		JavaPairRDD<String, String[]> joinedPairRDD = HelpMethods.lefOuterJoin(neighPairs, listingPairsWithNeighborhood);
-		
+
 		//number of listings, number of neighbourhood that is equal
 		double[] initial = {0.0, 0.0};
 		double[] result = joinedPairRDD.aggregate(initial, HelpMethods.addAndCountNumberOfEqualNeighborhood(), HelpMethods.combinePairEqualNeighbourhood());
 		Print.task6a(result);
-		
+
 	}
-	
+
 	public static void task6b() throws IOException{
 		ArrayList<PolygonConstructor> polygons = HelpMethods.createPolygons();
 		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
@@ -258,30 +375,16 @@ public class Program {
 		JavaPairRDD<String, String[]> listingPairs = HelpMethods.mapToPair(listings_usRDD, keys1, columndNeededListings, HelpMethods.attributeListingIndex);
 		// {"id", "amenities", "longtitude", "latitude", "neighbourhood"}
 		JavaPairRDD<String, String[]> listingPairsMapedToNeighbourhood = HelpMethods.mapToPairAddNeighbourhood(listingPairs, polygons);
-		
+
 		//Makes neighbourhood new key
 		int[] keyIndexes = {4};
 		JavaPairRDD<String, String[]> listingPairsMapedToNeighbourhoodNewKey = HelpMethods.mapToPairNewKey(listingPairsMapedToNeighbourhood, keyIndexes);
-		
+
 		ArrayList<String> initial = new ArrayList<String>();
 		JavaPairRDD<String, ArrayList<String>> results = listingPairsMapedToNeighbourhoodNewKey.aggregateByKey(initial, HelpMethods.addAndCountDistinctAmenities(), HelpMethods.combinePairDistinctAmenities());
 		Print.task6b(results);
 		HelpMethods.mapToPairToStringArray(results).coalesce(1).saveAsTextFile("target/task6b");
 	}
-
-//	public static void task7(){
-//		final String[] columndNeededListingsa = {"city", "price"};
-//		String[] keysa = {"city"};
-//		JavaRDD<String> listings =  listings_usRDD.map(new Function<String, String>() {
-//
-//			public String call(String v1) throws Exception {
-//				String 
-//				return null;
-//			}
-//		});
-//		JavaPairRDD<String, String> mappedListingsPair = HelpMethods.mapToPair(listings_usRDD, keysa, columndNeededListingsa, HelpMethods.attributeListingIndex);
-//		JavaPairRDD<String, String> output = HelpMethods.mapToPairToString(mappedListingsPair);
-//	}
 
 
 	public static void main(String[] args) throws IOException {
@@ -291,8 +394,7 @@ public class Program {
 		;
 		JavaSparkContext sc = new JavaSparkContext(conf);
 
-		new Program(sc);
+		Program p=new Program(sc);
+		p.task5();
 	}
-
-
 }

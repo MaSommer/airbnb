@@ -1,0 +1,4532 @@
+id	neighbourhood	city
+3335	Dunlap	Seattle
+4291	Roosevelt	Seattle
+5682	South Delridge	Seattle
+6606	Wallingford	Seattle
+7369	Broadway	Seattle
+9419	Georgetown	Seattle
+9460	First Hill	Seattle
+9531	The Junction	Seattle
+9534	The Junction	Seattle
+9596	Wallingford	Seattle
+9909	The Junction	Seattle
+10385	Maple Leaf	Seattle
+10695	Maple Leaf	Seattle
+11012	Wallingford	Seattle
+11161	Leschi	Seattle
+11163	Leschi	Seattle
+11411	Maple Leaf	Seattle
+13068	Capitol Hill	Seattle
+14386	Green Lake	Seattle
+15108	Green Lake	Seattle
+17951	The Junction	Seattle
+19611	Belltown	Seattle
+19619	Belltown	Seattle
+19623	Belltown	Seattle
+20868	Maple Leaf	Seattle
+20927	Ballard	Seattle
+20928	Ballard	Seattle
+23192	Capitol Hill	Seattle
+23356	Holly Park	Seattle
+23430	Belltown	Seattle
+23919	Windermere	Seattle
+24212	Belltown	Seattle
+25002	Ballard	Seattle
+26116	Capitol Hill	Seattle
+30712	Ballard	Seattle
+37234	Ballard	Seattle
+38545	Wallingford	Seattle
+41401	North Beacon Hill	Seattle
+43373	Wallingford	Seattle
+46008	The Junction	Seattle
+46022	The Junction	Seattle
+47196	Stevens	Seattle
+47491	Wedgewood	Seattle
+48319		Seattle
+48848	Windermere	Seattle
+50233	Genesee	Seattle
+51826	Fremont	Seattle
+52525	Wedgewood	Seattle
+53803	Fremont	Seattle
+53867	Ravenna	Seattle
+58503	Greenwood	Seattle
+59708	Belltown	Seattle
+59827	Belltown	Seattle
+59838	Belltown	Seattle
+63308	Montlake	Seattle
+63733	Ballard	Seattle
+66540	Wedgewood	Seattle
+66611	Wedgewood	Seattle
+67270	Columbia City	Seattle
+68508	Capitol Hill	Seattle
+69662	Queen Anne	Seattle
+72743	Highland Park	Seattle
+74328	Leschi	Seattle
+80188	Crown Hill	Seattle
+80543	Riverview	Seattle
+81085	University District	Seattle
+82763	Capitol Hill	Seattle
+84030	Green Lake	Seattle
+86185	North Admiral	Seattle
+92835	Central Business District	Seattle
+103466	Phinney Ridge	Seattle
+103908	Green Lake	Seattle
+103920	Green Lake	Seattle
+107046	Ravenna	Seattle
+107962	Haller Lake	Seattle
+108468	Queen Anne	Seattle
+108765	North Beacon Hill	Seattle
+113951	Atlantic	Seattle
+116221	Fremont	Seattle
+117165	Alki	Seattle
+117862	South Lake Union	Seattle
+119103	Fremont	Seattle
+132120	Wallingford	Seattle
+132160	Green Lake	Seattle
+134091	Capitol Hill	Seattle
+136480	Seward Park	Seattle
+137644	Leschi	Seattle
+138666	Leschi	Seattle
+139463	Capitol Hill	Seattle
+140331	Harrison/Denny-Blaine	Seattle
+143580	North Beacon Hill	Seattle
+143704	Minor	Seattle
+146301	Seaview	Seattle
+149489	Mathews Beach	Seattle
+153967	The Junction	Seattle
+157939	The Junction	Seattle
+158345	Ballard	Seattle
+158953	The Junction	Seattle
+160222	Queen Anne	Seattle
+170273	Lower Queen Anne	Seattle
+170469	Ballard	Seattle
+173896	Ballard	Seattle
+174636	Rainier Beach	Seattle
+175576	Queen Anne	Seattle
+176678	Magnolia	Seattle
+178844	Greenwood	Seattle
+180939	Minor	Seattle
+182716	Wallingford	Seattle
+186328	Queen Anne	Seattle
+189156	Seaview	Seattle
+190984	Columbia City	Seattle
+192628	University District	Seattle
+193371	Minor	Seattle
+193836	Gatewood	Seattle
+194313	Stevens	Seattle
+201429	Queen Anne	Seattle
+201634	Eastlake	Seattle
+202174	International District	Seattle
+202251	Phinney Ridge	Seattle
+202260	Bryant	Seattle
+206781	Belltown	Seattle
+208356	International District	Seattle
+208670	Capitol Hill	Seattle
+210316	Crown Hill	Seattle
+215882	Columbia City	Seattle
+215954	Fremont	Seattle
+217142	Belltown	Seattle
+218741	Ballard	Seattle
+219532	Fremont	Seattle
+222885	Phinney Ridge	Seattle
+224763	Belltown	Seattle
+225820	Phinney Ridge	Seattle
+226495	Ballard	Seattle
+226536	Magnolia	Seattle
+226677		Seattle
+227636	Ballard	Seattle
+231097	Mathews Beach	Seattle
+233502	North Admiral	Seattle
+234898	Wallingford	Seattle
+240920	Wallingford	Seattle
+241016	Queen Anne	Seattle
+241032	Queen Anne	Seattle
+244499	Eastlake	Seattle
+251922	North Admiral	Seattle
+254340	Phinney Ridge	Seattle
+255073	Stevens	Seattle
+257140	Belltown	Seattle
+258571	Capitol Hill	Seattle
+260613	Ballard	Seattle
+261912	Green Lake	Seattle
+262764	Fremont	Seattle
+264829	North Beacon Hill	Seattle
+265901	North Beacon Hill	Seattle
+270370	North Beach/Blue Ridge	Seattle
+271509	Belltown	Seattle
+277416	Belltown	Seattle
+278192	North Beacon Hill	Seattle
+278830	Queen Anne	Seattle
+279063	Capitol Hill	Seattle
+281208	Atlantic	Seattle
+281789	Capitol Hill	Seattle
+282934	Fremont	Seattle
+284087	First Hill	Seattle
+284480	North Delridge	Seattle
+284813	Belltown	Seattle
+286080	Belltown	Seattle
+286712	Atlantic	Seattle
+293890	University District	Seattle
+299817	Stevens	Seattle
+301059	Belltown	Seattle
+314180	Wallingford	Seattle
+315120	Haller Lake	Seattle
+317248	Capitol Hill	Seattle
+319768	Atlantic	Seattle
+320704	Phinney Ridge	Seattle
+334579	Olympic Hills	Seattle
+338043	Capitol Hill	Seattle
+338091	Capitol Hill	Seattle
+340706	Wallingford	Seattle
+340734	Magnolia	Seattle
+341454	Minor	Seattle
+353039	First Hill	Seattle
+353110	North Admiral	Seattle
+353347	Arbor Heights	Seattle
+354453	Greenwood	Seattle
+356566	Wallingford	Seattle
+356608	First Hill	Seattle
+356817	Magnolia	Seattle
+363064	Lower Queen Anne	Seattle
+365550	International District	Seattle
+366301	North Beacon Hill	Seattle
+368403	Green Lake	Seattle
+370361	Greenwood	Seattle
+380950	Fremont	Seattle
+381263		Seattle
+384797	Capitol Hill	Seattle
+385438	Broadway	Seattle
+387078	Capitol Hill	Seattle
+387079	Capitol Hill	Seattle
+387464	Ravenna	Seattle
+392140	North Beacon Hill	Seattle
+392779	North Beacon Hill	Seattle
+394408	Fremont	Seattle
+397117	Central Business District	Seattle
+408526	Ballard	Seattle
+413733	Madrona	Seattle
+421168		Seattle
+423945	Queen Anne	Seattle
+426089	North Admiral	Seattle
+429453	Wallingford	Seattle
+430453	Capitol Hill	Seattle
+430609	Fremont	Seattle
+430610	Wallingford	Seattle
+442487	Stevens	Seattle
+443580	Minor	Seattle
+443736	Minor	Seattle
+443942	Belltown	Seattle
+444221	Minor	Seattle
+445199	North Delridge	Seattle
+446276	Capitol Hill	Seattle
+447488	Capitol Hill	Seattle
+447523	Wedgewood	Seattle
+449602	Central Business District	Seattle
+451012	Broadview	Seattle
+456040	Wallingford	Seattle
+458055	Fauntleroy	Seattle
+458183	Capitol Hill	Seattle
+458186	Capitol Hill	Seattle
+458189	Capitol Hill	Seattle
+458191	Capitol Hill	Seattle
+458193	Capitol Hill	Seattle
+458197	Capitol Hill	Seattle
+459560	Ballard	Seattle
+461234	Ballard	Seattle
+461567	Crown Hill	Seattle
+463768	Ballard	Seattle
+475361	Cedar Park	Seattle
+479653	North Beacon Hill	Seattle
+481220	Lower Queen Anne	Seattle
+486344	North Delridge	Seattle
+486829	Bryant	Seattle
+488268	Ballard	Seattle
+490076	Fremont	Seattle
+490110	Pike Place Market	Seattle
+491958	Columbia City	Seattle
+492287	Magnolia	Seattle
+493591	Crown Hill	Seattle
+496074	Phinney Ridge	Seattle
+499301	Ravenna	Seattle
+506542	Wallingford	Seattle
+513344	Phinney Ridge	Seattle
+522287	Wallingford	Seattle
+523883	Greenwood	Seattle
+529090	Belltown	Seattle
+533443	Riverview	Seattle
+535300	Eastlake	Seattle
+544433	Lower Queen Anne	Seattle
+552523	Wallingford	Seattle
+555182	Wedgewood	Seattle
+555838	Minor	Seattle
+555858	Minor	Seattle
+557126	Capitol Hill	Seattle
+564220	Mount Baker	Seattle
+564428	Mount Baker	Seattle
+565703	Minor	Seattle
+566435	Crown Hill	Seattle
+568525	North Admiral	Seattle
+571640	North Beacon Hill	Seattle
+571651	North Beacon Hill	Seattle
+573942		Seattle
+580182	Green Lake	Seattle
+580815	First Hill	Seattle
+585418	University District	Seattle
+585465	Capitol Hill	Seattle
+587584	Greenwood	Seattle
+598023	Genesee	Seattle
+604600	Central Business District	Seattle
+606297	North Beacon Hill	Seattle
+607788	Central Business District	Seattle
+609252	Greenwood	Seattle
+609421	Greenwood	Seattle
+609610	Columbia City	Seattle
+609701	Fremont	Seattle
+610989	Queen Anne	Seattle
+611500	North Beacon Hill	Seattle
+611509	Wallingford	Seattle
+613020	Fauntleroy	Seattle
+613151	North Beacon Hill	Seattle
+614347	South Beacon Hill	Seattle
+619366	Eastlake	Seattle
+620518	Bryant	Seattle
+631445	Belltown	Seattle
+635878	University District	Seattle
+637156	Pioneer Square	Seattle
+637326	Maple Leaf	Seattle
+637710	Fremont	Seattle
+639130	Madrona	Seattle
+645061	Minor	Seattle
+649243	Fremont	Seattle
+654734	First Hill	Seattle
+656909	Bryant	Seattle
+656997	Bryant	Seattle
+660603	Minor	Seattle
+666897	Minor	Seattle
+668095	Queen Anne	Seattle
+668169	Wallingford	Seattle
+670009	Minor	Seattle
+670021	Olympic Hills	Seattle
+670056	Olympic Hills	Seattle
+670262	Greenwood	Seattle
+671828	Greenwood	Seattle
+674113	Mount Baker	Seattle
+677266	Georgetown	Seattle
+682135	Eastlake	Seattle
+685600	Magnolia	Seattle
+686649	Capitol Hill	Seattle
+687626	The Junction	Seattle
+689309	Broadview	Seattle
+692080	Fairmount Park	Seattle
+692671	Fremont	Seattle
+693956		Seattle
+695699	Capitol Hill	Seattle
+696004	Highland Park	Seattle
+699460	Ballard	Seattle
+699596	Capitol Hill	Seattle
+703058	Wallingford	Seattle
+704477	North College Park	Seattle
+704764	Queen Anne	Seattle
+706385	Eastlake	Seattle
+707424	Stevens	Seattle
+708774	Eastlake	Seattle
+710370	Madison Park	Seattle
+714043	Greenwood	Seattle
+716829	Greenwood	Seattle
+719233	Capitol Hill	Seattle
+722537	Stevens	Seattle
+722602	Minor	Seattle
+723723	Harrison/Denny-Blaine	Seattle
+723846	Maple Leaf	Seattle
+726582	Capitol Hill	Seattle
+729753	Leschi	Seattle
+738005	Ballard	Seattle
+741699	Columbia City	Seattle
+745099	Broadway	Seattle
+746380	North Admiral	Seattle
+747388	Ravenna	Seattle
+748526	Phinney Ridge	Seattle
+749758	Greenwood	Seattle
+752483	Broadway	Seattle
+755613	Mount Baker	Seattle
+757840	Queen Anne	Seattle
+762029	Queen Anne	Seattle
+765698	Seaview	Seattle
+769213	Minor	Seattle
+774659	Mount Baker	Seattle
+775445	Capitol Hill	Seattle
+776643	Capitol Hill	Seattle
+777159	Mount Baker	Seattle
+781474	Queen Anne	Seattle
+783061	Green Lake	Seattle
+785830	Leschi	Seattle
+788146	Columbia City	Seattle
+789229	Pioneer Square	Seattle
+789966	Minor	Seattle
+790860	Green Lake	Seattle
+791274	Minor	Seattle
+793629	North Beacon Hill	Seattle
+794604	Ballard	Seattle
+794633	Harrison/Denny-Blaine	Seattle
+796594	Capitol Hill	Seattle
+797358	Mount Baker	Seattle
+799882	Green Lake	Seattle
+803902	Alki	Seattle
+808134	Belltown	Seattle
+808811	Wallingford	Seattle
+815017	North Beacon Hill	Seattle
+817115	Maple Leaf	Seattle
+823989	Bitter Lake	Seattle
+825574	Stevens	Seattle
+826436	Mount Baker	Seattle
+828298	First Hill	Seattle
+830948	Westlake	Seattle
+835149	Capitol Hill	Seattle
+838764	Alki	Seattle
+841049	Capitol Hill	Seattle
+841140	Capitol Hill	Seattle
+841274	Mount Baker	Seattle
+843812	Ballard	Seattle
+844939	Belltown	Seattle
+850286	Capitol Hill	Seattle
+856550	Queen Anne	Seattle
+858248	Atlantic	Seattle
+859467	Seaview	Seattle
+864850	Fremont	Seattle
+872152	Capitol Hill	Seattle
+873073	Wallingford	Seattle
+873728	Bryant	Seattle
+877203	Atlantic	Seattle
+879113	Bryant	Seattle
+879181	Atlantic	Seattle
+882274	Capitol Hill	Seattle
+888967	Ballard	Seattle
+890677	Broadway	Seattle
+902243	Belltown	Seattle
+902609	Highland Park	Seattle
+904057	Ballard	Seattle
+909102	Lower Queen Anne	Seattle
+910784	Minor	Seattle
+911001	Minor	Seattle
+921571	Victory Heights	Seattle
+922986	Central Business District	Seattle
+931154	Belltown	Seattle
+931758	Belltown	Seattle
+931785	Central Business District	Seattle
+934123	Central Business District	Seattle
+934216	Central Business District	Seattle
+934235	Eastlake	Seattle
+935432	Central Business District	Seattle
+935671	Central Business District	Seattle
+935845	Fremont	Seattle
+935862	Central Business District	Seattle
+936158	South Lake Union	Seattle
+936177	Central Business District	Seattle
+936378	Central Business District	Seattle
+936484	Pike Place Market	Seattle
+937370	Belltown	Seattle
+938785		Seattle
+941467	Capitol Hill	Seattle
+942490	Greenwood	Seattle
+944237	Pike Market	Seattle
+945645	Pike Market	Seattle
+945833	Lower Queen Anne	Seattle
+948077	Capitol Hill	Seattle
+953595	Queen Anne	Seattle
+955506	Green Lake	Seattle
+958475	North Beacon Hill	Seattle
+973859	Minor	Seattle
+975179	Ballard	Seattle
+977722	University District	Seattle
+988176	Belltown	Seattle
+991961	Pike Place Market	Seattle
+995443	Columbia City	Seattle
+1000883	North Admiral	Seattle
+1001139	Maple Leaf	Seattle
+1002835	Capitol Hill	Seattle
+1003890	South Delridge	Seattle
+1009838	Mount Baker	Seattle
+1012003	Montlake	Seattle
+1018204	Minor	Seattle
+1022135	Haller Lake	Seattle
+1023693	Ballard	Seattle
+1027860	Queen Anne	Seattle
+1029680	Madrona	Seattle
+1030411	Wallingford	Seattle
+1030546		Seattle
+1030615	Capitol Hill	Seattle
+1030781		Seattle
+1034345	Ballard	Seattle
+1034741	SoDo	Seattle
+1039766	Capitol Hill	Seattle
+1042022	Madison Park	Seattle
+1043194	First Hill	Seattle
+1048798	Fauntleroy	Seattle
+1049039	Capitol Hill	Seattle
+1049293	Stevens	Seattle
+1055661	Belltown	Seattle
+1055838	North Beacon Hill	Seattle
+1060467	Lower Queen Anne	Seattle
+1063855	Minor	Seattle
+1067357	North Delridge	Seattle
+1069300	Mount Baker	Seattle
+1069562	Fremont	Seattle
+1071843	Lower Queen Anne	Seattle
+1080097	Pioneer Square	Seattle
+1084046	Belltown	Seattle
+1084084	Belltown	Seattle
+1084117	Central Business District	Seattle
+1090307	Green Lake	Seattle
+1090449	Capitol Hill	Seattle
+1092793	Yesler Terrace	Seattle
+1095207	Green Lake	Seattle
+1097026	Columbia City	Seattle
+1097520	Mount Baker	Seattle
+1097766		Seattle
+1100686	Fremont	Seattle
+1100714	Capitol Hill	Seattle
+1107845	Capitol Hill	Seattle
+1110749	Queen Anne	Seattle
+1112092	Queen Anne	Seattle
+1114695	Wallingford	Seattle
+1115621	Wallingford	Seattle
+1118153	Fremont	Seattle
+1122236	Capitol Hill	Seattle
+1123977	University District	Seattle
+1125116	Bryant	Seattle
+1125133	University District	Seattle
+1130659	Roosevelt	Seattle
+1133329	Phinney Ridge	Seattle
+1136522	Ravenna	Seattle
+1136984	First Hill	Seattle
+1141226	First Hill	Seattle
+1142039	Victory Heights	Seattle
+1144370	Phinney Ridge	Seattle
+1145148	North Delridge	Seattle
+1145590	Westlake	Seattle
+1145941	Roosevelt	Seattle
+1146966	Fremont	Seattle
+1147349	Harrison/Denny-Blaine	Seattle
+1148517	Ballard	Seattle
+1150519	Roosevelt	Seattle
+1157083	First Hill	Seattle
+1159111	First Hill	Seattle
+1159226	First Hill	Seattle
+1163345	Central Business District	Seattle
+1164438	South Lake Union	Seattle
+1167507	Queen Anne	Seattle
+1171574	Madrona	Seattle
+1175308	Ballard	Seattle
+1179538	Ballard	Seattle
+1184846	Wallingford	Seattle
+1186271	Minor	Seattle
+1187735	Meadowbrook	Seattle
+1190224	Mathews Beach	Seattle
+1190571	Mathews Beach	Seattle
+1198799	Ballard	Seattle
+1198884	First Hill	Seattle
+1200083	Central Business District	Seattle
+1200231	Central Business District	Seattle
+1200829	Belltown	Seattle
+1204142	Capitol Hill	Seattle
+1205666	Gatewood	Seattle
+1209255	Queen Anne	Seattle
+1209447	Mount Baker	Seattle
+1214306	Minor	Seattle
+1214316	Wallingford	Seattle
+1219691	Haller Lake	Seattle
+1220471	Capitol Hill	Seattle
+1220816	Greenwood	Seattle
+1223644	Columbia City	Seattle
+1225820	North Admiral	Seattle
+1225822	Queen Anne	Seattle
+1233473	Ballard	Seattle
+1236470	Lower Queen Anne	Seattle
+1236583	Lower Queen Anne	Seattle
+1236994	Lower Queen Anne	Seattle
+1239834	Wedgewood	Seattle
+1244053	Minor	Seattle
+1246117	Seaview	Seattle
+1246769	First Hill	Seattle
+1246809	Atlantic	Seattle
+1248437	Laurelhurst	Seattle
+1249060	Minor	Seattle
+1251707	Central Business District	Seattle
+1251763	Central Business District	Seattle
+1251813	Central Business District	Seattle
+1252147	The Junction	Seattle
+1252642	Capitol Hill	Seattle
+1252740	Wallingford	Seattle
+1255787	Phinney Ridge	Seattle
+1256883	Minor	Seattle
+1256892	Phinney Ridge	Seattle
+1259305	Gatewood	Seattle
+1260259	Magnolia	Seattle
+1263470	Dunlap	Seattle
+1264287	Wallingford	Seattle
+1265651	University District	Seattle
+1266459	Ballard	Seattle
+1273432	Minor	Seattle
+1277033	Seward Park	Seattle
+1279660	Fremont	Seattle
+1289082	Ballard	Seattle
+1301535	Ballard	Seattle
+1301812	Capitol Hill	Seattle
+1305009	North Beacon Hill	Seattle
+1307898	Stevens	Seattle
+1313833		Seattle
+1317919	North Beacon Hill	Seattle
+1320606	Phinney Ridge	Seattle
+1320997		Seattle
+1321090	Lower Queen Anne	Seattle
+1323446	Queen Anne	Seattle
+1323510	Capitol Hill	Seattle
+1323634	North Beacon Hill	Seattle
+1328159	North Delridge	Seattle
+1340668	Bitter Lake	Seattle
+1343805	Green Lake	Seattle
+1348777	Capitol Hill	Seattle
+1349175	Capitol Hill	Seattle
+1351716	Atlantic	Seattle
+1354750	Capitol Hill	Seattle
+1355094	Capitol Hill	Seattle
+1356339	Capitol Hill	Seattle
+1360238	Ballard	Seattle
+1360824	Belltown	Seattle
+1364440	Ballard	Seattle
+1365882	University District	Seattle
+1377812	Leschi	Seattle
+1386306	Bryant	Seattle
+1388585	Roosevelt	Seattle
+1388743	Fremont	Seattle
+1392332	Queen Anne	Seattle
+1404307	Atlantic	Seattle
+1407502	Ballard	Seattle
+1416279	Capitol Hill	Seattle
+1416763	Seward Park	Seattle
+1417880	University District	Seattle
+1422036	Queen Anne	Seattle
+1427103	Wallingford	Seattle
+1428687	Wallingford	Seattle
+1429904	Laurelhurst	Seattle
+1432713	Stevens	Seattle
+1433440	Columbia City	Seattle
+1434224	Minor	Seattle
+1438468	Capitol Hill	Seattle
+1439237	Madrona	Seattle
+1441678	Capitol Hill	Seattle
+1442904	Magnolia	Seattle
+1442973	Leschi	Seattle
+1450262		Seattle
+1455269	Columbia City	Seattle
+1455908	Leschi	Seattle
+1456848	Queen Anne	Seattle
+1457330	Columbia City	Seattle
+1461971	Victory Heights	Seattle
+1467337	Capitol Hill	Seattle
+1472532	Belltown	Seattle
+1476298	Belltown	Seattle
+1479944	Queen Anne	Seattle
+1483944	Green Lake	Seattle
+1484595	University District	Seattle
+1484651	Industrial District	Seattle
+1488166	Ballard	Seattle
+1493197	Belltown	Seattle
+1494828	Eastlake	Seattle
+1494986	Queen Anne	Seattle
+1495271	Queen Anne	Seattle
+1499538	Queen Anne	Seattle
+1499596	Minor	Seattle
+1508607	Minor	Seattle
+1510996	Queen Anne	Seattle
+1511620	Capitol Hill	Seattle
+1513847	Fremont	Seattle
+1516213		Seattle
+1520449	Capitol Hill	Seattle
+1520501	Capitol Hill	Seattle
+1520533	Capitol Hill	Seattle
+1520549	Capitol Hill	Seattle
+1520581	Capitol Hill	Seattle
+1520593	Capitol Hill	Seattle
+1521633	University District	Seattle
+1525972	Capitol Hill	Seattle
+1531458	University District	Seattle
+1534622	Ravenna	Seattle
+1537246	Capitol Hill	Seattle
+1538865	North Admiral	Seattle
+1539463	Madrona	Seattle
+1539476	Capitol Hill	Seattle
+1541705	Ravenna	Seattle
+1545801	Capitol Hill	Seattle
+1546668	Capitol Hill	Seattle
+1547337	Stevens	Seattle
+1549973	University District	Seattle
+1551325	Minor	Seattle
+1556170	North Beacon Hill	Seattle
+1557314	Broadview	Seattle
+1561256	Licton Springs	Seattle
+1562643	Capitol Hill	Seattle
+1566487	Minor	Seattle
+1571230	University District	Seattle
+1574120	The Junction	Seattle
+1579615	Ballard	Seattle
+1583047	First Hill	Seattle
+1589461	University District	Seattle
+1589681	Ballard	Seattle
+1589732	University District	Seattle
+1589931	University District	Seattle
+1593429	Capitol Hill	Seattle
+1593939	Fremont	Seattle
+1593991	Crown Hill	Seattle
+1594219	Bitter Lake	Seattle
+1594313	Bitter Lake	Seattle
+1594328	Wallingford	Seattle
+1594412	Gatewood	Seattle
+1599856	Columbia City	Seattle
+1601475	South Lake Union	Seattle
+1601714	Belltown	Seattle
+1602421	Green Lake	Seattle
+1602488	Queen Anne	Seattle
+1603124	University District	Seattle
+1606171	Seward Park	Seattle
+1606320	University District	Seattle
+1609922	Ballard	Seattle
+1614502	Minor	Seattle
+1618842	Ballard	Seattle
+1622794	Lower Queen Anne	Seattle
+1623894	Ballard	Seattle
+1628210	Phinney Ridge	Seattle
+1633025	Stevens	Seattle
+1633986	Capitol Hill	Seattle
+1647216	University District	Seattle
+1651324	Central Business District	Seattle
+1652097	Eastlake	Seattle
+1652107	South Beacon Hill	Seattle
+1660771	Minor	Seattle
+1672979	Dunlap	Seattle
+1684236	First Hill	Seattle
+1686930	Queen Anne	Seattle
+1686958	Capitol Hill	Seattle
+1688601	Capitol Hill	Seattle
+1692318	Haller Lake	Seattle
+1692342	Broadview	Seattle
+1695306	Minor	Seattle
+1696015	Magnolia	Seattle
+1696194	Magnolia	Seattle
+1696648	Capitol Hill	Seattle
+1702092	Fremont	Seattle
+1707064	Belltown	Seattle
+1709737	Yesler Terrace	Seattle
+1714753		Seattle
+1715582	Wallingford	Seattle
+1716901	Capitol Hill	Seattle
+1722573	Westlake	Seattle
+1724849	Central Business District	Seattle
+1732280	Belltown	Seattle
+1732441	North Delridge	Seattle
+1733747	North Beacon Hill	Seattle
+1737244	Bryant	Seattle
+1738425	North Beacon Hill	Seattle
+1742425	Bryant	Seattle
+1743306	Eastlake	Seattle
+1746616	North Beacon Hill	Seattle
+1747184	Wallingford	Seattle
+1750010	Ravenna	Seattle
+1750681	Mount Baker	Seattle
+1758935	Mount Baker	Seattle
+1761870	First Hill	Seattle
+1762354	Capitol Hill	Seattle
+1763809	Minor	Seattle
+1764233	Ravenna	Seattle
+1768883	Capitol Hill	Seattle
+1772119	Minor	Seattle
+1773803	University District	Seattle
+1775016	Capitol Hill	Seattle
+1777158	Ballard	Seattle
+1778989	International District	Seattle
+1781723	Fremont	Seattle
+1781873	Ballard	Seattle
+1782140	Capitol Hill	Seattle
+1783382	Queen Anne	Seattle
+1785541	University District	Seattle
+1786923	University District	Seattle
+1789341	Ballard	Seattle
+1790020	Capitol Hill	Seattle
+1793138	Ballard	Seattle
+1796217	Queen Anne	Seattle
+1796302	Fremont	Seattle
+1796861	Green Lake	Seattle
+1797207	Belltown	Seattle
+1799255	Queen Anne	Seattle
+1802067	Capitol Hill	Seattle
+1802663	Wallingford	Seattle
+1806899	North Beacon Hill	Seattle
+1810477	Maple Leaf	Seattle
+1815304	First Hill	Seattle
+1815472	International District	Seattle
+1815677	Stevens	Seattle
+1817811	Fremont	Seattle
+1817878	Minor	Seattle
+1818754	Atlantic	Seattle
+1818768	Stevens	Seattle
+1820794	Queen Anne	Seattle
+1826155	Minor	Seattle
+1827586	Seward Park	Seattle
+1828232	Capitol Hill	Seattle
+1831338	Magnolia	Seattle
+1833250	Belltown	Seattle
+1840671	Magnolia	Seattle
+1844791	Fremont	Seattle
+1851837	South Delridge	Seattle
+1851863	Greenwood	Seattle
+1856253	Ballard	Seattle
+1856851		Seattle
+1856970	Atlantic	Seattle
+1857141	Belltown	Seattle
+1872885		Seattle
+1880734	Stevens	Seattle
+1882316	Green Lake	Seattle
+1885801	Dunlap	Seattle
+1892640	Atlantic	Seattle
+1897000	Capitol Hill	Seattle
+1898511		Seattle
+1898774	Atlantic	Seattle
+1898806	Atlantic	Seattle
+1900698	Columbia City	Seattle
+1901706	First Hill	Seattle
+1905473	Minor	Seattle
+1909058	Queen Anne	Seattle
+1910368	Queen Anne	Seattle
+1914051	Queen Anne	Seattle
+1920477	Broadview	Seattle
+1922061	Wallingford	Seattle
+1922122	Wallingford	Seattle
+1925661	North Beacon Hill	Seattle
+1928010	Capitol Hill	Seattle
+1935439	Greenwood	Seattle
+1940787	Wallingford	Seattle
+1944596	Eastlake	Seattle
+1950012	Georgetown	Seattle
+1950446	Capitol Hill	Seattle
+1950480	Queen Anne	Seattle
+1954452	Central Business District	Seattle
+1955300	Columbia City	Seattle
+1956094	Ballard	Seattle
+1956274	Ballard	Seattle
+1956553	Minor	Seattle
+1961671	Leschi	Seattle
+1961950	Capitol Hill	Seattle
+1970725	Minor	Seattle
+1974131	Capitol Hill	Seattle
+1974575	Capitol Hill	Seattle
+1976382	Capitol Hill	Seattle
+1978743	Minor	Seattle
+1980280	Capitol Hill	Seattle
+1980283	High Point	Seattle
+1980395	North Delridge	Seattle
+1983713	Leschi	Seattle
+1984692	Greenwood	Seattle
+1984962	Minor	Seattle
+2004931	Capitol Hill	Seattle
+2011193	Wallingford	Seattle
+2016613	Columbia City	Seattle
+2020505	Queen Anne	Seattle
+2026794	Wallingford	Seattle
+2027236	Rainier Beach	Seattle
+2032805	Minor	Seattle
+2033191	Green Lake	Seattle
+2037250	Greenwood	Seattle
+2039149	Ballard	Seattle
+2047197	Lower Queen Anne	Seattle
+2051658	Pike Place Market	Seattle
+2056276	Ravenna	Seattle
+2060441	Ballard	Seattle
+2061463	Fremont	Seattle
+2062857	Roxhill	Seattle
+2068301	Belltown	Seattle
+2069917	North Beacon Hill	Seattle
+2071305	Maple Leaf	Seattle
+2075094	Fremont	Seattle
+2084386	Ravenna	Seattle
+2103939	Madison Park	Seattle
+2110357	Belltown	Seattle
+2112625	Leschi	Seattle
+2117568	Minor	Seattle
+2118253		Seattle
+2119866	Belltown	Seattle
+2130652	Minor	Seattle
+2134911	Interbay	Seattle
+2140253	Alki	Seattle
+2146185	Belltown	Seattle
+2149219	First Hill	Seattle
+2150760	Columbia City	Seattle
+2154617	Belltown	Seattle
+2158992	Ballard	Seattle
+2160065	Queen Anne	Seattle
+2166740	High Point	Seattle
+2183890	Roosevelt	Seattle
+2186330	Belltown	Seattle
+2187563	Wallingford	Seattle
+2187615	Pike Place Market	Seattle
+2187906	Greenwood	Seattle
+2191159	Central Business District	Seattle
+2191161	Central Business District	Seattle
+2191169	Central Business District	Seattle
+2191633	Central Business District	Seattle
+2194715		Seattle
+2197168	North Beacon Hill	Seattle
+2197982	Maple Leaf	Seattle
+2203359		Seattle
+2203983	Columbia City	Seattle
+2208757	Magnolia	Seattle
+2211594	Minor	Seattle
+2215336	Green Lake	Seattle
+2217257	Capitol Hill	Seattle
+2238105	Ballard	Seattle
+2249292	Leschi	Seattle
+2256124	University District	Seattle
+2260626	Olympic Hills	Seattle
+2263643	Magnolia	Seattle
+2267088	Queen Anne	Seattle
+2268329	Stevens	Seattle
+2274086	Minor	Seattle
+2277640	Ballard	Seattle
+2284536	Ballard	Seattle
+2285262	First Hill	Seattle
+2290772	Central Business District	Seattle
+2290987		Seattle
+2291123	Central Business District	Seattle
+2297917	Broadview	Seattle
+2298775	Victory Heights	Seattle
+2299257	Capitol Hill	Seattle
+2303981	Crown Hill	Seattle
+2305367	Fremont	Seattle
+2309250	Bryant	Seattle
+2332949	Portage Bay	Seattle
+2336600	Capitol Hill	Seattle
+2339333		Seattle
+2350464	Montlake	Seattle
+2352218	Meadowbrook	Seattle
+2357110	Capitol Hill	Seattle
+2358140	University District	Seattle
+2361523	The Junction	Seattle
+2361967	First Hill	Seattle
+2362694	Lower Queen Anne	Seattle
+2367298	Stevens	Seattle
+2372524	Belltown	Seattle
+2373176	Queen Anne	Seattle
+2385623	Montlake	Seattle
+2386589	Capitol Hill	Seattle
+2387265	South Lake Union	Seattle
+2387605	Atlantic	Seattle
+2391455	Greenwood	Seattle
+2391699	Fremont	Seattle
+2392869	Pike Place Market	Seattle
+2396734		Seattle
+2399736	Minor	Seattle
+2406966	Ballard	Seattle
+2412633	Bryant	Seattle
+2413338		Seattle
+2418658	Capitol Hill	Seattle
+2419879	Queen Anne	Seattle
+2420536	Ravenna	Seattle
+2426152	Licton Springs	Seattle
+2441908	Ballard	Seattle
+2454814	Capitol Hill	Seattle
+2459519	Portage Bay	Seattle
+2467550	Ballard	Seattle
+2471659	Columbia City	Seattle
+2471731	Phinney Ridge	Seattle
+2472850	Queen Anne	Seattle
+2474569	Broadview	Seattle
+2481189	Queen Anne	Seattle
+2481869	Queen Anne	Seattle
+2484067	Madrona	Seattle
+2486612	North Beacon Hill	Seattle
+2487892	Ballard	Seattle
+2488228	Capitol Hill	Seattle
+2489283	Belltown	Seattle
+2489339	Belltown	Seattle
+2492143		Seattle
+2493658	Queen Anne	Seattle
+2494157	Fremont	Seattle
+2500188	Stevens	Seattle
+2503021	Holly Park	Seattle
+2508065	Highland Park	Seattle
+2515795	Leschi	Seattle
+2516391	Eastlake	Seattle
+2520890	Mount Baker	Seattle
+2522091	North Admiral	Seattle
+2525172	Fremont	Seattle
+2526129	Minor	Seattle
+2526405	Stevens	Seattle
+2532879	Capitol Hill	Seattle
+2536507	North Admiral	Seattle
+2539881	Ballard	Seattle
+2547825		Seattle
+2556794	Riverview	Seattle
+2557712	Phinney Ridge	Seattle
+2577625	Minor	Seattle
+2578855	Greenwood	Seattle
+2584354	Madrona	Seattle
+2586350	Brighton	Seattle
+2586642	Interbay	Seattle
+2593176	Minor	Seattle
+2593263	Minor	Seattle
+2605975		Seattle
+2610187	Bryant	Seattle
+2612025	North Beacon Hill	Seattle
+2612399	Madrona	Seattle
+2614294	Capitol Hill	Seattle
+2614387	Fremont	Seattle
+2620429	First Hill	Seattle
+2621746	Central Business District	Seattle
+2628010	Capitol Hill	Seattle
+2630912	Bitter Lake	Seattle
+2638086	North Admiral	Seattle
+2642359	View Ridge	Seattle
+2642739	Bryant	Seattle
+2650482	Ballard	Seattle
+2652941	The Junction	Seattle
+2660384	Belltown	Seattle
+2670365	Stevens	Seattle
+2686004	North Admiral	Seattle
+2686374	Ballard	Seattle
+2686624	Licton Springs	Seattle
+2686659	Mount Baker	Seattle
+2687172	Capitol Hill	Seattle
+2688555	Capitol Hill	Seattle
+2691273	Belltown	Seattle
+2692126	Queen Anne	Seattle
+2693137	Eastlake	Seattle
+2693700	Fremont	Seattle
+2695493	Columbia City	Seattle
+2710274	Wallingford	Seattle
+2715623	Queen Anne	Seattle
+2720963	Magnolia	Seattle
+2721575	Columbia City	Seattle
+2723368	Phinney Ridge	Seattle
+2727808	Fremont	Seattle
+2727938	Capitol Hill	Seattle
+2727984	Harrison/Denny-Blaine	Seattle
+2729077	Ravenna	Seattle
+2730208	Rainier Beach	Seattle
+2731253	Fremont	Seattle
+2736961	Columbia City	Seattle
+2737012	Highland Park	Seattle
+2737038	North Beach/Blue Ridge	Seattle
+2739168		Seattle
+2746782	Queen Anne	Seattle
+2749725	Pike Place Market	Seattle
+2755730	Fremont	Seattle
+2756162	Capitol Hill	Seattle
+2760312	Fremont	Seattle
+2760901	Minor	Seattle
+2761092	The Junction	Seattle
+2762241	Phinney Ridge	Seattle
+2763078	Columbia City	Seattle
+2764126	Stevens	Seattle
+2764473	Capitol Hill	Seattle
+2769088	Ballard	Seattle
+2771290	Capitol Hill	Seattle
+2772152	Madison Park	Seattle
+2776890		Seattle
+2778101	Stevens	Seattle
+2800448	Minor	Seattle
+2802844	Minor	Seattle
+2803605	Queen Anne	Seattle
+2804399	Roosevelt	Seattle
+2808357		Seattle
+2809796	North Delridge	Seattle
+2818292	Genesee	Seattle
+2818420		Seattle
+2822984	Bryant	Seattle
+2825852	First Hill	Seattle
+2830174	Atlantic	Seattle
+2830564	Capitol Hill	Seattle
+2832055	Queen Anne	Seattle
+2836237	Capitol Hill	Seattle
+2836869	Lower Queen Anne	Seattle
+2847177	University District	Seattle
+2856806	Columbia City	Seattle
+2858482	Phinney Ridge	Seattle
+2865992	Gatewood	Seattle
+2868006	Phinney Ridge	Seattle
+2875975	Capitol Hill	Seattle
+2881446	Belltown	Seattle
+2882641	Stevens	Seattle
+2897897	Licton Springs	Seattle
+2898401	Capitol Hill	Seattle
+2898954	Mount Baker	Seattle
+2905375	Belltown	Seattle
+2906694	North Admiral	Seattle
+2909478	Capitol Hill	Seattle
+2909809	Capitol Hill	Seattle
+2919571	Industrial District	Seattle
+2923529	Queen Anne	Seattle
+2926393	North Beacon Hill	Seattle
+2926776	Yesler Terrace	Seattle
+2931922	University District	Seattle
+2933877	First Hill	Seattle
+2934119	Ballard	Seattle
+2934389	Roosevelt	Seattle
+2935486	Belltown	Seattle
+2943811	Queen Anne	Seattle
+2943860	First Hill	Seattle
+2944021	First Hill	Seattle
+2950213	Ballard	Seattle
+2955782	Central Business District	Seattle
+2958318	Magnolia	Seattle
+2966415	Minor	Seattle
+2969955	Phinney Ridge	Seattle
+2970666	Capitol Hill	Seattle
+2976798	Wallingford	Seattle
+2978929	First Hill	Seattle
+2979387	University District	Seattle
+2980762	Columbia City	Seattle
+2986056	Wallingford	Seattle
+2986305	Ballard	Seattle
+2986317	Capitol Hill	Seattle
+2989758	Fremont	Seattle
+2994309	Wallingford	Seattle
+2995996	Minor	Seattle
+2996701	Belltown	Seattle
+3003255	Capitol Hill	Seattle
+3004007	Mathews Beach	Seattle
+3005854		Seattle
+3008140	Capitol Hill	Seattle
+3022308	University District	Seattle
+3022564	Columbia City	Seattle
+3024336	Minor	Seattle
+3025456	High Point	Seattle
+3030205	Queen Anne	Seattle
+3031209	Lower Queen Anne	Seattle
+3031415	Ballard	Seattle
+3033190	Queen Anne	Seattle
+3033913		Seattle
+3038772	Ballard	Seattle
+3039438	Lower Queen Anne	Seattle
+3040278	Lower Queen Anne	Seattle
+3041619	Capitol Hill	Seattle
+3043151	Rainier Beach	Seattle
+3049224	Laurelhurst	Seattle
+3050140	Wallingford	Seattle
+3052151	Ballard	Seattle
+3053237	Ballard	Seattle
+3061653	Lower Queen Anne	Seattle
+3061918	North Admiral	Seattle
+3066740		Seattle
+3067057	Lower Queen Anne	Seattle
+3068827	Capitol Hill	Seattle
+3074725	Belltown	Seattle
+3076065	Ballard	Seattle
+3085726	University District	Seattle
+3096191	University District	Seattle
+3105259	Lower Queen Anne	Seattle
+3115801	North Delridge	Seattle
+3120652	Columbia City	Seattle
+3121829	Ballard	Seattle
+3123041	Magnolia	Seattle
+3123632	Minor	Seattle
+3124383	Maple Leaf	Seattle
+3124961	North Admiral	Seattle
+3126153	Ravenna	Seattle
+3133408	Capitol Hill	Seattle
+3138278	Laurelhurst	Seattle
+3139847	Belltown	Seattle
+3139972	North Beacon Hill	Seattle
+3143175	Fremont	Seattle
+3143227	Minor	Seattle
+3144311		Seattle
+3144597	Minor	Seattle
+3146212	Ravenna	Seattle
+3147706	Columbia City	Seattle
+3147867	Leschi	Seattle
+3154950	SoDo	Seattle
+3155785	Ballard	Seattle
+3157738	Ballard	Seattle
+3158210	Eastlake	Seattle
+3158243	University District	Seattle
+3168651		Seattle
+3177005	Minor	Seattle
+3182884	Columbia City	Seattle
+3185225	Belltown	Seattle
+3186785	Rainier Beach	Seattle
+3193738	Wallingford	Seattle
+3200646	Queen Anne	Seattle
+3202181	Magnolia	Seattle
+3206305	Riverview	Seattle
+3208330	Greenwood	Seattle
+3208667	Olympic Hills	Seattle
+3209633	Phinney Ridge	Seattle
+3209964		Seattle
+3215404	Lower Queen Anne	Seattle
+3226793	Belltown	Seattle
+3231850	Wallingford	Seattle
+3237501	Magnolia	Seattle
+3238295	Phinney Ridge	Seattle
+3242247	Mathews Beach	Seattle
+3242605	Seaview	Seattle
+3245876	Queen Anne	Seattle
+3246706	North Beacon Hill	Seattle
+3250577	Ballard	Seattle
+3251016	Alki	Seattle
+3251069	Minor	Seattle
+3254956	Wallingford	Seattle
+3258213	Columbia City	Seattle
+3258386	Fremont	Seattle
+3258585		Seattle
+3258640	Minor	Seattle
+3263071	University District	Seattle
+3263722	Broadview	Seattle
+3265292	Alki	Seattle
+3269390	Queen Anne	Seattle
+3270492	First Hill	Seattle
+3272374	Capitol Hill	Seattle
+3273014	University District	Seattle
+3273240	Pioneer Square	Seattle
+3279728	South Delridge	Seattle
+3281072	Genesee	Seattle
+3282000	Central Business District	Seattle
+3282760	Greenwood	Seattle
+3291295	University District	Seattle
+3291777	University District	Seattle
+3293438	Minor	Seattle
+3294243	Ballard	Seattle
+3294804	Wallingford	Seattle
+3303376	Georgetown	Seattle
+3303857	University District	Seattle
+3303978	Ballard	Seattle
+3308825	North Admiral	Seattle
+3308979	Queen Anne	Seattle
+3312406	Fremont	Seattle
+3316219	Eastlake	Seattle
+3317940	Bryant	Seattle
+3317944		Seattle
+3319386	Harrison/Denny-Blaine	Seattle
+3329962	University District	Seattle
+3331575	Phinney Ridge	Seattle
+3333819	University District	Seattle
+3333942	Belltown	Seattle
+3333971	Pioneer Square	Seattle
+3334052	Minor	Seattle
+3340727	Roxhill	Seattle
+3344390	Stevens	Seattle
+3344977	Ballard	Seattle
+3345341	Belltown	Seattle
+3351817	Pike Place Market	Seattle
+3352685	Montlake	Seattle
+3353721	Columbia City	Seattle
+3354244	Columbia City	Seattle
+3354614	Leschi	Seattle
+3354761	Magnolia	Seattle
+3361327	Green Lake	Seattle
+3367488	Magnolia	Seattle
+3372502		Seattle
+3372535	Seward Park	Seattle
+3379116	Portage Bay	Seattle
+3380159	Pike Place Market	Seattle
+3382533	Magnolia	Seattle
+3383329	Fremont	Seattle
+3383567	Eastlake	Seattle
+3384995	North Delridge	Seattle
+3385421	Pike Place Market	Seattle
+3386862	Capitol Hill	Seattle
+3391736	Queen Anne	Seattle
+3391831	Yesler Terrace	Seattle
+3394338	Minor	Seattle
+3394837	First Hill	Seattle
+3394936	First Hill	Seattle
+3396140	Capitol Hill	Seattle
+3401644	Queen Anne	Seattle
+3402376	Genesee	Seattle
+3403638	Wallingford	Seattle
+3403858	North Admiral	Seattle
+3404557	Wallingford	Seattle
+3404700	Riverview	Seattle
+3404914	Capitol Hill	Seattle
+3411548	Green Lake	Seattle
+3412630	Capitol Hill	Seattle
+3413183	Magnolia	Seattle
+3416217	Minor	Seattle
+3416590	Stevens	Seattle
+3418230	Capitol Hill	Seattle
+3418349	Queen Anne	Seattle
+3422894	University District	Seattle
+3424114	Wallingford	Seattle
+3424242	Wallingford	Seattle
+3424991	Capitol Hill	Seattle
+3426639	Capitol Hill	Seattle
+3434459	Ravenna	Seattle
+3441402	Victory Heights	Seattle
+3441487	Yesler Terrace	Seattle
+3446274	Stevens	Seattle
+3449059	Pioneer Square	Seattle
+3456599	Wallingford	Seattle
+3463245	Madrona	Seattle
+3465357	Minor	Seattle
+3468261	Westlake	Seattle
+3469590	Minor	Seattle
+3479039	Capitol Hill	Seattle
+3479241	Queen Anne	Seattle
+3479851	Portage Bay	Seattle
+3487824	International District	Seattle
+3488436	Seward Park	Seattle
+3489083	Central Business District	Seattle
+3489150	Fremont	Seattle
+3489837	Fremont	Seattle
+3490239	Minor	Seattle
+3490649	Capitol Hill	Seattle
+3493752	Fremont	Seattle
+3494608	University District	Seattle
+3497530	Central Business District	Seattle
+3498114	Capitol Hill	Seattle
+3504521	Capitol Hill	Seattle
+3505739	Alki	Seattle
+3505829	Wallingford	Seattle
+3510818	Ballard	Seattle
+3518808	Wallingford	Seattle
+3522409		Seattle
+3523653	Pioneer Square	Seattle
+3528627	Magnolia	Seattle
+3529563	Laurelhurst	Seattle
+3531616	Riverview	Seattle
+3533112	Minor	Seattle
+3533224	Minor	Seattle
+3533325	Phinney Ridge	Seattle
+3534187	Capitol Hill	Seattle
+3534364	Belltown	Seattle
+3534428	Holly Park	Seattle
+3534444	Fremont	Seattle
+3535171	Greenwood	Seattle
+3542076	North Beach/Blue Ridge	Seattle
+3542107	Minor	Seattle
+3543084	Belltown	Seattle
+3543247		Seattle
+3543791	Capitol Hill	Seattle
+3544550	Queen Anne	Seattle
+3544953	Queen Anne	Seattle
+3544964	Holly Park	Seattle
+3550964	Lower Queen Anne	Seattle
+3551526	Madrona	Seattle
+3551668	Capitol Hill	Seattle
+3552006	Capitol Hill	Seattle
+3552523	International District	Seattle
+3554558	Fremont	Seattle
+3554676	Seward Park	Seattle
+3555721		Seattle
+3559396	Broadview	Seattle
+3559961	Queen Anne	Seattle
+3560373	Queen Anne	Seattle
+3561108	Roosevelt	Seattle
+3561237	Magnolia	Seattle
+3562617	Lower Queen Anne	Seattle
+3563218	Victory Heights	Seattle
+3570061	Magnolia	Seattle
+3570691	Capitol Hill	Seattle
+3571159	Magnolia	Seattle
+3582883	North Beacon Hill	Seattle
+3584790	Ballard	Seattle
+3585592	Capitol Hill	Seattle
+3592838	Central Business District	Seattle
+3593582	North Beacon Hill	Seattle
+3594885	Capitol Hill	Seattle
+3594959	Fremont	Seattle
+3601923	Green Lake	Seattle
+3604904	Bryant	Seattle
+3604931	Fauntleroy	Seattle
+3606047	Belltown	Seattle
+3610724	University District	Seattle
+3612774	Interbay	Seattle
+3613516	North Beach/Blue Ridge	Seattle
+3615614	Capitol Hill	Seattle
+3624990	First Hill	Seattle
+3625969	Ravenna	Seattle
+3626162	Wallingford	Seattle
+3626497	Capitol Hill	Seattle
+3627658	Eastlake	Seattle
+3630581	University District	Seattle
+3636351	Licton Springs	Seattle
+3637180	Greenwood	Seattle
+3639023	Queen Anne	Seattle
+3642289	Columbia City	Seattle
+3646357	North Beacon Hill	Seattle
+3646393	Montlake	Seattle
+3652434		Seattle
+3652612	Capitol Hill	Seattle
+3653575	Greenwood	Seattle
+3653930	Lower Queen Anne	Seattle
+3654621	Capitol Hill	Seattle
+3654695	Stevens	Seattle
+3656508	Crown Hill	Seattle
+3657819	Ballard	Seattle
+3665414	Capitol Hill	Seattle
+3666970	Stevens	Seattle
+3668014	First Hill	Seattle
+3673011	Columbia City	Seattle
+3673759	Belltown	Seattle
+3674546	Capitol Hill	Seattle
+3676779	University District	Seattle
+3677084	Green Lake	Seattle
+3677515	Capitol Hill	Seattle
+3677729		Seattle
+3678718	Ballard	Seattle
+3679177	Columbia City	Seattle
+3679617	University District	Seattle
+3686556	Lower Queen Anne	Seattle
+3688337	Wallingford	Seattle
+3689119	Ballard	Seattle
+3689416	Bitter Lake	Seattle
+3691288	Atlantic	Seattle
+3695321	Ballard	Seattle
+3697351	Belltown	Seattle
+3703121	Mathews Beach	Seattle
+3706719	University District	Seattle
+3720310	Ballard	Seattle
+3720429	Lower Queen Anne	Seattle
+3720511	Queen Anne	Seattle
+3720731	Montlake	Seattle
+3722201		Seattle
+3726391	Columbia City	Seattle
+3727017	Minor	Seattle
+3727519		Seattle
+3728802	Leschi	Seattle
+3729211		Seattle
+3730624	Industrial District	Seattle
+3732076	Wallingford	Seattle
+3732094	Wallingford	Seattle
+3732103	Wallingford	Seattle
+3732317	Fremont	Seattle
+3732949	Capitol Hill	Seattle
+3738724	Lower Queen Anne	Seattle
+3739341	University District	Seattle
+3739681	Wallingford	Seattle
+3751503	Minor	Seattle
+3753645	Greenwood	Seattle
+3757858	Minor	Seattle
+3759039	Capitol Hill	Seattle
+3766055	Ravenna	Seattle
+3766285	Capitol Hill	Seattle
+3766866	Ballard	Seattle
+3768626	Wallingford	Seattle
+3768742		Seattle
+3768745		Seattle
+3769336	Minor	Seattle
+3770248	University District	Seattle
+3772674	Ballard	Seattle
+3773417	Capitol Hill	Seattle
+3773568	Wallingford	Seattle
+3773700	Wallingford	Seattle
+3773784	Stevens	Seattle
+3774113	Windermere	Seattle
+3775207	University District	Seattle
+3781827	Minor	Seattle
+3783060		Seattle
+3783162	Wallingford	Seattle
+3783873	Stevens	Seattle
+3790420		Seattle
+3791920	Wallingford	Seattle
+3793047	Capitol Hill	Seattle
+3793185	Belltown	Seattle
+3793406	Roosevelt	Seattle
+3793790	Holly Park	Seattle
+3803212	Capitol Hill	Seattle
+3803947	First Hill	Seattle
+3811220	Belltown	Seattle
+3811828	Stevens	Seattle
+3811872	Stevens	Seattle
+3811930	Stevens	Seattle
+3811955	Stevens	Seattle
+3812725	Ravenna	Seattle
+3812957	Capitol Hill	Seattle
+3813803	Ballard	Seattle
+3817141	Madison Park	Seattle
+3818401	Minor	Seattle
+3818746	North Admiral	Seattle
+3818827	Ballard	Seattle
+3819831	Capitol Hill	Seattle
+3820186	Belltown	Seattle
+3821663	Pioneer Square	Seattle
+3821822	Green Lake	Seattle
+3827398	North Admiral	Seattle
+3829926	Brighton	Seattle
+3833325	Alki	Seattle
+3835995	Ballard	Seattle
+3836405	Capitol Hill	Seattle
+3843706	Roosevelt	Seattle
+3844087	Fremont	Seattle
+3849918	Mount Baker	Seattle
+3850240	Columbia City	Seattle
+3851082		Seattle
+3852117	Ravenna	Seattle
+3858725	Capitol Hill	Seattle
+3859118	Capitol Hill	Seattle
+3859882	Rainier Beach	Seattle
+3861673	Ballard	Seattle
+3868138	Central Business District	Seattle
+3868844	Alki	Seattle
+3870253	Wallingford	Seattle
+3870937	Mathews Beach	Seattle
+3876097		Seattle
+3882930	Ballard	Seattle
+3883041		Seattle
+3883137	Crown Hill	Seattle
+3883392		Seattle
+3883563		Seattle
+3884805		Seattle
+3884851	Ballard	Seattle
+3888924	Wallingford	Seattle
+3888986		Seattle
+3889050		Seattle
+3889280		Seattle
+3889299		Seattle
+3889330		Seattle
+3890786	Mount Baker	Seattle
+3890990		Seattle
+3891695	Central Business District	Seattle
+3898413		Seattle
+3898692		Seattle
+3898773	Capitol Hill	Seattle
+3899160		Seattle
+3904056	Seward Park	Seattle
+3906076	First Hill	Seattle
+3908378	Ballard	Seattle
+3915826	Fremont	Seattle
+3916050		Seattle
+3921664	Harrison/Denny-Blaine	Seattle
+3922578		Seattle
+3922845		Seattle
+3922853	Greenwood	Seattle
+3924649	Maple Leaf	Seattle
+3924792	Belltown	Seattle
+3925572		Seattle
+3925573		Seattle
+3926008	Stevens	Seattle
+3928844		Seattle
+3930270	Capitol Hill	Seattle
+3930681		Seattle
+3931346	Ballard	Seattle
+3931571		Seattle
+3932674	Stevens	Seattle
+3933846	Atlantic	Seattle
+3939683	Wallingford	Seattle
+3940265	Minor	Seattle
+3946160	Atlantic	Seattle
+3946631		Seattle
+3946674	Minor	Seattle
+3951768	North Beacon Hill	Seattle
+3953365		Seattle
+3953611		Seattle
+3959442		Seattle
+3959460		Seattle
+3961077		Seattle
+3962961		Seattle
+3963320		Seattle
+3963352		Seattle
+3968416	Fauntleroy	Seattle
+3970736	Minor	Seattle
+3971137	Wallingford	Seattle
+3971250	Fremont	Seattle
+3971346		Seattle
+3971934	Central Business District	Seattle
+3975434	Lower Queen Anne	Seattle
+3977450	North Beacon Hill	Seattle
+3977605		Seattle
+3979496		Seattle
+3986788	Fauntleroy	Seattle
+3986793	Broadview	Seattle
+3987838	Madrona	Seattle
+3992155	Belltown	Seattle
+3993960	North Delridge	Seattle
+3994397	Gatewood	Seattle
+3994601	Stevens	Seattle
+3994634	Stevens	Seattle
+3995007	Belltown	Seattle
+3998922	Atlantic	Seattle
+3998984	Belltown	Seattle
+3999027	Fremont	Seattle
+4008373	Central Business District	Seattle
+4009295	Capitol Hill	Seattle
+4009508	Pike Place Market	Seattle
+4016079	Laurelhurst	Seattle
+4016650	Queen Anne	Seattle
+4017140		Seattle
+4022127		Seattle
+4023177	Ballard	Seattle
+4024844	Roosevelt	Seattle
+4025593	Green Lake	Seattle
+4025954	Green Lake	Seattle
+4026757	Wallingford	Seattle
+4030600	Ravenna	Seattle
+4030640	The Junction	Seattle
+4031625	First Hill	Seattle
+4033797	Central Business District	Seattle
+4038347	Greenwood	Seattle
+4038530	Belltown	Seattle
+4041868	Columbia City	Seattle
+4046863	Wallingford	Seattle
+4047058	Wallingford	Seattle
+4047399	Lower Queen Anne	Seattle
+4053092	Ballard	Seattle
+4053644		Seattle
+4053972	Madrona	Seattle
+4061051	Minor	Seattle
+4061207	Atlantic	Seattle
+4066344	High Point	Seattle
+4066595	Maple Leaf	Seattle
+4069543	Fauntleroy	Seattle
+4074954	Lower Queen Anne	Seattle
+4075152	North Beacon Hill	Seattle
+4077415	Queen Anne	Seattle
+4077920	Capitol Hill	Seattle
+4082250	Capitol Hill	Seattle
+4082895	Magnolia	Seattle
+4082986	Belltown	Seattle
+4084398	Phinney Ridge	Seattle
+4084712	Atlantic	Seattle
+4085439	Ballard	Seattle
+4085664	Capitol Hill	Seattle
+4092037	Cedar Park	Seattle
+4098695	Belltown	Seattle
+4100009	Fremont	Seattle
+4104442	Phinney Ridge	Seattle
+4105049	Seaview	Seattle
+4105081	South Delridge	Seattle
+4105164	Gatewood	Seattle
+4106041	First Hill	Seattle
+4110396	Belltown	Seattle
+4111137	Minor	Seattle
+4111954	Greenwood	Seattle
+4113197	Bitter Lake	Seattle
+4116645	Queen Anne	Seattle
+4118282	Ballard	Seattle
+4121334	Genesee	Seattle
+4122325	Green Lake	Seattle
+4125779	Queen Anne	Seattle
+4126284	Mount Baker	Seattle
+4127196	Ballard	Seattle
+4127381	Wallingford	Seattle
+4128097		Seattle
+4129218	Capitol Hill	Seattle
+4130102		Seattle
+4130112	Wallingford	Seattle
+4135710	Wallingford	Seattle
+4137114	First Hill	Seattle
+4138423	Ballard	Seattle
+4144767	Ballard	Seattle
+4145694	Capitol Hill	Seattle
+4151093	Belltown	Seattle
+4151430	Belltown	Seattle
+4157572	Columbia City	Seattle
+4163204	High Point	Seattle
+4163306	Belltown	Seattle
+4163408	Belltown	Seattle
+4163851	North Beacon Hill	Seattle
+4165387	Pike Place Market	Seattle
+4165554	University District	Seattle
+4170863	Leschi	Seattle
+4172364		Seattle
+4173147		Seattle
+4174473	Capitol Hill	Seattle
+4180905	Lower Queen Anne	Seattle
+4181226	Ravenna	Seattle
+4182732	Highland Park	Seattle
+4183077	Ballard	Seattle
+4183530	Phinney Ridge	Seattle
+4184211	Capitol Hill	Seattle
+4187961	Phinney Ridge	Seattle
+4190689	Belltown	Seattle
+4190771	Belltown	Seattle
+4191621	Central Business District	Seattle
+4198216	First Hill	Seattle
+4199019	Capitol Hill	Seattle
+4204969	Eastlake	Seattle
+4205026	Bryant	Seattle
+4208555	Ravenna	Seattle
+4210585	Belltown	Seattle
+4211081	Capitol Hill	Seattle
+4211629	Queen Anne	Seattle
+4211836		Seattle
+4215714	Minor	Seattle
+4218733	Queen Anne	Seattle
+4219153	Wallingford	Seattle
+4223597	Capitol Hill	Seattle
+4225225	Stevens	Seattle
+4226386	Pioneer Square	Seattle
+4231670	Capitol Hill	Seattle
+4235559	Green Lake	Seattle
+4236723	Ballard	Seattle
+4238106	Minor	Seattle
+4240933	Belltown	Seattle
+4241012	First Hill	Seattle
+4241862	Capitol Hill	Seattle
+4242626	Belltown	Seattle
+4243163	Belltown	Seattle
+4250367	Queen Anne	Seattle
+4250639	First Hill	Seattle
+4250749	Fremont	Seattle
+4250850	Wallingford	Seattle
+4250938	Wallingford	Seattle
+4251235	Central Business District	Seattle
+4251426	Central Business District	Seattle
+4252591	Highland Park	Seattle
+4256558	Belltown	Seattle
+4256705	Minor	Seattle
+4257097	Belltown	Seattle
+4258515	Ballard	Seattle
+4258762	Wallingford	Seattle
+4264012	North Delridge	Seattle
+4264043	Belltown	Seattle
+4264056	Belltown	Seattle
+4270642	University District	Seattle
+4271174	Interbay	Seattle
+4271221	Madrona	Seattle
+4271470	Stevens	Seattle
+4275992	Stevens	Seattle
+4277026	Capitol Hill	Seattle
+4278896	Laurelhurst	Seattle
+4279578	Green Lake	Seattle
+4279876	Wallingford	Seattle
+4287974	Windermere	Seattle
+4288801	Ravenna	Seattle
+4295451	Eastlake	Seattle
+4297068	Atlantic	Seattle
+4297534		Seattle
+4304454	Cedar Park	Seattle
+4304605	Cedar Park	Seattle
+4304893	Fremont	Seattle
+4308641	Cedar Park	Seattle
+4310055	Lower Queen Anne	Seattle
+4310085	Queen Anne	Seattle
+4311078	University District	Seattle
+4311244	Belltown	Seattle
+4311275	First Hill	Seattle
+4316910	Atlantic	Seattle
+4317390	Ballard	Seattle
+4318031	Belltown	Seattle
+4318709	Capitol Hill	Seattle
+4318814	Phinney Ridge	Seattle
+4322622	Fremont	Seattle
+4324317		Seattle
+4324917	Lower Queen Anne	Seattle
+4334804	Ballard	Seattle
+4340410	Eastlake	Seattle
+4340838	Wallingford	Seattle
+4342891	Capitol Hill	Seattle
+4343419	Queen Anne	Seattle
+4349344	Fremont	Seattle
+4351067	Capitol Hill	Seattle
+4352105	Pioneer Square	Seattle
+4352184	University District	Seattle
+4357979	Fremont	Seattle
+4360485	Greenwood	Seattle
+4360604	Greenwood	Seattle
+4363919	Belltown	Seattle
+4364285	Mount Baker	Seattle
+4365389	Pike Place Market	Seattle
+4365589	North Beacon Hill	Seattle
+4370312	Madrona	Seattle
+4374326	North Beacon Hill	Seattle
+4378803	Genesee	Seattle
+4379551	Alki	Seattle
+4384000	Mount Baker	Seattle
+4384095	Leschi	Seattle
+4384343	Wallingford	Seattle
+4384800	North Admiral	Seattle
+4387985	Minor	Seattle
+4388148		Seattle
+4393577	Ballard	Seattle
+4395349	Pike Place Market	Seattle
+4395502	Phinney Ridge	Seattle
+4395578	Ballard	Seattle
+4395654	The Junction	Seattle
+4396961	Leschi	Seattle
+4400811	Mount Baker	Seattle
+4401544	Stevens	Seattle
+4401683	Minor	Seattle
+4402880	Belltown	Seattle
+4402979	Magnolia	Seattle
+4403171	Phinney Ridge	Seattle
+4404126	Capitol Hill	Seattle
+4405139	Capitol Hill	Seattle
+4410493		Seattle
+4410544	First Hill	Seattle
+4410789	Belltown	Seattle
+4417792	Belltown	Seattle
+4418480	Minor	Seattle
+4418617	Capitol Hill	Seattle
+4419318	Capitol Hill	Seattle
+4423130	Maple Leaf	Seattle
+4429898	Ballard	Seattle
+4430233	Minor	Seattle
+4430381	Minor	Seattle
+4432113	Belltown	Seattle
+4432489	Leschi	Seattle
+4436353	Capitol Hill	Seattle
+4438160	Ballard	Seattle
+4438188	University District	Seattle
+4438871	Ballard	Seattle
+4439293	First Hill	Seattle
+4449303	Ballard	Seattle
+4454121	Capitol Hill	Seattle
+4454264	Montlake	Seattle
+4454295	Queen Anne	Seattle
+4461706	Mount Baker	Seattle
+4464542	Madison Park	Seattle
+4464795	Capitol Hill	Seattle
+4464824	Belltown	Seattle
+4468524	Leschi	Seattle
+4477426	Minor	Seattle
+4479426		Seattle
+4481979	Eastlake	Seattle
+4484426	University District	Seattle
+4485424	Magnolia	Seattle
+4494947	First Hill	Seattle
+4494948	First Hill	Seattle
+4495596	Belltown	Seattle
+4500531	Belltown	Seattle
+4503535	Capitol Hill	Seattle
+4507137	Maple Leaf	Seattle
+4516960	Central Business District	Seattle
+4517529	Fremont	Seattle
+4518037	North Beacon Hill	Seattle
+4518474	Fremont	Seattle
+4520099	Queen Anne	Seattle
+4520179	Belltown	Seattle
+4521755	Wallingford	Seattle
+4524575	Fremont	Seattle
+4526421	Minor	Seattle
+4526737	Dunlap	Seattle
+4526943	Capitol Hill	Seattle
+4531036	Mount Baker	Seattle
+4531944		Seattle
+4532538	Ballard	Seattle
+4539948	Minor	Seattle
+4540816	North Delridge	Seattle
+4546924	Minor	Seattle
+4550099	Ballard	Seattle
+4550199	Bryant	Seattle
+4554020		Seattle
+4555274	Lower Queen Anne	Seattle
+4555997	Queen Anne	Seattle
+4556937	Capitol Hill	Seattle
+4557204	Madison Park	Seattle
+4559222	Rainier Beach	Seattle
+4559985	Bryant	Seattle
+4564730	Genesee	Seattle
+4565370	Minor	Seattle
+4566393	Queen Anne	Seattle
+4566609	First Hill	Seattle
+4567243		Seattle
+4568677	South Park	Seattle
+4569115	Belltown	Seattle
+4574039		Seattle
+4574700	Madrona	Seattle
+4575853		Seattle
+4577542	Minor	Seattle
+4581124	Crown Hill	Seattle
+4581256		Seattle
+4583161	Queen Anne	Seattle
+4586876	Queen Anne	Seattle
+4589654	South Park	Seattle
+4593740	Central Business District	Seattle
+4596493	Lower Queen Anne	Seattle
+4597013	Alki	Seattle
+4597421	University District	Seattle
+4597584	Pike Place Market	Seattle
+4598160		Seattle
+4599119	Bryant	Seattle
+4607830	Capitol Hill	Seattle
+4608208	Magnolia	Seattle
+4608592	Wallingford	Seattle
+4614955	First Hill	Seattle
+4616634	Ballard	Seattle
+4616695	First Hill	Seattle
+4623541	Minor	Seattle
+4629020	Ravenna	Seattle
+4632923	Stevens	Seattle
+4633033	University District	Seattle
+4637670	Central Business District	Seattle
+4637801	Ravenna	Seattle
+4638785	Phinney Ridge	Seattle
+4639040	Seward Park	Seattle
+4639465	Minor	Seattle
+4642956	Queen Anne	Seattle
+4645208	Queen Anne	Seattle
+4645405	Fremont	Seattle
+4647463	Phinney Ridge	Seattle
+4651974		Seattle
+4652918	Capitol Hill	Seattle
+4653552	Green Lake	Seattle
+4659710	Wallingford	Seattle
+4659824	Mount Baker	Seattle
+4660260	Wallingford	Seattle
+4660460	Eastlake	Seattle
+4660517	Capitol Hill	Seattle
+4661374	Belltown	Seattle
+4661812	Queen Anne	Seattle
+4663749	Stevens	Seattle
+4664312	Roosevelt	Seattle
+4668327	North Beacon Hill	Seattle
+4669117	North Beacon Hill	Seattle
+4669377	Belltown	Seattle
+4672934	Ballard	Seattle
+4676275	Belltown	Seattle
+4677524	Belltown	Seattle
+4678866	Eastlake	Seattle
+4679983	Capitol Hill	Seattle
+4681687	The Junction	Seattle
+4681885	Bitter Lake	Seattle
+4688137		Seattle
+4688267	Capitol Hill	Seattle
+4688603	Eastlake	Seattle
+4693488	Greenwood	Seattle
+4694479	Ballard	Seattle
+4701141	Ravenna	Seattle
+4701146	Olympic Hills	Seattle
+4701205	Capitol Hill	Seattle
+4706111	Yesler Terrace	Seattle
+4707171	Columbia City	Seattle
+4708075	Rainier Beach	Seattle
+4710866	Stevens	Seattle
+4710869	Stevens	Seattle
+4711069	Rainier Beach	Seattle
+4716486	Seward Park	Seattle
+4718820	Crown Hill	Seattle
+4718921		Seattle
+4722461	Belltown	Seattle
+4725935	Capitol Hill	Seattle
+4729855	Madrona	Seattle
+4730525	Pike Place Market	Seattle
+4732995	Ballard	Seattle
+4735761	Dunlap	Seattle
+4737727	Minor	Seattle
+4738191	Fremont	Seattle
+4738971	Fremont	Seattle
+4739190	Victory Heights	Seattle
+4752447	Capitol Hill	Seattle
+4752817	First Hill	Seattle
+4757025	Harrison/Denny-Blaine	Seattle
+4758042	Capitol Hill	Seattle
+4758999	Ballard	Seattle
+4760181	Ballard	Seattle
+4760472	Minor	Seattle
+4760968	North Beacon Hill	Seattle
+4766173	Capitol Hill	Seattle
+4768038	Capitol Hill	Seattle
+4768225	Fremont	Seattle
+4772997	Rainier Beach	Seattle
+4773614	Minor	Seattle
+4776823	Belltown	Seattle
+4777832	Atlantic	Seattle
+4782745	Capitol Hill	Seattle
+4783585	Belltown	Seattle
+4783817	Minor	Seattle
+4784639	Phinney Ridge	Seattle
+4787415	Queen Anne	Seattle
+4793097	Queen Anne	Seattle
+4796081	Capitol Hill	Seattle
+4796383	Belltown	Seattle
+4796797	University District	Seattle
+4800848	Minor	Seattle
+4802178	Central Business District	Seattle
+4803403	Fremont	Seattle
+4808173	Capitol Hill	Seattle
+4808896	The Junction	Seattle
+4809486	North Delridge	Seattle
+4809601	Capitol Hill	Seattle
+4811583	Central Business District	Seattle
+4814811	Minor	Seattle
+4814894	Queen Anne	Seattle
+4820795	Roosevelt	Seattle
+4824435		Seattle
+4824581	Highland Park	Seattle
+4824699		Seattle
+4825073	Ravenna	Seattle
+4825472	Ballard	Seattle
+4829464	Magnolia	Seattle
+4831200	Capitol Hill	Seattle
+4832481	Rainier Beach	Seattle
+4833820	Columbia City	Seattle
+4836619	Belltown	Seattle
+4841586	Capitol Hill	Seattle
+4848255	Capitol Hill	Seattle
+4853548	Ballard	Seattle
+4854767	Greenwood	Seattle
+4856986	Minor	Seattle
+4857192	Minor	Seattle
+4862719	Wallingford	Seattle
+4863335		Seattle
+4863369	Mount Baker	Seattle
+4863479	Belltown	Seattle
+4863533	Greenwood	Seattle
+4868135	Fremont	Seattle
+4868812	Ballard	Seattle
+4869458	Maple Leaf	Seattle
+4871348	Fremont	Seattle
+4872699	Ballard	Seattle
+4875639		Seattle
+4879013	Wallingford	Seattle
+4887845	Alki	Seattle
+4888709		Seattle
+4891577	Eastlake	Seattle
+4891955		Seattle
+4892357	Madrona	Seattle
+4892529	Ravenna	Seattle
+4892700		Seattle
+4903296	North Beacon Hill	Seattle
+4906490		Seattle
+4909327	North Beacon Hill	Seattle
+4910140	Genesee	Seattle
+4916433	North Delridge	Seattle
+4922836	Columbia City	Seattle
+4933447	Queen Anne	Seattle
+4936647	Broadview	Seattle
+4938126	Bryant	Seattle
+4940379	Portage Bay	Seattle
+4940491	Wallingford	Seattle
+4941356	Maple Leaf	Seattle
+4942217	Lower Queen Anne	Seattle
+4943016	First Hill	Seattle
+4946781	Lower Queen Anne	Seattle
+4947002	Phinney Ridge	Seattle
+4948745	Queen Anne	Seattle
+4949899	Phinney Ridge	Seattle
+4950847	Olympic Hills	Seattle
+4951079	Olympic Hills	Seattle
+4951430	Lower Queen Anne	Seattle
+4966379	Ballard	Seattle
+4968752	Green Lake	Seattle
+4973204	Lower Queen Anne	Seattle
+4978928	Crown Hill	Seattle
+4986015	Capitol Hill	Seattle
+4988679	Lower Queen Anne	Seattle
+4993710	Fremont	Seattle
+4995903	Ballard	Seattle
+4996554		Seattle
+4997187	International District	Seattle
+4997916	Roosevelt	Seattle
+5002964	Interbay	Seattle
+5003070	Capitol Hill	Seattle
+5004411	Capitol Hill	Seattle
+5006092	Montlake	Seattle
+5013094	Greenwood	Seattle
+5014835	Greenwood	Seattle
+5015262	Alki	Seattle
+5019444	Belltown	Seattle
+5020848	Westlake	Seattle
+5020861	University District	Seattle
+5021081	Queen Anne	Seattle
+5021969	Pioneer Square	Seattle
+5022572		Seattle
+5029665	Phinney Ridge	Seattle
+5030361	Capitol Hill	Seattle
+5031285	International District	Seattle
+5031357	Mathews Beach	Seattle
+5031383	International District	Seattle
+5036739	First Hill	Seattle
+5037874	Ballard	Seattle
+5038164		Seattle
+5040885	Stevens	Seattle
+5041669	Maple Leaf	Seattle
+5042014	Ballard	Seattle
+5047188	Maple Leaf	Seattle
+5047883	Eastlake	Seattle
+5048597	Belltown	Seattle
+5050923	Maple Leaf	Seattle
+5051529	Maple Leaf	Seattle
+5052459	Queen Anne	Seattle
+5056580	North Beacon Hill	Seattle
+5057466	Ravenna	Seattle
+5058086	Queen Anne	Seattle
+5058302	Belltown	Seattle
+5059981	Broadview	Seattle
+5060388	Atlantic	Seattle
+5061411	Fremont	Seattle
+5061566	Lower Queen Anne	Seattle
+5061612	South Lake Union	Seattle
+5062445	Queen Anne	Seattle
+5067177	Capitol Hill	Seattle
+5069495		Seattle
+5078129	Wallingford	Seattle
+5078244	Leschi	Seattle
+5078876	Capitol Hill	Seattle
+5096363	High Point	Seattle
+5102135	Atlantic	Seattle
+5104077	Cedar Park	Seattle
+5104918	Portage Bay	Seattle
+5123904	Phinney Ridge	Seattle
+5126077	Queen Anne	Seattle
+5126365	Wallingford	Seattle
+5126446		Seattle
+5127136	Greenwood	Seattle
+5127766	Capitol Hill	Seattle
+5128160	Wallingford	Seattle
+5143441		Seattle
+5146419	University District	Seattle
+5153236	First Hill	Seattle
+5160893	Capitol Hill	Seattle
+5163047	Lower Queen Anne	Seattle
+5164194	Stevens	Seattle
+5164581	Magnolia	Seattle
+5174876	Minor	Seattle
+5175000		Seattle
+5175464	Columbia City	Seattle
+5175631	Queen Anne	Seattle
+5183164	Meadowbrook	Seattle
+5183938	Belltown	Seattle
+5192122	Rainier Beach	Seattle
+5194319	Minor	Seattle
+5194332	Mount Baker	Seattle
+5195064	Magnolia	Seattle
+5201816		Seattle
+5204475	Capitol Hill	Seattle
+5204694	Mount Baker	Seattle
+5205984	Victory Heights	Seattle
+5213468	Pike Place Market	Seattle
+5217979	Minor	Seattle
+5218550	First Hill	Seattle
+5219336	Victory Heights	Seattle
+5228066	Laurelhurst	Seattle
+5229971	Alki	Seattle
+5236979	North Delridge	Seattle
+5240694	Seward Park	Seattle
+5240802	Minor	Seattle
+5240893	Minor	Seattle
+5241195	Seward Park	Seattle
+5241773	Minor	Seattle
+5242148		Seattle
+5242712	First Hill	Seattle
+5249067	Harrison/Denny-Blaine	Seattle
+5249093	First Hill	Seattle
+5252515	Lower Queen Anne	Seattle
+5252543	Arbor Heights	Seattle
+5252877	Fremont	Seattle
+5253287	Capitol Hill	Seattle
+5259194	Minor	Seattle
+5261239	Belltown	Seattle
+5262750	Minor	Seattle
+5270223	First Hill	Seattle
+5270886	Belltown	Seattle
+5272327	Harrison/Denny-Blaine	Seattle
+5277900	Leschi	Seattle
+5278993	Greenwood	Seattle
+5282068		Seattle
+5286781	Wallingford	Seattle
+5287760	Minor	Seattle
+5289293		Seattle
+5297143	Capitol Hill	Seattle
+5297405	Madison Park	Seattle
+5299060	North Delridge	Seattle
+5299087	North Admiral	Seattle
+5304739	Broadview	Seattle
+5306727	Lower Queen Anne	Seattle
+5308339	Haller Lake	Seattle
+5308429	Ballard	Seattle
+5308875		Seattle
+5309974	Bitter Lake	Seattle
+5310193	Queen Anne	Seattle
+5310503	Roosevelt	Seattle
+5315169	First Hill	Seattle
+5318962	Madison Park	Seattle
+5319948	Maple Leaf	Seattle
+5324459	North Admiral	Seattle
+5325214	Wallingford	Seattle
+5325809	Wedgewood	Seattle
+5328225	Capitol Hill	Seattle
+5328449	Minor	Seattle
+5330475	Westlake	Seattle
+5335791		Seattle
+5336585	Wallingford	Seattle
+5337848	Maple Leaf	Seattle
+5340242	Bryant	Seattle
+5352741	Victory Heights	Seattle
+5353512	Eastlake	Seattle
+5355100	North Admiral	Seattle
+5360328	International District	Seattle
+5362889	Lower Queen Anne	Seattle
+5364119	North Beacon Hill	Seattle
+5364244	Ballard	Seattle
+5364414		Seattle
+5364580	North Delridge	Seattle
+5364609		Seattle
+5365612	North Beacon Hill	Seattle
+5372156	First Hill	Seattle
+5372181	North Admiral	Seattle
+5376433	Mount Baker	Seattle
+5381310	North Admiral	Seattle
+5383192	Queen Anne	Seattle
+5386937	Stevens	Seattle
+5395530	Capitol Hill	Seattle
+5397134	Roosevelt	Seattle
+5402304	Fremont	Seattle
+5403847	Meadowbrook	Seattle
+5405643	Queen Anne	Seattle
+5407311	University District	Seattle
+5413564	Ravenna	Seattle
+5415077	Pike Place Market	Seattle
+5415110	Mount Baker	Seattle
+5422159	Central Business District	Seattle
+5422881	Capitol Hill	Seattle
+5423692	University District	Seattle
+5423787	Capitol Hill	Seattle
+5424448	Columbia City	Seattle
+5433597	Phinney Ridge	Seattle
+5442907	South Lake Union	Seattle
+5444457	Phinney Ridge	Seattle
+5446156	Belltown	Seattle
+5446176		Seattle
+5446180		Seattle
+5446513	Belltown	Seattle
+5456914	Capitol Hill	Seattle
+5457260	Ballard	Seattle
+5457686	Ballard	Seattle
+5457915	Bryant	Seattle
+5458027	Fremont	Seattle
+5459895	Belltown	Seattle
+5463875	Atlantic	Seattle
+5470629	Ballard	Seattle
+5470943	Stevens	Seattle
+5471427	Ravenna	Seattle
+5473498	Ravenna	Seattle
+5478677	Ballard	Seattle
+5479566		Seattle
+5482204	Fremont	Seattle
+5487522	Queen Anne	Seattle
+5487653	Crown Hill	Seattle
+5487934	Queen Anne	Seattle
+5489676	Queen Anne	Seattle
+5491168	Minor	Seattle
+5492587	Belltown	Seattle
+5495802	Capitol Hill	Seattle
+5499882	Maple Leaf	Seattle
+5500398	Greenwood	Seattle
+5500752	Maple Leaf	Seattle
+5510720	Capitol Hill	Seattle
+5514578	Capitol Hill	Seattle
+5523863	Belltown	Seattle
+5524530	Minor	Seattle
+5524847	Greenwood	Seattle
+5525073	Fremont	Seattle
+5534463	Westlake	Seattle
+5535648	First Hill	Seattle
+5537446	Capitol Hill	Seattle
+5537833	Minor	Seattle
+5538484	Wallingford	Seattle
+5538663	Lower Queen Anne	Seattle
+5538874	Maple Leaf	Seattle
+5544181	Queen Anne	Seattle
+5548856	Capitol Hill	Seattle
+5548982		Seattle
+5549211	Ballard	Seattle
+5559063	Atlantic	Seattle
+5559643	Magnolia	Seattle
+5562674	Ballard	Seattle
+5563136	Capitol Hill	Seattle
+5571759	Greenwood	Seattle
+5577903	Capitol Hill	Seattle
+5578943	Madrona	Seattle
+5579427	Magnolia	Seattle
+5580457	Queen Anne	Seattle
+5580773		Seattle
+5591534	Queen Anne	Seattle
+5593399	North Beacon Hill	Seattle
+5593504	Eastlake	Seattle
+5593981	Capitol Hill	Seattle
+5593982		Seattle
+5602370	Green Lake	Seattle
+5603785	Queen Anne	Seattle
+5604024	Capitol Hill	Seattle
+5607404	Pinehurst	Seattle
+5608272	First Hill	Seattle
+5615620	Pike Place Market	Seattle
+5618094	Capitol Hill	Seattle
+5619397	Ballard	Seattle
+5620306	Ballard	Seattle
+5620928	Queen Anne	Seattle
+5625964	Fremont	Seattle
+5630068	Capitol Hill	Seattle
+5630783	Wallingford	Seattle
+5631602	Minor	Seattle
+5632713	Ballard	Seattle
+5633607	Capitol Hill	Seattle
+5637990	Capitol Hill	Seattle
+5639238	Lower Queen Anne	Seattle
+5640214	Capitol Hill	Seattle
+5640722	Greenwood	Seattle
+5641280	Greenwood	Seattle
+5643228	Wedgewood	Seattle
+5643240	Ballard	Seattle
+5648564	Queen Anne	Seattle
+5650702	Greenwood	Seattle
+5651254	Gatewood	Seattle
+5652705	The Junction	Seattle
+5654314	North Admiral	Seattle
+5657947	Greenwood	Seattle
+5658596	Minor	Seattle
+5660792	Capitol Hill	Seattle
+5670781	Minor	Seattle
+5670798	Queen Anne	Seattle
+5671843	Ballard	Seattle
+5673552		Seattle
+5680462	Queen Anne	Seattle
+5682316	Columbia City	Seattle
+5683646	Phinney Ridge	Seattle
+5683765	Belltown	Seattle
+5685646	Madrona	Seattle
+5685908	Stevens	Seattle
+5686162	North Beacon Hill	Seattle
+5686178		Seattle
+5686404	Phinney Ridge	Seattle
+5686435	Queen Anne	Seattle
+5691933	Belltown	Seattle
+5695243		Seattle
+5695344	Meadowbrook	Seattle
+5695717	Capitol Hill	Seattle
+5698080	Stevens	Seattle
+5705161	North Beacon Hill	Seattle
+5707514	Eastlake	Seattle
+5716972	Minor	Seattle
+5719631	University District	Seattle
+5721061	North Beacon Hill	Seattle
+5727341		Seattle
+5728135	Stevens	Seattle
+5728739	Fremont	Seattle
+5730482	North Beacon Hill	Seattle
+5736082	Belltown	Seattle
+5736761	Ballard	Seattle
+5738982		Seattle
+5744931	University District	Seattle
+5747363	Magnolia	Seattle
+5749958	Ballard	Seattle
+5751177	North Admiral	Seattle
+5757708		Seattle
+5759668		Seattle
+5760050	Queen Anne	Seattle
+5760860	Minor	Seattle
+5760902	Belltown	Seattle
+5761290	Wallingford	Seattle
+5762575	Ballard	Seattle
+5763226	Pike Place Market	Seattle
+5766989		Seattle
+5774942	North Beacon Hill	Seattle
+5780003	Capitol Hill	Seattle
+5781237	Madison Park	Seattle
+5781547	Fremont	Seattle
+5783888	Belltown	Seattle
+5784320	Belltown	Seattle
+5785382	Pike Place Market	Seattle
+5787922	Fremont	Seattle
+5792683	Atlantic	Seattle
+5793477		Seattle
+5798152	University District	Seattle
+5802986	Roosevelt	Seattle
+5803823	Stevens	Seattle
+5804875	Seward Park	Seattle
+5805162	Ravenna	Seattle
+5805907		Seattle
+5813657	Minor	Seattle
+5814207	Minor	Seattle
+5821872	Lower Queen Anne	Seattle
+5824987		Seattle
+5825701	Maple Leaf	Seattle
+5825985	Greenwood	Seattle
+5834820	Seward Park	Seattle
+5838129	North Delridge	Seattle
+5847934	Belltown	Seattle
+5848330	Fremont	Seattle
+5848400	Queen Anne	Seattle
+5850789		Seattle
+5851320	University District	Seattle
+5851659	Seward Park	Seattle
+5851896	Wallingford	Seattle
+5852034	South Delridge	Seattle
+5859152	Leschi	Seattle
+5862552	Alki	Seattle
+5863446	Maple Leaf	Seattle
+5863558	Maple Leaf	Seattle
+5873892		Seattle
+5874421	Belltown	Seattle
+5874841		Seattle
+5882923	Phinney Ridge	Seattle
+5883409	University District	Seattle
+5883680	Minor	Seattle
+5892185	Fremont	Seattle
+5893969	Fremont	Seattle
+5900224	Belltown	Seattle
+5902452	Fremont	Seattle
+5903478	Capitol Hill	Seattle
+5905263	Capitol Hill	Seattle
+5905958	Fremont	Seattle
+5913611	Pioneer Square	Seattle
+5918259	Mount Baker	Seattle
+5918741	Belltown	Seattle
+5919096	Ballard	Seattle
+5919569	Belltown	Seattle
+5927083	Stevens	Seattle
+5927750		Seattle
+5930473	Wedgewood	Seattle
+5930806	Capitol Hill	Seattle
+5931372	Greenwood	Seattle
+5932324	First Hill	Seattle
+5932882	Atlantic	Seattle
+5941598	Riverview	Seattle
+5946151		Seattle
+5946675	Lower Queen Anne	Seattle
+5948003	Queen Anne	Seattle
+5950957		Seattle
+5956968	Queen Anne	Seattle
+5957039	Pioneer Square	Seattle
+5957814		Seattle
+5958194	Genesee	Seattle
+5958674	Genesee	Seattle
+5959816	Ravenna	Seattle
+5966429	Belltown	Seattle
+5968862	Ballard	Seattle
+5969069	Stevens	Seattle
+5969872	University District	Seattle
+5971354	Ravenna	Seattle
+5977363	Wallingford	Seattle
+5977556	Capitol Hill	Seattle
+5978216	The Junction	Seattle
+5978498	Queen Anne	Seattle
+5980730	Ravenna	Seattle
+5981343	Pike Place Market	Seattle
+5989894	First Hill	Seattle
+5991139	Ballard	Seattle
+5991734	North Admiral	Seattle
+5992032	Fremont	Seattle
+5992645	Wallingford	Seattle
+6002165	Alki	Seattle
+6004058	Queen Anne	Seattle
+6004165	Minor	Seattle
+6005222		Seattle
+6005443	Eastlake	Seattle
+6007267	University District	Seattle
+6012735	Lower Queen Anne	Seattle
+6015972	Wallingford	Seattle
+6018416	Ballard	Seattle
+6019762	Highland Park	Seattle
+6020633	University District	Seattle
+6020744	Central Business District	Seattle
+6022715	Minor	Seattle
+6032726	Capitol Hill	Seattle
+6033201	Belltown	Seattle
+6033433	Greenwood	Seattle
+6035005	University District	Seattle
+6043482	Fremont	Seattle
+6043488	Wallingford	Seattle
+6044106	Queen Anne	Seattle
+6044185	North Delridge	Seattle
+6045361	University District	Seattle
+6046312	University District	Seattle
+6065566	Queen Anne	Seattle
+6066185		Seattle
+6066570		Seattle
+6073437	Green Lake	Seattle
+6074049		Seattle
+6074312	Stevens	Seattle
+6075783	Lower Queen Anne	Seattle
+6076158	Capitol Hill	Seattle
+6077760	Westlake	Seattle
+6078382	Columbia City	Seattle
+6078959	Columbia City	Seattle
+6079131	The Junction	Seattle
+6079216	Capitol Hill	Seattle
+6084188		Seattle
+6087451	Fremont	Seattle
+6091789	Minor	Seattle
+6093756		Seattle
+6101613	Cedar Park	Seattle
+6103108	Licton Springs	Seattle
+6103744	Mount Baker	Seattle
+6105021	North Beacon Hill	Seattle
+6106498	Ballard	Seattle
+6107518	Brighton	Seattle
+6107901	Fremont	Seattle
+6108006	Seward Park	Seattle
+6108796	Queen Anne	Seattle
+6115704	Pike Place Market	Seattle
+6115807		Seattle
+6116207	Stevens	Seattle
+6117473	Dunlap	Seattle
+6118198	Seaview	Seattle
+6118291	Capitol Hill	Seattle
+6118359	Capitol Hill	Seattle
+6119785	Phinney Ridge	Seattle
+6119821	Pike Place Market	Seattle
+6120046	Fremont	Seattle
+6127974	Phinney Ridge	Seattle
+6128257		Seattle
+6130287		Seattle
+6131411	Capitol Hill	Seattle
+6133354	Minor	Seattle
+6133684	Highland Park	Seattle
+6134153	Queen Anne	Seattle
+6134382	Gatewood	Seattle
+6135413	Queen Anne	Seattle
+6141724		Seattle
+6144312	North Beacon Hill	Seattle
+6146025	Lower Queen Anne	Seattle
+6146977		Seattle
+6153532	Ballard	Seattle
+6154478		Seattle
+6156470		Seattle
+6165353	Minor	Seattle
+6165819	Bryant	Seattle
+6166307	Greenwood	Seattle
+6168769	North Beacon Hill	Seattle
+6168975	Columbia City	Seattle
+6169489	Fremont	Seattle
+6169978	Wallingford	Seattle
+6172149	University District	Seattle
+6176933		Seattle
+6179956	Fremont	Seattle
+6182371	Capitol Hill	Seattle
+6182715	Capitol Hill	Seattle
+6182860	North Beacon Hill	Seattle
+6183330	North Beacon Hill	Seattle
+6183721	Fremont	Seattle
+6185083		Seattle
+6186081	Belltown	Seattle
+6187340	Atlantic	Seattle
+6187841	Belltown	Seattle
+6188494	Fremont	Seattle
+6201320	North Beacon Hill	Seattle
+6202014	University District	Seattle
+6202214	Wallingford	Seattle
+6202603	Wallingford	Seattle
+6209191	Madrona	Seattle
+6210952	Capitol Hill	Seattle
+6211882	North Beacon Hill	Seattle
+6214517	Portage Bay	Seattle
+6214998	Ravenna	Seattle
+6215199	Greenwood	Seattle
+6215943	Fauntleroy	Seattle
+6216116	Capitol Hill	Seattle
+6218849		Seattle
+6222245		Seattle
+6222790	Fremont	Seattle
+6226666	First Hill	Seattle
+6226804	North Beacon Hill	Seattle
+6228211	Stevens	Seattle
+6228474	Belltown	Seattle
+6228959		Seattle
+6234347	North Delridge	Seattle
+6239108	North Beach/Blue Ridge	Seattle
+6239907	First Hill	Seattle
+6240383	Fremont	Seattle
+6240501	Queen Anne	Seattle
+6245498	Ballard	Seattle
+6246861		Seattle
+6248083	Lower Queen Anne	Seattle
+6249164	Rainier Beach	Seattle
+6249458	Capitol Hill	Seattle
+6249536	University District	Seattle
+6250399	University District	Seattle
+6260884	Minor	Seattle
+6262987	Green Lake	Seattle
+6263153	Madrona	Seattle
+6263270	Belltown	Seattle
+6272065	Minor	Seattle
+6274351	Mount Baker	Seattle
+6276224	Lower Queen Anne	Seattle
+6278078	Belltown	Seattle
+6278127	University District	Seattle
+6278181	Green Lake	Seattle
+6278191	Belltown	Seattle
+6278216	Capitol Hill	Seattle
+6278361	Central Business District	Seattle
+6278566	Minor	Seattle
+6278680	Arbor Heights	Seattle
+6278756	University District	Seattle
+6287276	Queen Anne	Seattle
+6288141	Fremont	Seattle
+6289789	Fremont	Seattle
+6289996	Licton Springs	Seattle
+6290509	Fremont	Seattle
+6291829	Queen Anne	Seattle
+6292452	Madrona	Seattle
+6292489		Seattle
+6304139	Bryant	Seattle
+6304299	Queen Anne	Seattle
+6305314		Seattle
+6305798	Capitol Hill	Seattle
+6306420	Capitol Hill	Seattle
+6307463	Belltown	Seattle
+6314486	Capitol Hill	Seattle
+6315269	First Hill	Seattle
+6315435	Belltown	Seattle
+6315453	Licton Springs	Seattle
+6315614	Queen Anne	Seattle
+6316917		Seattle
+6316934	Queen Anne	Seattle
+6317449	North Beacon Hill	Seattle
+6325283	Capitol Hill	Seattle
+6325685	Wallingford	Seattle
+6327506	North Beacon Hill	Seattle
+6327662	Bitter Lake	Seattle
+6327780		Seattle
+6328073	Columbia City	Seattle
+6328150	Belltown	Seattle
+6328923	Capitol Hill	Seattle
+6334245	Seward Park	Seattle
+6335327	Capitol Hill	Seattle
+6337492		Seattle
+6342327	Wedgewood	Seattle
+6343866	Wallingford	Seattle
+6344566	Central Business District	Seattle
+6348159	Riverview	Seattle
+6349598	Capitol Hill	Seattle
+6350606		Seattle
+6358529	Portage Bay	Seattle
+6358605	Madrona	Seattle
+6360198	Industrial District	Seattle
+6360895	North Beacon Hill	Seattle
+6361863	Queen Anne	Seattle
+6362362	Queen Anne	Seattle
+6362630	Minor	Seattle
+6362918	Belltown	Seattle
+6363765	North Beacon Hill	Seattle
+6363779	Eastlake	Seattle
+6364316	Queen Anne	Seattle
+6364549	Belltown	Seattle
+6364753	Greenwood	Seattle
+6365330	Wallingford	Seattle
+6370313	Belltown	Seattle
+6370655	Belltown	Seattle
+6373374	Queen Anne	Seattle
+6375415	Ballard	Seattle
+6376952	North Beach/Blue Ridge	Seattle
+6378563		Seattle
+6378592	Central Business District	Seattle
+6385885	Belltown	Seattle
+6386210	Montlake	Seattle
+6386399	Belltown	Seattle
+6387576	Capitol Hill	Seattle
+6388869		Seattle
+6389657	Queen Anne	Seattle
+6389721	Greenwood	Seattle
+6390214	Capitol Hill	Seattle
+6392029	Fremont	Seattle
+6400000	Queen Anne	Seattle
+6400379	Queen Anne	Seattle
+6401209	Ballard	Seattle
+6403031	Eastlake	Seattle
+6403104	Crown Hill	Seattle
+6403158	First Hill	Seattle
+6403878	Pike Place Market	Seattle
+6404427	Queen Anne	Seattle
+6411259	Greenwood	Seattle
+6411986	Atlantic	Seattle
+6412566	Alki	Seattle
+6412858		Seattle
+6414696	Magnolia	Seattle
+6416765	North Beacon Hill	Seattle
+6421243	North Beacon Hill	Seattle
+6423037	Capitol Hill	Seattle
+6423204	Ballard	Seattle
+6423488	Minor	Seattle
+6424859	Capitol Hill	Seattle
+6424982	Queen Anne	Seattle
+6425537		Seattle
+6425652		Seattle
+6425735	Queen Anne	Seattle
+6426003	North Beacon Hill	Seattle
+6426462	University District	Seattle
+6435342	Stevens	Seattle
+6436458	Green Lake	Seattle
+6436727	First Hill	Seattle
+6436772	North Admiral	Seattle
+6436976		Seattle
+6437571		Seattle
+6438013	Interbay	Seattle
+6438099	Cedar Park	Seattle
+6438518	Fremont	Seattle
+6438875	Queen Anne	Seattle
+6439915	Stevens	Seattle
+6445741	Capitol Hill	Seattle
+6445769	Greenwood	Seattle
+6445939	Pike Place Market	Seattle
+6446062	Harrison/Denny-Blaine	Seattle
+6447215	Belltown	Seattle
+6448099	Genesee	Seattle
+6451305		Seattle
+6452801	Capitol Hill	Seattle
+6452927		Seattle
+6453099	Yesler Terrace	Seattle
+6453383	Ballard	Seattle
+6462176	Eastlake	Seattle
+6462182	Belltown	Seattle
+6462365	Minor	Seattle
+6463935	Minor	Seattle
+6466129	Green Lake	Seattle
+6466388		Seattle
+6474341	Ballard	Seattle
+6475289	Leschi	Seattle
+6477225	Capitol Hill	Seattle
+6478445	Pike Place Market	Seattle
+6479027	Highland Park	Seattle
+6481695	Capitol Hill	Seattle
+6481764	Ballard	Seattle
+6482409	Brighton	Seattle
+6482984	Belltown	Seattle
+6486807	Belltown	Seattle
+6489648	Belltown	Seattle
+6490091	Belltown	Seattle
+6490453	Green Lake	Seattle
+6491320	Green Lake	Seattle
+6491904	Belltown	Seattle
+6492056	Capitol Hill	Seattle
+6492880	Wallingford	Seattle
+6494181	First Hill	Seattle
+6495391	Belltown	Seattle
+6495424	North Beach/Blue Ridge	Seattle
+6506751	Capitol Hill	Seattle
+6512378	Leschi	Seattle
+6512979	The Junction	Seattle
+6514446	First Hill	Seattle
+6515046	North Admiral	Seattle
+6516529	Ballard	Seattle
+6516775	Fremont	Seattle
+6517594	Lower Queen Anne	Seattle
+6523393	Eastlake	Seattle
+6528192	Minor	Seattle
+6528342	View Ridge	Seattle
+6537432	Montlake	Seattle
+6543677		Seattle
+6543683	Portage Bay	Seattle
+6544409	Leschi	Seattle
+6545246	Capitol Hill	Seattle
+6545602	Capitol Hill	Seattle
+6545773	Belltown	Seattle
+6546748		Seattle
+6554299	Queen Anne	Seattle
+6554352	Gatewood	Seattle
+6555128	International District	Seattle
+6555393	Columbia City	Seattle
+6557018	Ballard	Seattle
+6557297	Rainier Beach	Seattle
+6557767	Maple Leaf	Seattle
+6558980		Seattle
+6561379		Seattle
+6561753	Capitol Hill	Seattle
+6561811	Capitol Hill	Seattle
+6562393	Queen Anne	Seattle
+6567683		Seattle
+6569950	Lower Queen Anne	Seattle
+6572501	North Beacon Hill	Seattle
+6575380	Queen Anne	Seattle
+6575407	University District	Seattle
+6575839		Seattle
+6576006	Minor	Seattle
+6576228	Queen Anne	Seattle
+6576650	Lower Queen Anne	Seattle
+6577295	Columbia City	Seattle
+6577729	Phinney Ridge	Seattle
+6578095		Seattle
+6578147		Seattle
+6584214	Belltown	Seattle
+6584984	Lower Queen Anne	Seattle
+6586480	Gatewood	Seattle
+6586979	Minor	Seattle
+6587443	Madrona	Seattle
+6590264	Ballard	Seattle
+6591879	Magnolia	Seattle
+6591894	Stevens	Seattle
+6592178	Stevens	Seattle
+6592421	Fremont	Seattle
+6597728	Maple Leaf	Seattle
+6598354		Seattle
+6599960	Ravenna	Seattle
+6603061	Lower Queen Anne	Seattle
+6603376	Mathews Beach	Seattle
+6610942	North Beacon Hill	Seattle
+6612940	Ravenna	Seattle
+6613192	Central Business District	Seattle
+6613601	South Lake Union	Seattle
+6613636	Roosevelt	Seattle
+6613723	Roosevelt	Seattle
+6613806	Roosevelt	Seattle
+6621924	Fremont	Seattle
+6623075	Minor	Seattle
+6623079	University District	Seattle
+6626493	North Beacon Hill	Seattle
+6627050	Lower Queen Anne	Seattle
+6627129	University District	Seattle
+6627184	Stevens	Seattle
+6627403	Capitol Hill	Seattle
+6629132	Queen Anne	Seattle
+6629278		Seattle
+6629548	International District	Seattle
+6629657		Seattle
+6637899	Stevens	Seattle
+6642062	South Lake Union	Seattle
+6642402	Central Business District	Seattle
+6643589	Queen Anne	Seattle
+6644628	North Beacon Hill	Seattle
+6644760	Madison Park	Seattle
+6644796	Capitol Hill	Seattle
+6644854	Alki	Seattle
+6646843	Ballard	Seattle
+6646894		Seattle
+6646985		Seattle
+6647442		Seattle
+6652199	Roosevelt	Seattle
+6655233		Seattle
+6657574	Crown Hill	Seattle
+6658052	Belltown	Seattle
+6658113	Phinney Ridge	Seattle
+6659301	Capitol Hill	Seattle
+6660097	Georgetown	Seattle
+6660186	Greenwood	Seattle
+6660395	University District	Seattle
+6661541	Holly Park	Seattle
+6661617		Seattle
+6662639	Pioneer Square	Seattle
+6670332	Minor	Seattle
+6671901	Belltown	Seattle
+6672533	Capitol Hill	Seattle
+6674408	Minor	Seattle
+6675927	Minor	Seattle
+6676621	Capitol Hill	Seattle
+6676926	Ravenna	Seattle
+6676993	Queen Anne	Seattle
+6677571	Belltown	Seattle
+6678058	Magnolia	Seattle
+6680001	Fremont	Seattle
+6686072	Wallingford	Seattle
+6687939	Central Business District	Seattle
+6689259	Capitol Hill	Seattle
+6690388	Victory Heights	Seattle
+6691324	Pike Place Market	Seattle
+6691873	Greenwood	Seattle
+6692398	Minor	Seattle
+6694276	North Admiral	Seattle
+6700856	Lower Queen Anne	Seattle
+6701018	Greenwood	Seattle
+6704004	Belltown	Seattle
+6704239	Stevens	Seattle
+6704673	Interbay	Seattle
+6704734	Wallingford	Seattle
+6705584	University District	Seattle
+6706377	Minor	Seattle
+6707735	Wallingford	Seattle
+6714501	Ballard	Seattle
+6714652		Seattle
+6714817	Wallingford	Seattle
+6716380	Minor	Seattle
+6716620	North Beacon Hill	Seattle
+6716874	Mount Baker	Seattle
+6717555	University District	Seattle
+6723099	View Ridge	Seattle
+6724599	Queen Anne	Seattle
+6726462	Belltown	Seattle
+6727231		Seattle
+6727420	Lower Queen Anne	Seattle
+6727729	Wallingford	Seattle
+6727846	Lower Queen Anne	Seattle
+6728017	Leschi	Seattle
+6728419	Bryant	Seattle
+6729669	Fremont	Seattle
+6729818	Wedgewood	Seattle
+6730803		Seattle
+6731127		Seattle
+6731420	Pike Place Market	Seattle
+6732406	Cedar Park	Seattle
+6734621	Magnolia	Seattle
+6740521	Central Business District	Seattle
+6741135	Seward Park	Seattle
+6741526	Mathews Beach	Seattle
+6744143	Gatewood	Seattle
+6746826	Pike Place Market	Seattle
+6747473	Central Business District	Seattle
+6748502	Genesee	Seattle
+6750264	Fremont	Seattle
+6750430		Seattle
+6752031	First Hill	Seattle
+6759038	Ballard	Seattle
+6759046	Genesee	Seattle
+6759104		Seattle
+6759343	Roosevelt	Seattle
+6761267	Minor	Seattle
+6761492	University District	Seattle
+6762256	First Hill	Seattle
+6762958	Genesee	Seattle
+6763750	First Hill	Seattle
+6764646		Seattle
+6765045	Wallingford	Seattle
+6765354	Georgetown	Seattle
+6765724	Ballard	Seattle
+6766513	Eastlake	Seattle
+6766708	Belltown	Seattle
+6767445		Seattle
+6767616	Bryant	Seattle
+6768768	Capitol Hill	Seattle
+6769696	Capitol Hill	Seattle
+6773472	Central Business District	Seattle
+6776229	Queen Anne	Seattle
+6779893	Capitol Hill	Seattle
+6779896	University District	Seattle
+6780615	Magnolia	Seattle
+6780670	Lower Queen Anne	Seattle
+6781308	Queen Anne	Seattle
+6782993		Seattle
+6783394	Interbay	Seattle
+6784336	Belltown	Seattle
+6784997	Minor	Seattle
+6786604	Interbay	Seattle
+6787059	Interbay	Seattle
+6793490	North Beacon Hill	Seattle
+6794702	The Junction	Seattle
+6795678	Minor	Seattle
+6796066	North Beacon Hill	Seattle
+6796246	North Admiral	Seattle
+6796336	University District	Seattle
+6797786	Broadview	Seattle
+6799577		Seattle
+6800715		Seattle
+6801095	Minor	Seattle
+6807884	Capitol Hill	Seattle
+6807981	Pike Place Market	Seattle
+6808970	First Hill	Seattle
+6810430	Highland Park	Seattle
+6811792	Maple Leaf	Seattle
+6812054	Capitol Hill	Seattle
+6812415	First Hill	Seattle
+6813483	Ballard	Seattle
+6813623		Seattle
+6821407	Ballard	Seattle
+6822322	Capitol Hill	Seattle
+6823597	Capitol Hill	Seattle
+6823781	Ballard	Seattle
+6823837	Genesee	Seattle
+6824408	Minor	Seattle
+6824729	Eastlake	Seattle
+6830223		Seattle
+6830228		Seattle
+6831239		Seattle
+6832592	Greenwood	Seattle
+6835466	Capitol Hill	Seattle
+6835473	Alki	Seattle
+6836330	Ballard	Seattle
+6837308	Fremont	Seattle
+6837338	Stevens	Seattle
+6837751	Portage Bay	Seattle
+6837819	Capitol Hill	Seattle
+6838418		Seattle
+6838772	Belltown	Seattle
+6843693		Seattle
+6846578	Capitol Hill	Seattle
+6847052	North Admiral	Seattle
+6848043		Seattle
+6848455	Magnolia	Seattle
+6850007	Pike Place Market	Seattle
+6852243	Yesler Terrace	Seattle
+6852288		Seattle
+6852821		Seattle
+6852960	Capitol Hill	Seattle
+6854019	Wallingford	Seattle
+6854552	Belltown	Seattle
+6854732		Seattle
+6855839	Belltown	Seattle
+6856295	Ballard	Seattle
+6862499	Portage Bay	Seattle
+6863176	Columbia City	Seattle
+6864319	Minor	Seattle
+6865200	Capitol Hill	Seattle
+6865696	Capitol Hill	Seattle
+6866562	University District	Seattle
+6867053	Fremont	Seattle
+6868378	Belltown	Seattle
+6869436	First Hill	Seattle
+6869475	Minor	Seattle
+6870575	Capitol Hill	Seattle
+6872650	North Beacon Hill	Seattle
+6873123	Minor	Seattle
+6881188	Ballard	Seattle
+6881345	Belltown	Seattle
+6881869	Portage Bay	Seattle
+6882211	Queen Anne	Seattle
+6882518	First Hill	Seattle
+6883913	Eastlake	Seattle
+6884552	First Hill	Seattle
+6884604	Minor	Seattle
+6884820	Ballard	Seattle
+6886273	Stevens	Seattle
+6886529	Queen Anne	Seattle
+6886633	Ballard	Seattle
+6888073	Eastlake	Seattle
+6888107	High Point	Seattle
+6888942	Madrona	Seattle
+6895132	Maple Leaf	Seattle
+6897639	Ballard	Seattle
+6898008	Belltown	Seattle
+6900913	Capitol Hill	Seattle
+6901218		Seattle
+6902752	The Junction	Seattle
+6903500	Montlake	Seattle
+6907671	Ravenna	Seattle
+6908161	Stevens	Seattle
+6910619	Wallingford	Seattle
+6911511	Stevens	Seattle
+6913414	University District	Seattle
+6913508	Capitol Hill	Seattle
+6913706	South Lake Union	Seattle
+6914120		Seattle
+6915439	Wallingford	Seattle
+6915487	Wallingford	Seattle
+6916167	Central Business District	Seattle
+6921373	Fremont	Seattle
+6923948	Fremont	Seattle
+6924651		Seattle
+6925807	Madrona	Seattle
+6926511	Greenwood	Seattle
+6927016	Capitol Hill	Seattle
+6927021	Minor	Seattle
+6934128	Stevens	Seattle
+6934695	First Hill	Seattle
+6935774	Capitol Hill	Seattle
+6935953	Victory Heights	Seattle
+6937071	Fremont	Seattle
+6937492	Fauntleroy	Seattle
+6938103	University District	Seattle
+6938542	Montlake	Seattle
+6938601	South Lake Union	Seattle
+6939106	Capitol Hill	Seattle
+6939472		Seattle
+6941113	First Hill	Seattle
+6941238	Mount Baker	Seattle
+6941835	International District	Seattle
+6949900	First Hill	Seattle
+6951415	Capitol Hill	Seattle
+6954984	Capitol Hill	Seattle
+6956301	Queen Anne	Seattle
+6956938	North Admiral	Seattle
+6957270	University District	Seattle
+6958026	South Lake Union	Seattle
+6958436	Belltown	Seattle
+6958603	Queen Anne	Seattle
+6958703	North Beacon Hill	Seattle
+6959336	Magnolia	Seattle
+6961346	Lower Queen Anne	Seattle
+6968101	Queen Anne	Seattle
+6971260		Seattle
+6973570	Pike Place Market	Seattle
+6973790	Belltown	Seattle
+6974175		Seattle
+6975036	Belltown	Seattle
+6977095	Genesee	Seattle
+6985530	Capitol Hill	Seattle
+6990477	South Lake Union	Seattle
+6990677	Seaview	Seattle
+6990882	Leschi	Seattle
+6991188	Minor	Seattle
+6992387		Seattle
+6992696	Lower Queen Anne	Seattle
+6993019	Pike Place Market	Seattle
+6993726	Madison Park	Seattle
+6993978	First Hill	Seattle
+6994406	Ballard	Seattle
+7003848	Portage Bay	Seattle
+7005538	Seward Park	Seattle
+7007118		Seattle
+7007598	North Beacon Hill	Seattle
+7009282	Fremont	Seattle
+7011200		Seattle
+7011773	Ballard	Seattle
+7013085	Dunlap	Seattle
+7018009	Ravenna	Seattle
+7021544	Queen Anne	Seattle
+7021702	Ballard	Seattle
+7021906	Ballard	Seattle
+7024684	Montlake	Seattle
+7025898	Minor	Seattle
+7026898	Wedgewood	Seattle
+7027507	Madrona	Seattle
+7035077		Seattle
+7035240	Queen Anne	Seattle
+7035498	Belltown	Seattle
+7036707	Harrison/Denny-Blaine	Seattle
+7037291	Atlantic	Seattle
+7037522	Seward Park	Seattle
+7038750	Ballard	Seattle
+7039427	High Point	Seattle
+7048843	Atlantic	Seattle
+7050204	Minor	Seattle
+7050492		Seattle
+7050534	Magnolia	Seattle
+7054225	Capitol Hill	Seattle
+7064681	Greenwood	Seattle
+7066118	Bitter Lake	Seattle
+7067082		Seattle
+7067650	Eastlake	Seattle
+7069080	Olympic Hills	Seattle
+7069143	Fremont	Seattle
+7070169	Montlake	Seattle
+7071021	University District	Seattle
+7071222	Minor	Seattle
+7071331	Crown Hill	Seattle
+7072218	Minor	Seattle
+7073650	Capitol Hill	Seattle
+7074024		Seattle
+7075357	Eastlake	Seattle
+7075913		Seattle
+7075948	Minor	Seattle
+7077910		Seattle
+7087957	Capitol Hill	Seattle
+7089415	Ballard	Seattle
+7091397	Queen Anne	Seattle
+7093738	Leschi	Seattle
+7093910	Leschi	Seattle
+7093986	Leschi	Seattle
+7095802	Atlantic	Seattle
+7096107	North Beacon Hill	Seattle
+7096547		Seattle
+7109376		Seattle
+7109735		Seattle
+7110655	International District	Seattle
+7110923	Ravenna	Seattle
+7116795	Belltown	Seattle
+7118258	First Hill	Seattle
+7127036	Stevens	Seattle
+7128310		Seattle
+7131797	North Admiral	Seattle
+7134759	Ballard	Seattle
+7149703		Seattle
+7151093	Stevens	Seattle
+7151107		Seattle
+7151417	Fremont	Seattle
+7151924	Queen Anne	Seattle
+7153101	University District	Seattle
+7161725	Ballard	Seattle
+7161897	Phinney Ridge	Seattle
+7162664	Lower Queen Anne	Seattle
+7163934	Wallingford	Seattle
+7177194	Capitol Hill	Seattle
+7178239	Fremont	Seattle
+7178490	Fremont	Seattle
+7179337		Seattle
+7179783		Seattle
+7180032		Seattle
+7182584	Wallingford	Seattle
+7198282	Licton Springs	Seattle
+7201336	Roosevelt	Seattle
+7202016	Lower Queen Anne	Seattle
+7203408	Lower Queen Anne	Seattle
+7203765	South Lake Union	Seattle
+7204672	Magnolia	Seattle
+7205443	Minor	Seattle
+7207641	Queen Anne	Seattle
+7208439	Madrona	Seattle
+7217102		Seattle
+7219541	Cedar Park	Seattle
+7219838	Minor	Seattle
+7221204	North Beach/Blue Ridge	Seattle
+7222136	Stevens	Seattle
+7226013	Wallingford	Seattle
+7227464	Magnolia	Seattle
+7228435	Capitol Hill	Seattle
+7228499	Queen Anne	Seattle
+7229015	Minor	Seattle
+7229312	Mount Baker	Seattle
+7229743		Seattle
+7235573	Capitol Hill	Seattle
+7239217	North Delridge	Seattle
+7241235	Capitol Hill	Seattle
+7241905	Atlantic	Seattle
+7243974	Green Lake	Seattle
+7245586	Ravenna	Seattle
+7245692		Seattle
+7247518		Seattle
+7247720	University District	Seattle
+7247767		Seattle
+7249508	Belltown	Seattle
+7249631	South Lake Union	Seattle
+7256122	Georgetown	Seattle
+7258811	Wallingford	Seattle
+7262142	Columbia City	Seattle
+7262358	Madison Park	Seattle
+7263506	Columbia City	Seattle
+7264667	Belltown	Seattle
+7266662	Minor	Seattle
+7274556	Ravenna	Seattle
+7275027	Capitol Hill	Seattle
+7275464	Stevens	Seattle
+7278583	North Admiral	Seattle
+7279669	Wedgewood	Seattle
+7291403	Portage Bay	Seattle
+7302675	University District	Seattle
+7305969	Minor	Seattle
+7308331	Capitol Hill	Seattle
+7308567	Queen Anne	Seattle
+7311407	Pike Place Market	Seattle
+7322718	Wallingford	Seattle
+7324041	South Delridge	Seattle
+7324993	Belltown	Seattle
+7325455		Seattle
+7326419	University District	Seattle
+7327623	Bryant	Seattle
+7329805	Magnolia	Seattle
+7329915		Seattle
+7331079	Green Lake	Seattle
+7332364	Central Business District	Seattle
+7335567		Seattle
+7343707	Magnolia	Seattle
+7344117	Minor	Seattle
+7347229	Belltown	Seattle
+7348578	University District	Seattle
+7349029	Alki	Seattle
+7349099	Phinney Ridge	Seattle
+7350059	Minor	Seattle
+7350870	Central Business District	Seattle
+7350992	Ravenna	Seattle
+7353834	University District	Seattle
+7360078	South Lake Union	Seattle
+7362757		Seattle
+7363462	University District	Seattle
+7363701	Capitol Hill	Seattle
+7363727	Mount Baker	Seattle
+7364024		Seattle
+7364146	Wallingford	Seattle
+7368030	Wallingford	Seattle
+7368599	Haller Lake	Seattle
+7368959		Seattle
+7381005	First Hill	Seattle
+7381677	Lower Queen Anne	Seattle
+7382303	Mount Baker	Seattle
+7382368	Greenwood	Seattle
+7386675	Seward Park	Seattle
+7387294	University District	Seattle
+7388225	First Hill	Seattle
+7388899	Rainier Beach	Seattle
+7389248	Ballard	Seattle
+7389483	First Hill	Seattle
+7389950	Laurelhurst	Seattle
+7390195		Seattle
+7391003	First Hill	Seattle
+7396508	Minor	Seattle
+7396707	Fremont	Seattle
+7397476	Minor	Seattle
+7400955	Madrona	Seattle
+7401671	Eastlake	Seattle
+7401854	Minor	Seattle
+7402190	Minor	Seattle
+7402861	Columbia City	Seattle
+7403174	Haller Lake	Seattle
+7404370	Queen Anne	Seattle
+7405128	Roosevelt	Seattle
+7411863	North Beacon Hill	Seattle
+7415378	Rainier Beach	Seattle
+7417852	Columbia City	Seattle
+7418814	Roosevelt	Seattle
+7420339	Bryant	Seattle
+7420488	Columbia City	Seattle
+7420762	Phinney Ridge	Seattle
+7421950		Seattle
+7421966	Queen Anne	Seattle
+7429207	Atlantic	Seattle
+7430679	Minor	Seattle
+7430926	Queen Anne	Seattle
+7431247	First Hill	Seattle
+7434103	Cedar Park	Seattle
+7435912	Capitol Hill	Seattle
+7437784	Madrona	Seattle
+7438635	South Lake Union	Seattle
+7439802	South Lake Union	Seattle
+7440415	Belltown	Seattle
+7441508	Licton Springs	Seattle
+7451624	Central Business District	Seattle
+7452021	Gatewood	Seattle
+7454026	North Admiral	Seattle
+7455068	North Admiral	Seattle
+7455706	Victory Heights	Seattle
+7459637	The Junction	Seattle
+7459684	Wallingford	Seattle
+7462428	Madrona	Seattle
+7462439	Minor	Seattle
+7471629		Seattle
+7480196	Columbia City	Seattle
+7480843	Atlantic	Seattle
+7481498	Eastlake	Seattle
+7483750	Ravenna	Seattle
+7492006		Seattle
+7492877	Queen Anne	Seattle
+7496485	Capitol Hill	Seattle
+7499506	North Admiral	Seattle
+7500000		Seattle
+7500191		Seattle
+7500728	North Beacon Hill	Seattle
+7500976	Minor	Seattle
+7501583	University District	Seattle
+7501919	Ballard	Seattle
+7502246		Seattle
+7506165		Seattle
+7510776		Seattle
+7513198	Queen Anne	Seattle
+7513623		Seattle
+7514366	The Junction	Seattle
+7517215		Seattle
+7517684		Seattle
+7518316		Seattle
+7518794	Capitol Hill	Seattle
+7527242	Riverview	Seattle
+7529124	Maple Leaf	Seattle
+7531405	Minor	Seattle
+7533537	Gatewood	Seattle
+7533901	First Hill	Seattle
+7534300	Leschi	Seattle
+7534398	Ballard	Seattle
+7534812	Pinehurst	Seattle
+7535055	Capitol Hill	Seattle
+7536074	University District	Seattle
+7536219	Eastlake	Seattle
+7543458	Minor	Seattle
+7544337	Belltown	Seattle
+7547290	Seward Park	Seattle
+7547611	North Admiral	Seattle
+7550234	University District	Seattle
+7557951	Capitol Hill	Seattle
+7559939	Licton Springs	Seattle
+7561254	University District	Seattle
+7561272	University District	Seattle
+7561333	North Admiral	Seattle
+7562331	Mount Baker	Seattle
+7562591		Seattle
+7563243	North Admiral	Seattle
+7564942	Laurelhurst	Seattle
+7574864	Phinney Ridge	Seattle
+7577073	Yesler Terrace	Seattle
+7579854	Capitol Hill	Seattle
+7580593	Capitol Hill	Seattle
+7581631	Eastlake	Seattle
+7581974	Minor	Seattle
+7584142	Stevens	Seattle
+7585688	North Beacon Hill	Seattle
+7596455	Fremont	Seattle
+7596934	Greenwood	Seattle
+7597244	Belltown	Seattle
+7598743	Yesler Terrace	Seattle
+7601333	Wallingford	Seattle
+7601766	Capitol Hill	Seattle
+7603135	Phinney Ridge	Seattle
+7603457	Lower Queen Anne	Seattle
+7604621	Ballard	Seattle
+7614244	Capitol Hill	Seattle
+7615170	Columbia City	Seattle
+7616008	Belltown	Seattle
+7616031	Fremont	Seattle
+7616507	Capitol Hill	Seattle
+7618526	Capitol Hill	Seattle
+7618605	Ballard	Seattle
+7619060	Atlantic	Seattle
+7619727		Seattle
+7620570	Madison Park	Seattle
+7627794	Queen Anne	Seattle
+7630155	North Beacon Hill	Seattle
+7634011	North Beacon Hill	Seattle
+7635496	Olympic Hills	Seattle
+7635966	Capitol Hill	Seattle
+7636185	North Beacon Hill	Seattle
+7638263		Seattle
+7638282	Maple Leaf	Seattle
+7638689	Ballard	Seattle
+7646637	Ballard	Seattle
+7647221	Greenwood	Seattle
+7648716	Minor	Seattle
+7649837	University District	Seattle
+7650458	Cedar Park	Seattle
+7651148	North Admiral	Seattle
+7651602	North Admiral	Seattle
+7651653	Queen Anne	Seattle
+7651702	Capitol Hill	Seattle
+7653539	Maple Leaf	Seattle
+7660932		Seattle
+7661577		Seattle
+7662775	Fremont	Seattle
+7664565	Atlantic	Seattle
+7664899		Seattle
+7665114	Capitol Hill	Seattle
+7665392	North Admiral	Seattle
+7665415	The Junction	Seattle
+7666155	Capitol Hill	Seattle
+7667990	Wallingford	Seattle
+7674720	Greenwood	Seattle
+7676574	Magnolia	Seattle
+7678064	Lower Queen Anne	Seattle
+7678429	University District	Seattle
+7678814	First Hill	Seattle
+7679928	Maple Leaf	Seattle
+7680289	Queen Anne	Seattle
+7680439	Ballard	Seattle
+7680670	Lower Queen Anne	Seattle
+7685745	Minor	Seattle
+7692789	Madison Park	Seattle
+7695195	Capitol Hill	Seattle
+7697170	Capitol Hill	Seattle
+7697340		Seattle
+7698721	Windermere	Seattle
+7698916	Minor	Seattle
+7699096	First Hill	Seattle
+7699356	Belltown	Seattle
+7699495		Seattle
+7701014		Seattle
+7710713		Seattle
+7713043		Seattle
+7714294	Queen Anne	Seattle
+7714585		Seattle
+7717478	Wallingford	Seattle
+7717653	Gatewood	Seattle
+7717813	Madrona	Seattle
+7718139	North Beacon Hill	Seattle
+7718203	Capitol Hill	Seattle
+7724630	Ballard	Seattle
+7725597	Capitol Hill	Seattle
+7727428	Belltown	Seattle
+7731836	Ballard	Seattle
+7732071	Central Business District	Seattle
+7733192	Queen Anne	Seattle
+7735100	Fremont	Seattle
+7735282		Seattle
+7735313		Seattle
+7735464	Queen Anne	Seattle
+7742525	Bryant	Seattle
+7743727		Seattle
+7745016	Dunlap	Seattle
+7745196	Fremont	Seattle
+7746170	The Junction	Seattle
+7748349	Licton Springs	Seattle
+7748778		Seattle
+7748866	Phinney Ridge	Seattle
+7748905	Minor	Seattle
+7750477	North Beacon Hill	Seattle
+7756839	Fremont	Seattle
+7760836	Belltown	Seattle
+7761509	Fremont	Seattle
+7762347	Lower Queen Anne	Seattle
+7763298		Seattle
+7763613	Central Business District	Seattle
+7763878		Seattle
+7768727	Minor	Seattle
+7771531	Ballard	Seattle
+7772661	Queen Anne	Seattle
+7773668		Seattle
+7773851	North Admiral	Seattle
+7775167	Madrona	Seattle
+7775663	Capitol Hill	Seattle
+7776701		Seattle
+7777219	South Lake Union	Seattle
+7777381	International District	Seattle
+7784802	Capitol Hill	Seattle
+7788695	Crown Hill	Seattle
+7789264		Seattle
+7789438	Capitol Hill	Seattle
+7791010	The Junction	Seattle
+7798575	Lower Queen Anne	Seattle
+7800143	North Admiral	Seattle
+7800238	North Beacon Hill	Seattle
+7802149	Roosevelt	Seattle
+7802266	Capitol Hill	Seattle
+7803176	Phinney Ridge	Seattle
+7805332	Stevens	Seattle
+7805491	Fremont	Seattle
+7806698	Belltown	Seattle
+7807087		Seattle
+7807090	Belltown	Seattle
+7807169	Belltown	Seattle
+7807658	University District	Seattle
+7808495	Minor	Seattle
+7809455	Seward Park	Seattle
+7809494	First Hill	Seattle
+7809595	Lower Queen Anne	Seattle
+7809718	University District	Seattle
+7821003	Capitol Hill	Seattle
+7821351	Fremont	Seattle
+7823973	Stevens	Seattle
+7824426	Stevens	Seattle
+7824870	First Hill	Seattle
+7824929	Ballard	Seattle
+7826447	Haller Lake	Seattle
+7826541	Wallingford	Seattle
+7826593	Belltown	Seattle
+7828222	First Hill	Seattle
+7828509		Seattle
+7833113		Seattle
+7836953	Genesee	Seattle
+7838294	Madrona	Seattle
+7839535	Queen Anne	Seattle
+7839723	Pinehurst	Seattle
+7840228	South Lake Union	Seattle
+7843145		Seattle
+7843837	Ballard	Seattle
+7843995		Seattle
+7844444	Eastlake	Seattle
+7853358	North Beacon Hill	Seattle
+7853498	Fremont	Seattle
+7857241	Fremont	Seattle
+7858454	Bryant	Seattle
+7859906	Minor	Seattle
+7859909	Atlantic	Seattle
+7860710	Central Business District	Seattle
+7860837	Broadview	Seattle
+7869223	North Admiral	Seattle
+7870538		Seattle
+7871807	Capitol Hill	Seattle
+7871885	Stevens	Seattle
+7872818	Windermere	Seattle
+7872980	Capitol Hill	Seattle
+7873208	Stevens	Seattle
+7873345	Stevens	Seattle
+7873789	Ballard	Seattle
+7874053	Capitol Hill	Seattle
+7875887	Capitol Hill	Seattle
+7881802	Greenwood	Seattle
+7883181	North Beacon Hill	Seattle
+7884782	First Hill	Seattle
+7885859	Lower Queen Anne	Seattle
+7886656	The Junction	Seattle
+7887651	North Beacon Hill	Seattle
+7900056	Wallingford	Seattle
+7900497		Seattle
+7901318	Capitol Hill	Seattle
+7901725	Green Lake	Seattle
+7902068		Seattle
+7902137	Capitol Hill	Seattle
+7902229	Gatewood	Seattle
+7902268	Rainier Beach	Seattle
+7902330	Rainier Beach	Seattle
+7902382		Seattle
+7902569	The Junction	Seattle
+7914021	Seward Park	Seattle
+7915432	University District	Seattle
+7916754	Yesler Terrace	Seattle
+7917700		Seattle
+7917718	Wallingford	Seattle
+7920539	Yesler Terrace	Seattle
+7921278		Seattle
+7921289	Lower Queen Anne	Seattle
+7921453		Seattle
+7922013	Mount Baker	Seattle
+7922063		Seattle
+7922197	Belltown	Seattle
+7922373		Seattle
+7922581	Belltown	Seattle
+7922663	Mount Baker	Seattle
+7922676	Eastlake	Seattle
+7931111	Mathews Beach	Seattle
+7931386	Atlantic	Seattle
+7932696	Lower Queen Anne	Seattle
+7934356	Ravenna	Seattle
+7934963	Ballard	Seattle
+7935437	Greenwood	Seattle
+7936712	View Ridge	Seattle
+7936877	Eastlake	Seattle
+7938153	Seward Park	Seattle
+7938941	North Beacon Hill	Seattle
+7939058	Queen Anne	Seattle
+7940358		Seattle
+7941079		Seattle
+7948034		Seattle
+7949448	Fremont	Seattle
+7952032	Greenwood	Seattle
+7952930	Maple Leaf	Seattle
+7953211	Minor	Seattle
+7954781	Central Business District	Seattle
+7956227	Yesler Terrace	Seattle
+7956337	Mount Baker	Seattle
+7957689	Capitol Hill	Seattle
+7957729	Wallingford	Seattle
+7957904	Queen Anne	Seattle
+7965184		Seattle
+7967844	Queen Anne	Seattle
+7968548	Phinney Ridge	Seattle
+7969698		Seattle
+7970663		Seattle
+7971334	Minor	Seattle
+7971395	Minor	Seattle
+7974112	Phinney Ridge	Seattle
+7975026	Capitol Hill	Seattle
+7984550	Capitol Hill	Seattle
+7984738	Capitol Hill	Seattle
+7985714	Wallingford	Seattle
+7987836	Madrona	Seattle
+7987846	Capitol Hill	Seattle
+7988300		Seattle
+7988337	University District	Seattle
+7988436	The Junction	Seattle
+7988792	Capitol Hill	Seattle
+7995944	Maple Leaf	Seattle
+7999692	Eastlake	Seattle
+7999972	Eastlake	Seattle
+8000037	Eastlake	Seattle
+8002965	Ravenna	Seattle
+8006745	Seward Park	Seattle
+8009814	Wallingford	Seattle
+8012443	High Point	Seattle
+8014547	Capitol Hill	Seattle
+8015531	Pike Place Market	Seattle
+8016309		Seattle
+8016481	Belltown	Seattle
+8016610	Leschi	Seattle
+8016646	Central Business District	Seattle
+8017832	Genesee	Seattle
+8027776	Belltown	Seattle
+8028801	Greenwood	Seattle
+8029177	Magnolia	Seattle
+8033438	Ballard	Seattle
+8034871	Greenwood	Seattle
+8035212	Pike Place Market	Seattle
+8036620	Portage Bay	Seattle
+8036985		Seattle
+8046691	Capitol Hill	Seattle
+8047522	Minor	Seattle
+8048333	Magnolia	Seattle
+8049470	Leschi	Seattle
+8050232	First Hill	Seattle
+8050642	Magnolia	Seattle
+8051134	Broadview	Seattle
+8052307		Seattle
+8052542		Seattle
+8053049	Phinney Ridge	Seattle
+8053128	Leschi	Seattle
+8053396	Pike Place Market	Seattle
+8053554	Capitol Hill	Seattle
+8053921	Capitol Hill	Seattle
+8053990	Ballard	Seattle
+8054518	Stevens	Seattle
+8054892	Belltown	Seattle
+8054902	Fremont	Seattle
+8061699		Seattle
+8064351	Pioneer Square	Seattle
+8065531	First Hill	Seattle
+8065715	First Hill	Seattle
+8066883		Seattle
+8067001	South Lake Union	Seattle
+8067053	North Beacon Hill	Seattle
+8067827	Leschi	Seattle
+8068232	International District	Seattle
+8069192	Minor	Seattle
+8072850	Minor	Seattle
+8072907	Belltown	Seattle
+8072920	Wallingford	Seattle
+8080939		Seattle
+8081658	Fremont	Seattle
+8082659		Seattle
+8083242	South Lake Union	Seattle
+8086294	Olympic Hills	Seattle
+8087037	Magnolia	Seattle
+8088447	Queen Anne	Seattle
+8089214	Brighton	Seattle
+8089781	Madison Park	Seattle
+8090541	Stevens	Seattle
+8091417	Ravenna	Seattle
+8093529	Central Business District	Seattle
+8094338	High Point	Seattle
+8095168	Queen Anne	Seattle
+8097708	Ballard	Seattle
+8098383	Wedgewood	Seattle
+8099917	Ravenna	Seattle
+8100190	Central Business District	Seattle
+8101251	Central Business District	Seattle
+8101791	Ravenna	Seattle
+8101950	Fremont	Seattle
+8102064	Capitol Hill	Seattle
+8102349	North Admiral	Seattle
+8103365	Belltown	Seattle
+8103432	Atlantic	Seattle
+8104742	Atlantic	Seattle
+8105221	Queen Anne	Seattle
+8105351	Queen Anne	Seattle
+8106263	Capitol Hill	Seattle
+8106277	Capitol Hill	Seattle
+8107555	Atlantic	Seattle
+8116395	Capitol Hill	Seattle
+8116504	Crown Hill	Seattle
+8117705	Lower Queen Anne	Seattle
+8118110	Fremont	Seattle
+8118346	North Beacon Hill	Seattle
+8119192	Crown Hill	Seattle
+8129537		Seattle
+8129676	First Hill	Seattle
+8130015		Seattle
+8131762	Mathews Beach	Seattle
+8131881	Stevens	Seattle
+8132007		Seattle
+8132347	Ballard	Seattle
+8136553		Seattle
+8147215	North Beach/Blue Ridge	Seattle
+8147986	Belltown	Seattle
+8150045	Laurelhurst	Seattle
+8150145	Lower Queen Anne	Seattle
+8150395	Capitol Hill	Seattle
+8152191	Green Lake	Seattle
+8152764	Portage Bay	Seattle
+8153673	Windermere	Seattle
+8154238	University District	Seattle
+8155580	University District	Seattle
+8155710	University District	Seattle
+8156764	University District	Seattle
+8156860	University District	Seattle
+8156894	University District	Seattle
+8157486	North Delridge	Seattle
+8168476		Seattle
+8168876		Seattle
+8170683	Alki	Seattle
+8171726	University District	Seattle
+8173487	Magnolia	Seattle
+8173825	North Beacon Hill	Seattle
+8174285		Seattle
+8174389		Seattle
+8174626	University District	Seattle
+8174943	North Beacon Hill	Seattle
+8186781	Minor	Seattle
+8187537	Central Business District	Seattle
+8187592	North Beacon Hill	Seattle
+8193054	Central Business District	Seattle
+8193241	Central Business District	Seattle
+8193332		Seattle
+8193516	Capitol Hill	Seattle
+8194164	Roxhill	Seattle
+8194286	Greenwood	Seattle
+8194782	Alki	Seattle
+8194886	The Junction	Seattle
+8195348	Rainier Beach	Seattle
+8195629	Minor	Seattle
+8196883	Seward Park	Seattle
+8207848	Fremont	Seattle
+8207987		Seattle
+8209686	Genesee	Seattle
+8212190		Seattle
+8212989	Pike Place Market	Seattle
+8221520	Atlantic	Seattle
+8225635	Minor	Seattle
+8227038		Seattle
+8227710	Windermere	Seattle
+8233110		Seattle
+8236094		Seattle
+8240758	Ballard	Seattle
+8241019		Seattle
+8242212		Seattle
+8248970	Magnolia	Seattle
+8251213	Capitol Hill	Seattle
+8253456	Pike Place Market	Seattle
+8253758	Bryant	Seattle
+8253955	University District	Seattle
+8255196	Maple Leaf	Seattle
+8255615	Ballard	Seattle
+8257837	Capitol Hill	Seattle
+8267620	Capitol Hill	Seattle
+8273031	Capitol Hill	Seattle
+8273948	Leschi	Seattle
+8276416	North Delridge	Seattle
+8286095	High Point	Seattle
+8289871	Windermere	Seattle
+8292326	Capitol Hill	Seattle
+8293287	Minor	Seattle
+8294379	Eastlake	Seattle
+8296857	Stevens	Seattle
+8301680	Magnolia	Seattle
+8306501		Seattle
+8306581	Stevens	Seattle
+8306646	Belltown	Seattle
+8307502	Genesee	Seattle
+8308316	Queen Anne	Seattle
+8308353	Wallingford	Seattle
+8308386	Belltown	Seattle
+8310249	Ballard	Seattle
+8310398	Ballard	Seattle
+8310576	Pioneer Square	Seattle
+8311242	Central Business District	Seattle
+8322107	University District	Seattle
+8326413		Seattle
+8326940	Belltown	Seattle
+8327083	Magnolia	Seattle
+8327124	University District	Seattle
+8327765		Seattle
+8338155	First Hill	Seattle
+8338849	Ballard	Seattle
+8339303		Seattle
+8339428		Seattle
+8339580	Capitol Hill	Seattle
+8340819	Roosevelt	Seattle
+8340841	Capitol Hill	Seattle
+8341720	Yesler Terrace	Seattle
+8342429		Seattle
+8342968	The Junction	Seattle
+8350401	Atlantic	Seattle
+8354452	Belltown	Seattle
+8355276		Seattle
+8356608	Capitol Hill	Seattle
+8365938		Seattle
+8369321	Capitol Hill	Seattle
+8371720		Seattle
+8372038	Central Business District	Seattle
+8372562	Leschi	Seattle
+8373664	Queen Anne	Seattle
+8373832	North Admiral	Seattle
+8374102	Queen Anne	Seattle
+8379081	Green Lake	Seattle
+8385444	Maple Leaf	Seattle
+8385687	First Hill	Seattle
+8387068	Madison Park	Seattle
+8389809	Atlantic	Seattle
+8391954		Seattle
+8392661	Atlantic	Seattle
+8392801		Seattle
+8402434	Phinney Ridge	Seattle
+8409695	Stevens	Seattle
+8409750	Belltown	Seattle
+8409773	North Admiral	Seattle
+8409926	Seward Park	Seattle
+8409941	Seward Park	Seattle
+8409949	Seward Park	Seattle
+8409962	Seward Park	Seattle
+8409969	Seward Park	Seattle
+8409975	Seward Park	Seattle
+8411627		Seattle
+8411663	Greenwood	Seattle
+8412143	Fremont	Seattle
+8418650	Wallingford	Seattle
+8423118	Lower Queen Anne	Seattle
+8424532	Leschi	Seattle
+8425013	Madrona	Seattle
+8426749	Haller Lake	Seattle
+8426827	Ballard	Seattle
+8427227		Seattle
+8427254	Belltown	Seattle
+8428825	Fremont	Seattle
+8431178		Seattle
+8441263		Seattle
+8441477	Phinney Ridge	Seattle
+8443258	Yesler Terrace	Seattle
+8443952	Magnolia	Seattle
+8446120	View Ridge	Seattle
+8446347		Seattle
+8446541	Haller Lake	Seattle
+8446689	Pioneer Square	Seattle
+8446766		Seattle
+8453633	Capitol Hill	Seattle
+8455865	Queen Anne	Seattle
+8457402	Broadview	Seattle
+8459215	Queen Anne	Seattle
+8463726	Fremont	Seattle
+8472954	Maple Leaf	Seattle
+8473056	Maple Leaf	Seattle
+8473625		Seattle
+8474253	Mount Baker	Seattle
+8474294	Mount Baker	Seattle
+8474584	Greenwood	Seattle
+8474605		Seattle
+8483477		Seattle
+8483744	Greenwood	Seattle
+8484705	Ballard	Seattle
+8487843	Belltown	Seattle
+8501705		Seattle
+8501721	Lower Queen Anne	Seattle
+8503556		Seattle
+8503720		Seattle
+8505421		Seattle
+8505940	Montlake	Seattle
+8507062	Montlake	Seattle
+8507873	Stevens	Seattle
+8508223	Minor	Seattle
+8508341	Bryant	Seattle
+8515408	Queen Anne	Seattle
+8517235	Belltown	Seattle
+8517602	Queen Anne	Seattle
+8518308	Lower Queen Anne	Seattle
+8524349	Ballard	Seattle
+8524565	Licton Springs	Seattle
+8525338	Leschi	Seattle
+8525825	Leschi	Seattle
+8533375	Wallingford	Seattle
+8535897	Queen Anne	Seattle
+8536441	Green Lake	Seattle
+8537192	Ballard	Seattle
+8538420	North Admiral	Seattle
+8538630		Seattle
+8541389	Dunlap	Seattle
+8551871	Ballard	Seattle
+8553556		Seattle
+8555098	Wallingford	Seattle
+8555304	North Delridge	Seattle
+8555794	Leschi	Seattle
+8556103	Green Lake	Seattle
+8556665	Maple Leaf	Seattle
+8559462	Roosevelt	Seattle
+8562314		Seattle
+8566242	The Junction	Seattle
+8566475		Seattle
+8566501	Mount Baker	Seattle
+8567933	Ballard	Seattle
+8568567		Seattle
+8570596		Seattle
+8571518	Belltown	Seattle
+8575663	Lower Queen Anne	Seattle
+8578023	Queen Anne	Seattle
+8578490	Fremont	Seattle
+8579782	First Hill	Seattle
+8583457	Seaview	Seattle
+8594059	University District	Seattle
+8594406	Ballard	Seattle
+8594717	Capitol Hill	Seattle
+8596938	North Beacon Hill	Seattle
+8597687	Bryant	Seattle
+8597800		Seattle
+8605841		Seattle
+8606766	Lower Queen Anne	Seattle
+8608233		Seattle
+8608414	Ballard	Seattle
+8608525	Lower Queen Anne	Seattle
+8611952		Seattle
+8612922	Laurelhurst	Seattle
+8613792	Stevens	Seattle
+8616488		Seattle
+8616606	Leschi	Seattle
+8617043	North Admiral	Seattle
+8617171	Ravenna	Seattle
+8626068	Capitol Hill	Seattle
+8627921	Columbia City	Seattle
+8631419	Genesee	Seattle
+8632651	Fremont	Seattle
+8633733	Fremont	Seattle
+8634897	Fauntleroy	Seattle
+8637174	Belltown	Seattle
+8643209	Wallingford	Seattle
+8645226	Seaview	Seattle
+8652185	Minor	Seattle
+8653722	Greenwood	Seattle
+8653843		Seattle
+8666707	Minor	Seattle
+8668073	Green Lake	Seattle
+8668410	Belltown	Seattle
+8670079	Wallingford	Seattle
+8670484	Stevens	Seattle
+8673979	Capitol Hill	Seattle
+8674765		Seattle
+8683011	Fremont	Seattle
+8684315	Capitol Hill	Seattle
+8687716	Minor	Seattle
+8687967	Fremont	Seattle
+8689375	Stevens	Seattle
+8690491	Lower Queen Anne	Seattle
+8691263		Seattle
+8699046	Fremont	Seattle
+8703208		Seattle
+8703557	Leschi	Seattle
+8704438	Central Business District	Seattle
+8704931	Mathews Beach	Seattle
+8704964		Seattle
+8714974	Ravenna	Seattle
+8715320	Ravenna	Seattle
+8717068	Meadowbrook	Seattle
+8717758	Greenwood	Seattle
+8718936	Greenwood	Seattle
+8722230	Belltown	Seattle
+8723086		Seattle
+8724134	Capitol Hill	Seattle
+8734809	Mount Baker	Seattle
+8735996	Capitol Hill	Seattle
+8737284	North Beacon Hill	Seattle
+8741711		Seattle
+8742753		Seattle
+8743202	High Point	Seattle
+8754180	View Ridge	Seattle
+8755479	Queen Anne	Seattle
+8755762	Capitol Hill	Seattle
+8759443	North Beacon Hill	Seattle
+8764748	Madison Park	Seattle
+8765219	Wallingford	Seattle
+8766231	Bryant	Seattle
+8774504	Columbia City	Seattle
+8779676		Seattle
+8780704	North Beach/Blue Ridge	Seattle
+8782852	Genesee	Seattle
+8783900	Madrona	Seattle
+8784239		Seattle
+8785768	North Beacon Hill	Seattle
+8799162	Phinney Ridge	Seattle
+8799588	Broadview	Seattle
+8799909	Capitol Hill	Seattle
+8805211	Central Business District	Seattle
+8811781	Belltown	Seattle
+8811945	Queen Anne	Seattle
+8812578	Minor	Seattle
+8814555	South Lake Union	Seattle
+8814802		Seattle
+8815061	Belltown	Seattle
+8815638	Belltown	Seattle
+8817033	First Hill	Seattle
+8817038		Seattle
+8820414	Ballard	Seattle
+8828781		Seattle
+8829089		Seattle
+8829156	Queen Anne	Seattle
+8829472	Belltown	Seattle
+8829474	Belltown	Seattle
+8831088	South Lake Union	Seattle
+8842808	Wallingford	Seattle
+8843162	Belltown	Seattle
+8845144	Stevens	Seattle
+8845310	Columbia City	Seattle
+8847108	Madrona	Seattle
+8847951	North Delridge	Seattle
+8847979	Lower Queen Anne	Seattle
+8848403	Queen Anne	Seattle
+8848854	Minor	Seattle
+8849095	Bryant	Seattle
+8849407	Green Lake	Seattle
+8849596	Dunlap	Seattle
+8859380	Queen Anne	Seattle
+8863714	Madison Park	Seattle
+8865006	Minor	Seattle
+8866331		Seattle
+8866927	Ballard	Seattle
+8866960	Leschi	Seattle
+8868025	Stevens	Seattle
+8868833	Capitol Hill	Seattle
+8869027	First Hill	Seattle
+8869680	University District	Seattle
+8870139		Seattle
+8882345	Magnolia	Seattle
+8884826		Seattle
+8886847	Columbia City	Seattle
+8889257	Queen Anne	Seattle
+8890682	Belltown	Seattle
+8891577	Belltown	Seattle
+8901863	Rainier Beach	Seattle
+8902327	Portage Bay	Seattle
+8902887	Columbia City	Seattle
+8904748	Mount Baker	Seattle
+8904766	Dunlap	Seattle
+8907548	Capitol Hill	Seattle
+8919070	Genesee	Seattle
+8919372	Capitol Hill	Seattle
+8921924		Seattle
+8922153	Atlantic	Seattle
+8922554	Belltown	Seattle
+8923774	Roosevelt	Seattle
+8924032	Stevens	Seattle
+8925878	Queen Anne	Seattle
+8926060		Seattle
+8926188	Stevens	Seattle
+8934054	Capitol Hill	Seattle
+8939306		Seattle
+8939433		Seattle
+8939503		Seattle
+8939595		Seattle
+8939687		Seattle
+8939736		Seattle
+8941768	Queen Anne	Seattle
+8942678	Queen Anne	Seattle
+8943380		Seattle
+8943821	Magnolia	Seattle
+8952253	Columbia City	Seattle
+8953255	Roosevelt	Seattle
+8953857		Seattle
+8955477	Capitol Hill	Seattle
+8956628	Belltown	Seattle
+8956631	Belltown	Seattle
+8957312	Licton Springs	Seattle
+8958290	Ravenna	Seattle
+8967776	Queen Anne	Seattle
+8968494	Fremont	Seattle
+8968925		Seattle
+8969737	Stevens	Seattle
+8976178	Meadowbrook	Seattle
+8984454	Lower Queen Anne	Seattle
+8988178		Seattle
+8988281	Queen Anne	Seattle
+8989807	North Delridge	Seattle
+8995844	Wallingford	Seattle
+9011350	Capitol Hill	Seattle
+9012948		Seattle
+9013210	Holly Park	Seattle
+9013441	North Beacon Hill	Seattle
+9014572		Seattle
+9015088	Ballard	Seattle
+9016362		Seattle
+9023202	Stevens	Seattle
+9024838	Central Business District	Seattle
+9025039	Queen Anne	Seattle
+9028315	Central Business District	Seattle
+9028447		Seattle
+9030406	Ballard	Seattle
+9030929	Ravenna	Seattle
+9031119	Belltown	Seattle
+9033154	Wallingford	Seattle
+9034515		Seattle
+9048029		Seattle
+9048584	Greenwood	Seattle
+9050781	Greenwood	Seattle
+9061048	Lower Queen Anne	Seattle
+9061439	Capitol Hill	Seattle
+9061868	First Hill	Seattle
+9063355	Columbia City	Seattle
+9067268	Ravenna	Seattle
+9068366	Dunlap	Seattle
+9068419	Fremont	Seattle
+9074837		Seattle
+9075558		Seattle
+9075656	Mount Baker	Seattle
+9076287	Minor	Seattle
+9078843		Seattle
+9089308		Seattle
+9091301	Greenwood	Seattle
+9094366		Seattle
+9094836	Lower Queen Anne	Seattle
+9094872		Seattle
+9095510	Minor	Seattle
+9095668	Madrona	Seattle
+9096972	Alki	Seattle
+9097503	First Hill	Seattle
+9097754	University District	Seattle
+9098059	Ballard	Seattle
+9098494	Genesee	Seattle
+9109293	Fauntleroy	Seattle
+9110410	Mount Baker	Seattle
+9110560	Bryant	Seattle
+9110730	Genesee	Seattle
+9116815		Seattle
+9117301	Capitol Hill	Seattle
+9117633	Westlake	Seattle
+9118240	Lower Queen Anne	Seattle
+9133711	Capitol Hill	Seattle
+9134193	Queen Anne	Seattle
+9134196	University District	Seattle
+9136499	Queen Anne	Seattle
+9137075	Capitol Hill	Seattle
+9137259	Capitol Hill	Seattle
+9137335	Capitol Hill	Seattle
+9137398	Capitol Hill	Seattle
+9137469	Capitol Hill	Seattle
+9137487	Eastlake	Seattle
+9137899	Capitol Hill	Seattle
+9138392	Columbia City	Seattle
+9138600	Pike Place Market	Seattle
+9138923	Ballard	Seattle
+9149612	Capitol Hill	Seattle
+9151374		Seattle
+9151865		Seattle
+9153365	North Delridge	Seattle
+9154294	Wallingford	Seattle
+9154462	Bitter Lake	Seattle
+9155422	Maple Leaf	Seattle
+9156273	Stevens	Seattle
+9157232	Ravenna	Seattle
+9158383	Westlake	Seattle
+9159975	University District	Seattle
+9167786	Queen Anne	Seattle
+9168049	Ravenna	Seattle
+9169270	Stevens	Seattle
+9170870	Mount Baker	Seattle
+9171373	Lower Queen Anne	Seattle
+9174327	Fremont	Seattle
+9174507	Alki	Seattle
+9183380	Central Business District	Seattle
+9183838	Belltown	Seattle
+9186256		Seattle
+9186481	Ballard	Seattle
+9186681	Ravenna	Seattle
+9189391	Fremont	Seattle
+9196007	Fremont	Seattle
+9199082	Phinney Ridge	Seattle
+9199982	Queen Anne	Seattle
+9201292	Central Business District	Seattle
+9202380	Fremont	Seattle
+9210978	Minor	Seattle
+9215782	Queen Anne	Seattle
+9216874	Minor	Seattle
+9217030	Fremont	Seattle
+9217150	Green Lake	Seattle
+9217337	Phinney Ridge	Seattle
+9217446	Columbia City	Seattle
+9218403		Seattle
+9219567	Gatewood	Seattle
+9220485	Haller Lake	Seattle
+9229043	Phinney Ridge	Seattle
+9233533	Olympic Hills	Seattle
+9236814	Greenwood	Seattle
+9236961	First Hill	Seattle
+9237535	Central Business District	Seattle
+9238818	North Delridge	Seattle
+9240289	Minor	Seattle
+9241055	Wallingford	Seattle
+9252998	Capitol Hill	Seattle
+9254900		Seattle
+9256702	Minor	Seattle
+9258305	Madrona	Seattle
+9258513	Belltown	Seattle
+9258687	Atlantic	Seattle
+9262389	Fremont	Seattle
+9263252	Belltown	Seattle
+9280767	Capitol Hill	Seattle
+9281758	Capitol Hill	Seattle
+9282348	University District	Seattle
+9282409	Queen Anne	Seattle
+9288840	Fremont	Seattle
+9292039	Minor	Seattle
+9294683	Pike Place Market	Seattle
+9294832	Wallingford	Seattle
+9296887		Seattle
+9298045	Genesee	Seattle
+9299824	Bryant	Seattle
+9300972		Seattle
+9303530	University District	Seattle
+9304465	First Hill	Seattle
+9311687	Belltown	Seattle
+9313974	Wallingford	Seattle
+9314106	North Beacon Hill	Seattle
+9316009	Roosevelt	Seattle
+9316399	University District	Seattle
+9317101	Yesler Terrace	Seattle
+9318440		Seattle
+9318524		Seattle
+9318853	Belltown	Seattle
+9319891	University District	Seattle
+9327585	Capitol Hill	Seattle
+9328278	The Junction	Seattle
+9328692	Capitol Hill	Seattle
+9329068	Central Business District	Seattle
+9330174	South Lake Union	Seattle
+9331145	Ballard	Seattle
+9331449	Ballard	Seattle
+9332620		Seattle
+9342299	Madison Park	Seattle
+9345786	Mathews Beach	Seattle
+9347157	Westlake	Seattle
+9348375	Phinney Ridge	Seattle
+9351911		Seattle
+9352620		Seattle
+9352778	Magnolia	Seattle
+9362082		Seattle
+9364220	University District	Seattle
+9364302	Seward Park	Seattle
+9367465	Ballard	Seattle
+9368342	Queen Anne	Seattle
+9368517	Ballard	Seattle
+9368573		Seattle
+9368677		Seattle
+9368950	Montlake	Seattle
+9369481		Seattle
+9370007	Queen Anne	Seattle
+9370738	Queen Anne	Seattle
+9370866	Atlantic	Seattle
+9371895	Belltown	Seattle
+9373607	University District	Seattle
+9374358	Belltown	Seattle
+9374365	Ballard	Seattle
+9386179	Capitol Hill	Seattle
+9386509	Capitol Hill	Seattle
+9387189	Ballard	Seattle
+9389755	South Lake Union	Seattle
+9394485	Crown Hill	Seattle
+9394508	University District	Seattle
+9395217	Green Lake	Seattle
+9407255	Leschi	Seattle
+9407989	Capitol Hill	Seattle
+9408991	International District	Seattle
+9409233	Queen Anne	Seattle
+9410043	The Junction	Seattle
+9410128	Lower Queen Anne	Seattle
+9410302	University District	Seattle
+9411935	Capitol Hill	Seattle
+9414303	Capitol Hill	Seattle
+9415562		Seattle
+9416373		Seattle
+9416551	University District	Seattle
+9426058	Atlantic	Seattle
+9429399	Ballard	Seattle
+9432322	First Hill	Seattle
+9432497	Mathews Beach	Seattle
+9435279	Stevens	Seattle
+9435483	Stevens	Seattle
+9436832	Capitol Hill	Seattle
+9444769	Pike Place Market	Seattle
+9448215		Seattle
+9448719	Minor	Seattle
+9449062	International District	Seattle
+9449437	Ballard	Seattle
+9457328		Seattle
+9460991	Bitter Lake	Seattle
+9462315	Harrison/Denny-Blaine	Seattle
+9463491	Madison Park	Seattle
+9463729	Ballard	Seattle
+9465815	University District	Seattle
+9473312	Phinney Ridge	Seattle
+9473967	Capitol Hill	Seattle
+9474025		Seattle
+9475641	Greenwood	Seattle
+9476826	Queen Anne	Seattle
+9477204		Seattle
+9477539	North Delridge	Seattle
+9480029		Seattle
+9484823		Seattle
+9489310	Leschi	Seattle
+9490093	Interbay	Seattle
+9492036		Seattle
+9492873	Westlake	Seattle
+9494415	Capitol Hill	Seattle
+9494623	Capitol Hill	Seattle
+9494946	Capitol Hill	Seattle
+9496612	North Beacon Hill	Seattle
+9497431	Belltown	Seattle
+9505340	Belltown	Seattle
+9506766	Minor	Seattle
+9507115	Capitol Hill	Seattle
+9508386	Wallingford	Seattle
+9508837	Georgetown	Seattle
+9509279		Seattle
+9509695	Stevens	Seattle
+9511676		Seattle
+9511777	Fremont	Seattle
+9512909	Leschi	Seattle
+9513636	Fremont	Seattle
+9516114	Central Business District	Seattle
+9516608	Minor	Seattle
+9516743	Lower Queen Anne	Seattle
+9519968	Montlake	Seattle
+9521903		Seattle
+9522082	Lower Queen Anne	Seattle
+9530788	First Hill	Seattle
+9530877	First Hill	Seattle
+9531265		Seattle
+9532861	Pike Place Market	Seattle
+9532957	Belltown	Seattle
+9533648		Seattle
+9533803	Fremont	Seattle
+9545281	Wallingford	Seattle
+9545664		Seattle
+9545766	Ballard	Seattle
+9546508	Capitol Hill	Seattle
+9546633	Capitol Hill	Seattle
+9550869	Queen Anne	Seattle
+9558353	University District	Seattle
+9562586	Greenwood	Seattle
+9563458	Capitol Hill	Seattle
+9563749	Ballard	Seattle
+9564093	South Beacon Hill	Seattle
+9568491		Seattle
+9573675	Queen Anne	Seattle
+9574602	Pike Place Market	Seattle
+9576550	Greenwood	Seattle
+9577993	Belltown	Seattle
+9580021	Capitol Hill	Seattle
+9580209	University District	Seattle
+9587410	Ballard	Seattle
+9591718	Mathews Beach	Seattle
+9591787	Minor	Seattle
+9595087	Haller Lake	Seattle
+9597415	South Lake Union	Seattle
+9597947		Seattle
+9600159		Seattle
+9604740		Seattle
+9609152	Columbia City	Seattle
+9611409	University District	Seattle
+9612147	Minor	Seattle
+9615941	Genesee	Seattle
+9617068		Seattle
+9618016	Stevens	Seattle
+9619737		Seattle
+9628972	Madrona	Seattle
+9632775	Ravenna	Seattle
+9634448	Pike Place Market	Seattle
+9635943	Capitol Hill	Seattle
+9636238	Greenwood	Seattle
+9636248	Minor	Seattle
+9636952	University District	Seattle
+9651755	Capitol Hill	Seattle
+9652574	Belltown	Seattle
+9663221	University District	Seattle
+9664395	North Delridge	Seattle
+9666446	Pike Place Market	Seattle
+9675736	Haller Lake	Seattle
+9679300		Seattle
+9679301		Seattle
+9679741	Bitter Lake	Seattle
+9685856	International District	Seattle
+9693230	Fremont	Seattle
+9693971		Seattle
+9694921	Queen Anne	Seattle
+9695233	Magnolia	Seattle
+9696286	Crown Hill	Seattle
+9696532		Seattle
+9696912	Minor	Seattle
+9696950	Stevens	Seattle
+9698202	Fremont	Seattle
+9699490	Belltown	Seattle
+9706229	Pike Place Market	Seattle
+9710851	Mount Baker	Seattle
+9711153		Seattle
+9712348	Greenwood	Seattle
+9712716	Minor	Seattle
+9714078	North Beach/Blue Ridge	Seattle
+9715029	Phinney Ridge	Seattle
+9716348	Wedgewood	Seattle
+9717757	Meadowbrook	Seattle
+9727246	Stevens	Seattle
+9727857	First Hill	Seattle
+9732638	Ballard	Seattle
+9733835	Roosevelt	Seattle
+9733841		Seattle
+9736801	Minor	Seattle
+9736940		Seattle
+9738522	Minor	Seattle
+9739482	Phinney Ridge	Seattle
+9757138	Capitol Hill	Seattle
+9768655	Pike Place Market	Seattle
+9774404		Seattle
+9781881	First Hill	Seattle
+9796540	Alki	Seattle
+9797000	Brighton	Seattle
+9797545	Wallingford	Seattle
+9812439	Queen Anne	Seattle
+9813231	Central Business District	Seattle
+9813684	Gatewood	Seattle
+9814376	Holly Park	Seattle
+9820818	View Ridge	Seattle
+9822759	Central Business District	Seattle
+9822848	Fremont	Seattle
+9823290	Mount Baker	Seattle
+9835920	Capitol Hill	Seattle
+9836113	Capitol Hill	Seattle
+9843421	Capitol Hill	Seattle
+9846066	The Junction	Seattle
+9849122	North Delridge	Seattle
+9858690	Crown Hill	Seattle
+9863312		Seattle
+9863457	Holly Park	Seattle
+9863484	Belltown	Seattle
+9863565		Seattle
+9865846		Seattle
+9866461	Wallingford	Seattle
+9866909	Capitol Hill	Seattle
+9866984	Pike Place Market	Seattle
+9868607	Green Lake	Seattle
+9878971	Green Lake	Seattle
+9880665		Seattle
+9883943	North Admiral	Seattle
+9885225	South Lake Union	Seattle
+9886971	South Lake Union	Seattle
+9887142	Wedgewood	Seattle
+9888395	Roosevelt	Seattle
+9900303	Central Business District	Seattle
+9900319	Belltown	Seattle
+9901852	Roosevelt	Seattle
+9907337	Green Lake	Seattle
+9908591	Greenwood	Seattle
+9908825	First Hill	Seattle
+9909445	Minor	Seattle
+9910025	Madrona	Seattle
+9910189	Belltown	Seattle
+9920856	Stevens	Seattle
+9921445	Green Lake	Seattle
+9922140	First Hill	Seattle
+9922335	Green Lake	Seattle
+9924107		Seattle
+9925458	Fremont	Seattle
+9929059		Seattle
+9938792	Licton Springs	Seattle
+9939025	Central Business District	Seattle
+9939038	Lower Queen Anne	Seattle
+9939359	Capitol Hill	Seattle
+9939740	Lower Queen Anne	Seattle
+9957555	Minor	Seattle
+9961388	Roosevelt	Seattle
+9961538	Magnolia	Seattle
+9970609	Capitol Hill	Seattle
+9970805	Capitol Hill	Seattle
+9974658	Harrison/Denny-Blaine	Seattle
+9975073	Lower Queen Anne	Seattle
+9976135	University District	Seattle
+9979329	First Hill	Seattle
+9994758	Capitol Hill	Seattle
+9995551	Bryant	Seattle
+9999759	Windermere	Seattle
+9999955	Magnolia	Seattle
+10000273		Seattle
+10012724	First Hill	Seattle
+10015967	The Junction	Seattle
+10019082	Stevens	Seattle
+10020221	North Beacon Hill	Seattle
+10020782	The Junction	Seattle
+10022421	Columbia City	Seattle
+10023353	Magnolia	Seattle
+10026648	Westlake	Seattle
+10031055		Seattle
+10035274	Capitol Hill	Seattle
+10035644		Seattle
+10036903	Lower Queen Anne	Seattle
+10043487	Bryant	Seattle
+10060388	South Park	Seattle
+10060674	Fremont	Seattle
+10068879	Magnolia	Seattle
+10076279	Belltown	Seattle
+10077121		Seattle
+10104370	Maple Leaf	Seattle
+10106055	Queen Anne	Seattle
+10108451	Lower Queen Anne	Seattle
+10118341	Fremont	Seattle
+10121329		Seattle
+10122924	Gatewood	Seattle
+10123910	Madrona	Seattle
+10124808	Wallingford	Seattle
+10125020		Seattle
+10126050	University District	Seattle
+10126199	First Hill	Seattle
+10132385		Seattle
+10135378		Seattle
+10135468	Stevens	Seattle
+10136155		Seattle
+10139271	Stevens	Seattle
+10140582	International District	Seattle
+10141859	Lower Queen Anne	Seattle
+10156116		Seattle
+10157690		Seattle
+10157880	Capitol Hill	Seattle
+10170577	Lower Queen Anne	Seattle
+10170744	Lower Queen Anne	Seattle
+10183490		Seattle
+10188794	Mount Baker	Seattle
+10191917	Phinney Ridge	Seattle
+10192213	Minor	Seattle
+10204689	Madrona	Seattle
+10205366	Industrial District	Seattle
+10208623	Queen Anne	Seattle
+10210625	Capitol Hill	Seattle
+10210971		Seattle
+10211609	First Hill	Seattle
+10211716	First Hill	Seattle
+10211928	Ravenna	Seattle
+10229434		Seattle
+10231701	Ballard	Seattle
+10234558		Seattle
+10235014	Belltown	Seattle
+10235136	Meadowbrook	Seattle
+10247453	Central Business District	Seattle
+10248139	Minor	Seattle
+10249527	Wallingford	Seattle
+10250735	Capitol Hill	Seattle
+10252110	Genesee	Seattle
+10262971	Ballard	Seattle
+10265391		Seattle
+10267360		Seattle
+10272763		Seattle
+10273158	Central Business District	Seattle
+10274175		Seattle
+10279830	Minor	Seattle
+10281965	Montlake	Seattle
+10292753	Belltown	Seattle
+10295151	Capitol Hill	Seattle
+10299108		Seattle
+10299195		Seattle
+10309898		Seattle
+10310373	Queen Anne	Seattle
+10318171	Stevens	Seattle
+10319529	North Beach/Blue Ridge	Seattle
+10331249		Seattle
+10332096	Olympic Hills	Seattle
+10334184	Capitol Hill	Seattle
+10339144	Capitol Hill	Seattle
+10339145	Alki	Seattle
+10340165	Greenwood	Seattle
