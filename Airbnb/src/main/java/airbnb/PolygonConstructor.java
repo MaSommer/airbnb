@@ -14,7 +14,8 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class PolygonConstructor implements Serializable {
+
+public class PolygonConstructor implements Serializable{
 	
 	private Path2D path;
 	

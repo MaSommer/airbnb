@@ -100,5 +100,23 @@ public class Print {
 		System.out.println("The guest that spent the most money on accomodation is: ");
 		System.out.println("Name: " + result[2] + " ReviewerID: " + result[1] + " Amount: $" + result[5]);
 	}
+	
+	public static void task6a(double[] result){
+		System.out.println("Our result agree with the testing set: " + numberFormat.format(100*result[1]/result[0])+"% of the times.");
+	}
+	
+	public static void task6b(JavaPairRDD<String, ArrayList<String>> mappedListingsPairAggregated){
+		mappedListingsPairAggregated.foreach(new VoidFunction<Tuple2<String, ArrayList<String>>>(){
+			public void call(Tuple2<String, ArrayList<String>> t)
+					throws Exception {
+				System.out.println("The neighbourhood: " + t._1+ " have these distinct amenities:");
+				for (String amenities : t._2) {
+					System.out.print(amenities + ",");
+				}
+				System.out.println();
+				System.out.println();
+			}
+		});
+	}
 
 }

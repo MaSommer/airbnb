@@ -7,15 +7,13 @@ public class Host implements Serializable{
 	private final int id;
 	//listings id is key and price of listing per night is value
 	private double totalIncome;
-	private int totalListings;
 
 	private final String hostName;
 	
-	public Host(int id, String hostName, int totalListings, double price, int numberOfNightsNotAvailable){
+	public Host(int id, String hostName, double totalIncome){
 		this.id = id;
 		this.hostName = hostName;
-		this.totalListings = totalListings;
-		this.totalIncome = price*numberOfNightsNotAvailable;
+		this.totalIncome = totalIncome;
 	}
 	 
 	public int getId() {
@@ -29,11 +27,7 @@ public class Host implements Serializable{
 	public String getHostName() {
 		return hostName;
 	}
-	
-	public int getTotalListings() {
-		return totalListings;
-	}
-	
+
 	public void updateTotalIncome(Host newHost){
 		totalIncome += newHost.totalIncome;
 	}
