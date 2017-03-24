@@ -10,12 +10,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-
 import java.util.Iterator;
 import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
-
 import java.util.Scanner;
 
 import javax.annotation.OverridingMethodsMustInvokeSuper;
@@ -65,32 +63,42 @@ public class Program {
 		neighbourHoodTest_usRDD = sc.textFile("target/neighborhood_test.csv");
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Which assignment do you want to run? (2, 3, 4, 5, 6 or 7)");
-		if (scanner.next().equals("2")){
-			System.out.println("Whick task do you want to run? (b, c, or d");
-			if (scanner.next().equals("b")){
+		String task = scanner.next();
+		if (task.equals("2")){
+			System.out.println("Whick subtask do you want to run? (b, c, or d)");
+			String subtask = scanner.next();
+			if (subtask.equals("b")){
 				task2b();
 			}
-			else if (scanner.next().equals("c")){
+			else if (subtask.equals("c")){
+				System.out.println("ku");
 				task2c();
 			}
-			else{
+			else if (subtask.equals("d")){
 				task2d();
 			}
 		}
-		else if (scanner.next().equals("3")){
+		else if (task.equals("3")){
 			task3();
 		}
-		else if (scanner.next().equals("4")){
+		else if (task.equals("4")){
 			task4();
 		}
-		else if (scanner.next().equals("5")){
+		else if (task.equals("5")){
 			task5();
 		}
-		else if (scanner.next().equals("6")){
-			task6();
+		else if (task.equals("6")){
+			System.out.println("Which subtask do you want to run? (a or b)");
+			String subtask = scanner.next();
+			if (subtask.equals("a")){
+				task6a();				
+			}
+			else if (subtask.equals("b")){
+				task6b();								
+			}
 		}
-		else{
-//			task7();	
+		else if (task.equals("7")){
+			task7();	
 		}
 	}
 
@@ -135,7 +143,6 @@ public class Program {
 				cityIndex = i;
 			}
 		}
-
 		try {
 			JavaRDD<String> ret = HelpMethods.mapToColumnsString(listings_usRDD, headerList[cityIndex], 'l').distinct();				
 			int num = (int) ret.count();
@@ -181,7 +188,9 @@ public class Program {
 			String[] initial = new String[3];
 			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombinePairAverage(), HelpMethods.combinePairAverage());
 			Print.task3a(mappedListingsPairAggregated);
-			HelpMethods.mapToPairToStringAvg(mappedListingsPairAggregated).coalesce(1).saveAsTextFile("target/task3a");
+			
+			JavaRDD<String> outputPrint = HelpMethods.toStringPrint(HelpMethods.mapToPairToStringAvg(mappedListingsPairAggregated));
+			outputPrint.coalesce(1).saveAsTextFile("target/task3a");
 		}
 		else if (subtask.equals("b")){
 			String[] columndNeededListingsb = {"city", "price"};
@@ -192,7 +201,9 @@ public class Program {
 			String[] initial = new String[3];
 			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombinePairAverage(), HelpMethods.combinePairAverage());
 			Print.task3b(mappedListingsPairAggregated);
-			HelpMethods.mapToPairToStringAvg(mappedListingsPairAggregated).coalesce(1).saveAsTextFile("target/task3b");
+			
+			JavaRDD<String> outputPrint = HelpMethods.toStringPrint(HelpMethods.mapToPairToStringAvg(mappedListingsPairAggregated));
+			outputPrint.coalesce(1).saveAsTextFile("target/task3b");
 		}
 		else if (subtask.equals("c")){
 			String[] columndNeededListingsc = {"city", "reviews_per_month"};
@@ -202,7 +213,9 @@ public class Program {
 			String[] initial = new String[3];
 			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombinePairAverage(), HelpMethods.combinePairAverage());
 			Print.task3c(mappedListingsPairAggregated);
-			HelpMethods.mapToPairToStringAvg(mappedListingsPairAggregated).coalesce(1).saveAsTextFile("target/task3c");
+			
+			JavaRDD<String> outputPrint = HelpMethods.toStringPrint(HelpMethods.mapToPairToStringAvg(mappedListingsPairAggregated));
+			outputPrint.coalesce(1).saveAsTextFile("target/task3c");
 		}
 		else if (subtask.equals("d")){
 			String[] columndNeededListingsd = {"city", "reviews_per_month"};
@@ -212,7 +225,9 @@ public class Program {
 			String[] initial = new String[3];
 			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombineEstimatedNumberOfNights(), HelpMethods.combinePairEstimatedNumberOfNights());
 			Print.task3d(mappedListingsPairAggregated);
-			HelpMethods.mapToPairToString(mappedListingsPairAggregated).coalesce(1).saveAsTextFile("target/task3d");
+			
+			JavaRDD<String> outputPrint = HelpMethods.toStringPrint(HelpMethods.mapToPairToString(mappedListingsPairAggregated));
+			outputPrint.coalesce(1).saveAsTextFile("target/task3d");
 		}
 		else if (subtask.equals("e")){
 			String[] columndNeededListingse = {"city", "reviews_per_month", "price"};
@@ -222,7 +237,9 @@ public class Program {
 			String[] initial = new String[4];
 			JavaPairRDD<String, String[]> mappedListingsPairAggregated = mappedListingsPair.aggregateByKey(initial, HelpMethods.addAndCombineAmountOfMoneySpent(), HelpMethods.combinePairAmountOfMoneySpent());
 			Print.task3e(mappedListingsPairAggregated);
-			HelpMethods.mapToPairToString(mappedListingsPairAggregated).coalesce(1).saveAsTextFile("target/task3e");
+			
+			JavaRDD<String> outputPrint = HelpMethods.toStringPrint(HelpMethods.mapToPairToString(mappedListingsPairAggregated));
+			outputPrint.coalesce(1).saveAsTextFile("target/task3e");
 		}
 	}
 
@@ -261,8 +278,6 @@ public class Program {
 
 			int[] keyIndexes1 = {0, 3};
 			JavaPairRDD<String, String[]> joinedPairWithHostIdAndCityAsKey = HelpMethods.mapToPairNewKey(joinedPairReducedByKey, keyIndexes1);
-			System.out.println("here");
-			System.out.println(Arrays.toString(joinedPairWithHostIdAndCityAsKey.first()._2));
 			//The next line sums up total income and leave the tupple {city, host_id, host_name, totalIncome}
 			JavaPairRDD<String, String[]> joinedPairWithHostIdAndCityAsKeySummingIncome = HelpMethods.mapToPairNewKeyStringArray(joinedPairWithHostIdAndCityAsKey);
 			//The next line reduce by key and summing total income for each host in each city
@@ -312,8 +327,9 @@ public class Program {
 			ArrayList<Reviewer> initial = new ArrayList<Reviewer>();
 			JavaPairRDD<String, ArrayList<Reviewer>> joinedPairAggregatedOnCity = mappedCityAsKey.aggregateByKey(initial, HelpMethods.addAndCombineTop3Reviewers(), HelpMethods.combinePairTop3Reviewers());
 			Print.task5a(joinedPairAggregatedOnCity);
-			HelpMethods.mapToPairToStringFromReviewList(joinedPairAggregatedOnCity).coalesce(1).saveAsTextFile("target/task5a");
-
+			
+			JavaRDD<String> outputPrint = HelpMethods.toStringPrint(HelpMethods.mapToPairToStringFromReviewList(joinedPairAggregatedOnCity));
+			outputPrint.coalesce(1).saveAsTextFile("target/task5a");
 		}
 		else if (subtask.equals("b")){
 			String[] columndNeededListings = {"city", "price", "id"};
@@ -339,10 +355,6 @@ public class Program {
 			String[] result = joinedPairReducedOnReviewerId.aggregate(initial, HelpMethods.addAndCountTotalAmountSpent(), HelpMethods.combinePairTotalAmountSpent());
 			Print.task5b(result);
 		}
-	}
-
-	public static void task6() throws IOException{
-		ArrayList<PolygonConstructor> polygons = HelpMethods.createPolygons();
 	}
 
 	public static void task6a() throws IOException{
@@ -383,9 +395,42 @@ public class Program {
 		ArrayList<String> initial = new ArrayList<String>();
 		JavaPairRDD<String, ArrayList<String>> results = listingPairsMapedToNeighbourhoodNewKey.aggregateByKey(initial, HelpMethods.addAndCountDistinctAmenities(), HelpMethods.combinePairDistinctAmenities());
 		Print.task6b(results);
-		HelpMethods.mapToPairToStringArray(results).coalesce(1).saveAsTextFile("target/task6b");
+		
+		JavaRDD<String> outputPrint = HelpMethods.toStringPrint(HelpMethods.mapToPairToStringArray(results));
+		outputPrint.coalesce(1).saveAsTextFile("target/task6b");
 	}
 
+	public static void task7(){
+		 
+		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
+		
+		String[] colneeded = {"id","name","price","latitude","longitude"};
+		
+		JavaRDD<String[]> rowsNeededFromListings = HelpMethods.mapToColumnsWithHeader(listings_usRDD, colneeded, 'l');
+		
+		
+		JavaRDD<String> stringRdd = rowsNeededFromListings.map(new Function<String[], String>() {
+
+			public String call(String[] v1) throws Exception {
+				String resultString = "";
+				String[] listt = v1[1].split(",");
+				v1[1] = "";
+				for (int i = 0; i < listt.length; i++) {
+					v1[1] = v1[1] + listt[i];
+				}
+				
+				v1[2] = v1[2].replace('$', ' ').trim();
+		
+		
+				for (int i = 0; i < v1.length; i++) {
+					resultString = resultString + "," +  v1[i];
+				}
+				return resultString.substring(1, resultString.length()-1);
+			}
+		});
+
+		stringRdd.coalesce(1).saveAsTextFile("target/task7");
+	}
 
 	public static void main(String[] args) throws IOException {
 		SparkConf conf = new SparkConf()
@@ -393,8 +438,6 @@ public class Program {
 		.setMaster("local[*]")
 		;
 		JavaSparkContext sc = new JavaSparkContext(conf);
-
 		Program p=new Program(sc);
-		p.task5();
 	}
 }

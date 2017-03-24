@@ -14,13 +14,8 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-<<<<<<< HEAD
-import scala.Serializable;
 
 public class PolygonConstructor implements Serializable{
-=======
-public class PolygonConstructor implements Serializable {
->>>>>>> master
 	
 	private Path2D path;
 	
