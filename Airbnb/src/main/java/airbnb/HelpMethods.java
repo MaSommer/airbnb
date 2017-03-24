@@ -35,6 +35,7 @@ public class HelpMethods {
 	public static HashMap<String, Integer> attributeListingIndex;
 	public static HashMap<String, Integer> attributeCalendarIndex;
 	public static HashMap<String, Integer> attributeReviewIndex;
+	public static HashMap<String, Integer> attributeNeihbourhoodIndex;
 	public static HashMap<String, Integer> neigbourhoodTestIndex;
 	
 
@@ -62,31 +63,34 @@ public class HelpMethods {
 		}
 		return "Room for " + number + " persons";
 	}
-
+	
+	//The indexes for each attribute
+		public static void mapAttributeAndIndex(JavaRDD<String> input, char csvFile){
+			HashMap<String, Integer> attributeIndex = new HashMap<String, Integer>();
+			String[] attributeList = input.first().split("\t");
+			int index = 0;
+			for (String attribute : attributeList) {
+				attributeIndex.put(attribute, index);
+				index++;
+			}
+			if (csvFile == 'l'){
+				attributeListingIndex = attributeIndex;
+			}
+			else if (csvFile == 'c'){
+				attributeCalendarIndex = attributeIndex;
+			}
+			else if (csvFile == 'r'){
+				attributeReviewIndex = attributeIndex;
+			}
+			else if (csvFile == 'n'){
+				attributeNeihbourhoodIndex = attributeIndex;
+			}
+			else if (csvFile == 'a'){
+				neigbourhoodTestIndex = attributeIndex;
+			}
+		}
 
 	//The indexes for each attribute
-	public static void mapAttributeAndIndex(JavaRDD<String> input, char csvFile){
-		HashMap<String, Integer> attributeIndex = new HashMap<String, Integer>();
-		String[] attributeList = input.first().split("\t");
-		int index = 0;
-		for (String attribute : attributeList) {
-			attributeIndex.put(attribute, index);
-			index++;
-		}
-		if (csvFile == 'l'){
-			attributeListingIndex = attributeIndex;
-		}
-		else if (csvFile == 'c'){
-			attributeCalendarIndex = attributeIndex;
-		}
-		else if (csvFile == 'r'){
-			attributeReviewIndex = attributeIndex;
-		}
-		else if (csvFile == 'a'){
-			neigbourhoodTestIndex = attributeIndex;
-		}
-	}
-
 	//Returns a JavaRDD<String> with the the columns equal to the attributes specified in "columns"
 	public static JavaRDD<String[]> mapToColumns(JavaRDD<String> inputRDD, final String[] columns, final char csvFile){
 		JavaRDD<String[]> result = inputRDD.map(new Function<String, String[]>() {
@@ -124,6 +128,31 @@ public class HelpMethods {
 		//		System.out.println(result.count());
 		JavaRDD<String[]> resultAfterCuttingHead = result.mapPartitionsWithIndex(removeHeader, true);
 		return resultAfterCuttingHead;
+	}
+	public static JavaRDD<String[]> mapToColumnsWithHeader(JavaRDD<String> inputRDD, final String[] columns, final char csvFile){
+		JavaRDD<String[]> result = inputRDD.map(new Function<String, String[]>() {
+			public String[] call(String s) {
+				String[] entireRow = s.split("\t");
+				String[] attriButesToReturn = new String[columns.length];
+				for (int i = 0; i < columns.length; i++) {
+					int index = -1;
+					if (csvFile == 'l'){
+						index = attributeListingIndex.get(columns[i]);
+					}
+					else if (csvFile == 'c'){
+						index = attributeCalendarIndex.get(columns[i]);
+					}
+					else if (csvFile == 'a'){
+						index = neigbourhoodTestIndex.get(columns[i]);
+					}
+					
+					attriButesToReturn[i] = entireRow[index];
+				}
+				//				System.out.println(Arrays.toString(attriButesToReturn));
+				return attriButesToReturn;
+			} 
+		});
+		return result;
 	}
 
 
@@ -854,5 +883,35 @@ public class HelpMethods {
 		}	
 		return polygons;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	//Task 2
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }

@@ -93,6 +93,37 @@ public class Program {
 		}
 		
 	}
+	public static void task7(){
+		 
+		HelpMethods.mapAttributeAndIndex(listings_usRDD, 'l');
+		
+		String[] colneeded = {"id","name","price","latitude","longitude"};
+		
+		JavaRDD<String[]> rowsNeededFromListings = HelpMethods.mapToColumnsWithHeader(listings_usRDD, colneeded, 'l');
+		
+		
+		JavaRDD<String> stringRdd = rowsNeededFromListings.map(new Function<String[], String>() {
+
+			public String call(String[] v1) throws Exception {
+				String resultString = "";
+				String[] listt = v1[1].split(",");
+				v1[1] = "";
+				for (int i = 0; i < listt.length; i++) {
+					v1[1] = v1[1] + listt[i];
+				}
+				
+				v1[2] = v1[2].replace('$', ' ').trim();
+		
+		
+				for (int i = 0; i < v1.length; i++) {
+					resultString = resultString + "," +  v1[i];
+				}
+				return resultString.substring(1, resultString.length()-1);
+			}
+		});
+
+		stringRdd.coalesce(1).saveAsTextFile("target/task7_vtest15");
+	}
 
 	//c) Listings from how many and which cities are contained in the dataset
 	public static void task2c(){
@@ -437,6 +468,6 @@ public class Program {
 		JavaSparkContext sc = new JavaSparkContext(conf);
 
 		Program p=new Program(sc);
-		p.task5();
+		p.task7();
 	}
 }
